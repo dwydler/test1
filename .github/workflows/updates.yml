@@ -24,9 +24,20 @@ jobs:
       - name: Test with environment variables
         run: echo $TAG_NAME - $RELEASE_NAME
         env:
-          TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
-          RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
+          TAG_NAME: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
+          RELEASE_NAME: ubuntu24/${{ steps.date.outputs.date }}.1
 
     outputs:
       ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
       ReleaseTag: ubuntu24/${{ steps.date.outputs.date }}.1
+
+  CreateTest:
+    needs: CreateBasicInformations
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ReleaseName
+        run: echo "${{ needs.CreateBasicInformations.outputs.ReleaseName }}"
+
+      - name: Write ReleaseTag
+        run: echo "${{ needs.CreateBasicInformations.outputs.ReleaseTag }}"
