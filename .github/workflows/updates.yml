@@ -99,6 +99,16 @@ jobs:
           branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           github_token: ${{ secrets.GH_TOKEN }}
           force: true
+
+      - name: Read README.md(gh-pages)
+        id: ghpages
+        uses: jaywcjlove/github-action-read-file@v2.0.0
+        with:
+          branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          path: ./images/ubuntu/Ubuntu2404-Readme.md
+      
+      - name: Echo README.md(gh-pages)
+        run: echo "${{ steps.ghpages.outputs.content }}"
         
       - name: Create a new release
         uses: ncipollo/release-action@v1.14.0
