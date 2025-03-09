@@ -33,7 +33,7 @@ jobs:
 
       - name: Read README.md(gh-pages)
         id: ghpages
-        uses: jaywcjlove/github-action-read-file@v2
+        uses: jaywcjlove/github-action-read-file@v2.0.0
         with:
           branch: ${{ steps.octokit.outputs.tag }}
           path: README.md
