@@ -16,6 +16,10 @@ jobs:
   BasicInformations:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      pull-requests: write
+      
     steps:
       - name: Get current date
         id: date
@@ -30,6 +34,10 @@ jobs:
     needs: BasicInformations
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      pull-requests: write
+      
     steps:
       - name: Write ReleaseName
         run: echo "${{ needs.BasicInformations.outputs.ReleaseName }}"
@@ -51,6 +59,10 @@ jobs:
       - CreateTest
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+      pull-requests: write
+      
     steps:
       - name: Checkout new created branch
         uses: actions/checkout@v4
