@@ -19,6 +19,10 @@ jobs:
       contents: write
 
     steps:
+      - name: X
+        env:
+          VAR_X: ${{ inputs.var_x}}
+    
       - uses: oprypin/find-latest-tag@v1
         with:
           repository: actions/runner-images  # The repository to scan.
@@ -57,9 +61,11 @@ jobs:
         id: validate
         run: "packer validate ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl"
 
-      - name: Run `packer validate`
+      - name: Run `packer build`
         id: build
         run: "packer build ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl"
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
         
       - name: Read README.md(gh-pages)
