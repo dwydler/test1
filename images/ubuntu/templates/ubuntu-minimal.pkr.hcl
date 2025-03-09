@@ -83,7 +83,7 @@ source "hcloud" "gh-shr-ubuntu" {
   server_name = "${ var.os_image_name }-${ var.image_edition }-${formatdate("YYYYMMDD-HHmmss", timestamp())}"
   
   temporary_key_pair_type = "ed25519"
-  user_data_file = "cloud-init.cfg"
+  user_data_file = "${path.root}/cloud-init.cfg"
   ssh_username = var.ssh_username
 
   snapshot_name = "${ var.os_image_name }-${ var.image_edition }-${formatdate("YYYYMMDD-HHmmss", timestamp())}"
