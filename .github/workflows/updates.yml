@@ -4,13 +4,13 @@ on:
     inputs:
       ReleaseName:
         description: 'Release Name'
-        required: true
-        default: "Ubuntu 24.04 (20250302) Image Update"
+        required: false
+        #default: "Ubuntu 24.04 (20250302) Image Update"
         
       ReleaseTag:
         description: 'Release Tag'
-        required: true
-        default: "ubuntu24/20250302.1"
+        required: false
+        #default: "ubuntu24/20250302.1"
 
 jobs:
   CreateBasicInformations:
