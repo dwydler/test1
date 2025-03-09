@@ -26,8 +26,6 @@ jobs:
           #tag_prefix: 'Ubuntu 24.04'
           tag_template: 'yyyymmdd.i'
 
-          
-        "Ubuntu 24.04 (20250302) Image Update"
 
       - name: Test with environment variables
         run: echo ${{ steps.generate_release_tag.outputs.next_release_tag }}
