@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
+      contents: write
 
     steps:
       - uses: oprypin/find-latest-tag@v1
@@ -36,3 +36,4 @@ jobs:
           body: ${{ github.event.client_payload.ReleaseBody }}
           prerelease: ${{ github.event.client_payload.Prerelease }}
           commit: ${{ github.event.client_payload.Commitish }}
+          token: ${{ secrets.GH_TOKEN }}
