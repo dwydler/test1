@@ -18,11 +18,7 @@ jobs:
     permissions:
       contents: write
 
-    steps:
-      - name: X
-        env:
-          VAR_X: ${{ inputs.var_x}}
-    
+    steps:    
       - uses: oprypin/find-latest-tag@v1
         with:
           repository: actions/runner-images  # The repository to scan.
