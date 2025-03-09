@@ -19,10 +19,10 @@ jobs:
           tag_template: 'yyyy.mm.dd.i'
 
       - name: Test with environment variables
-              run: echo ${{ steps.generate_release_tag.outputs.next_release_tag }}
-              env:
-                TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
-                RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
+        run: echo ${{ steps.generate_release_tag.outputs.next_release_tag }}
+        env:
+          TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
+          RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
                 
 #      - name: Create Release
 #        uses: softprops/action-gh-release@v2
