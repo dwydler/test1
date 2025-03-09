@@ -40,6 +40,9 @@ jobs:
         with:
           ref: ${{ steps.octokit.outputs.tag }}
 
+      - name: Echo README.md(gh-pages)
+        run: ls -lisa
+
       - name: Setup `packer`
         uses: hashicorp/setup-packer@main
         id: setup
