@@ -18,10 +18,16 @@ jobs:
           tag_prefix: 'v'
           tag_template: 'yyyy.mm.dd.i'
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        with:
-          name: Release ${{ steps.generate_release_tag.outputs.next_release_tag }}
-          tag_name: ${{ steps.generate_release_tag.outputs.next_release_tag }}
-          token: ${{secrets.GITHUB_TOKEN}}
-          generate_release_notes: true
+      - name: Test with environment variables
+              run: echo ${{ steps.generate_release_tag.outputs.next_release_tag }}
+              env:
+                TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
+                RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
+                
+#      - name: Create Release
+#        uses: softprops/action-gh-release@v2
+#        with:
+#          name: Release ${{ steps.generate_release_tag.outputs.next_release_tag }}
+#          tag_name: ${{ steps.generate_release_tag.outputs.next_release_tag }}
+#          token: ${{secrets.GITHUB_TOKEN}}
+#          generate_release_notes: true
