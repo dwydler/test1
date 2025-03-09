@@ -1,0 +1,20 @@
+name: Mediathekview Updates
+on:
+  workflow_dispatch:
+
+jobs:
+  tag-new-versions:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - uses: oprypin/find-latest-tag@v1
+        with:
+          repository: actions/runner-images  # The repository to scan.
+          releases-only: true  # We know that all relevant tags have a GitHub release for them.
+          prefix: 'ubuntu24'
+        id: octokit  # The step ID to refer to later.
+    
+      - run: echo "Octokit is at version ${{ steps.octokit.outputs.tag }}"
