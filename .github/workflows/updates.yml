@@ -13,7 +13,7 @@ on:
         #default: "ubuntu24/20250302.1"
 
 jobs:
-  CreateBasicInformations:
+  BasicInformations:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +27,7 @@ jobs:
 
 
   CreateTest:
-    needs: CreateBasicInformations
+    needs: BasicInformations
     runs-on: ubuntu-latest
 
     steps:
@@ -36,3 +36,62 @@ jobs:
 
       - name: Write ReleaseTag
         run: echo "${{ needs.CreateBasicInformations.outputs.ReleaseTag }}"
+
+      - name: Create a new branch
+        uses: peterjgrainger/action-create-branch@v2.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          branch: ${{ needs.CreateBasicInformations.outputs.ReleaseTag }}
+
+
+  CreateVmTemplate:
+    needs:
+      - BasicInformations
+      - CreateTest
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout new created branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.CreateBasicInformations.outputs.ReleaseTag }}
+
+
+      - name: Setup `packer`
+        uses: hashicorp/setup-packer@main
+        id: setup
+        with:
+          version: latest
+
+      - name: Run `packer init`
+        id: init
+        run: "packer init ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl"
+
+      - name: Run `packer validate`
+        id: validate
+        run: "packer validate ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl"
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+
+      - name: Run `packer build`
+        id: build
+        run: "packer build ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl"
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+          
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          branch: ${{ needs.CreateBasicInformations.outputs.ReleaseTag }}
+          github_token: ${{ secrets.GH_TOKEN }}
+        
+      - name: Create a new release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          tag: ${{ needs.CreateBasicInformations.outputs.ReleaseTag }}
+          name: ${{ needs.CreateBasicInformations.outputs.ReleaseName }}
+          body: ${{ steps.ghpages.outputs.content }}
+          token: ${{ secrets.GH_TOKEN }}
+
