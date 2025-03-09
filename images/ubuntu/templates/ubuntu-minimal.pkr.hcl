@@ -1,7 +1,3 @@
-locals {
-  managed_image_name = var.managed_image_name != "" ? var.managed_image_name : "${ var.os_image_name }-${ var.image_edition }-${formatdate("YYYYMMDD-HHmmss", timestamp())}"
-}
-
 packer {
   required_plugins {
     hcloud = {
@@ -16,6 +12,16 @@ variable "hcloud_token" {
   type      = string
   sensitive = true
   default   = "${env("HCLOUD_TOKEN")}"
+}
+
+variable "dockerhub_login" {
+  type    = string
+  default = "${env("DOCKERHUB_LOGIN")}"
+}
+
+variable "dockerhub_password" {
+  type    = string
+  default = "${env("DOCKERHUB_PASSWORD")}"
 }
 
 variable "helper_script_folder" {
@@ -67,15 +73,6 @@ variable "ssh_username" {
   default   = "root"
 }
 
-variable "managed_image_name" {
-  type    = string
-
-//  validation {
-//    condition     = var.managed_image_name != ""
-//    error_message = "An empty string is not a valid value."
-//  }
-}
-
 
 source "hcloud" "gh-shr-ubuntu" {
   token = var.hcloud_token
@@ -83,13 +80,13 @@ source "hcloud" "gh-shr-ubuntu" {
   location    = var.server_location
   image       = var.os_image_name
   server_type = var.server_type
-  server_name = "${ var.managed_image_name }"
+  server_name = "${ var.os_image_name }-${ var.image_edition }-${formatdate("YYYYMMDD-HHmmss", timestamp())}"
   
   temporary_key_pair_type = "ed25519"
   user_data_file = "cloud-init.cfg"
   ssh_username = var.ssh_username
 
-  snapshot_name = "${ var.managed_image_name }"
+  snapshot_name = "${ var.os_image_name }-${ var.image_edition }-${formatdate("YYYYMMDD-HHmmss", timestamp())}"
   snapshot_labels = {
     app = "github-self-hosted-runner",
     os = var.os_image_name,
