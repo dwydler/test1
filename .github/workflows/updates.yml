@@ -50,7 +50,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          force: true
           branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
 
 
@@ -99,6 +98,7 @@ jobs:
         with:
           branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           github_token: ${{ secrets.GH_TOKEN }}
+          force: true
         
       - name: Create a new release
         uses: ncipollo/release-action@v1.14.0
