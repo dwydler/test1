@@ -26,7 +26,10 @@ jobs:
           branch: ${{ steps.octokit.outputs.tag }}
           #sha: '${{ github.event.pull_request.head.sha }}'
 
-      - uses: actions/checkout@v4
+      - name: Checkout new created branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.octokit.outputs.tag }}
 
       - name: Create release for ${{ steps.octokit.outputs.tag }}
         uses: ncipollo/release-action@v1.14.0
