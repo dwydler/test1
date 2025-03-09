@@ -15,19 +15,31 @@ jobs:
         uses: amitsingh-007/next-release-tag@v6.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          tag_prefix: 'ubuntu24/'
+          #tag_prefix: 'ubuntu24/'
           tag_template: 'yyyymmdd.i'
+
+      - name: Generate release name
+        id: generate_release_name
+        uses: amitsingh-007/next-release-tag@v6.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          #tag_prefix: 'Ubuntu 24.04'
+          tag_template: 'yyyymmdd.i'
+
+          
+        "Ubuntu 24.04 (20250302) Image Update"
 
       - name: Test with environment variables
         run: echo ${{ steps.generate_release_tag.outputs.next_release_tag }}
         env:
           TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
           RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
+
                 
-#      - name: Create Release
-#        uses: softprops/action-gh-release@v2
-#        with:
-#          name: Release ${{ steps.generate_release_tag.outputs.next_release_tag }}
-#          tag_name: ${{ steps.generate_release_tag.outputs.next_release_tag }}
-#          token: ${{secrets.GITHUB_TOKEN}}
-#          generate_release_notes: true
+      - name: Create a new release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          tag: ubuntu24/${{ steps.generate_release_tag.outputs.next_release_tag }}
+          name: Ubuntu 24.04 (${{ steps.generate_release_name.outputs.next_release_tag }}) Image Update
+          body: ${{ steps.ghpages.outputs.content }}
+          token: ${{ secrets.GH_TOKEN }}
