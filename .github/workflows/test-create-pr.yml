@@ -24,7 +24,7 @@ jobs:
       - name: Checkout new created branch
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: ubuntu24/20250310.1
       - name: Write new version number to file
         run: echo "hallo"  > test1
       
@@ -37,6 +37,5 @@ jobs:
           signoff: false
           delete-branch: false
           title: test4
-          branch: ubuntu24/20250310.1
-          base: master
+          branch: master
           draft: false
