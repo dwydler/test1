@@ -1,0 +1,39 @@
+name: Test create pr
+on:
+  workflow_dispatch:
+    inputs:
+      ReleaseName:
+        description: 'Release Name'
+        required: false
+        #default: "Ubuntu 24.04 (20250302) Image Update"
+        
+      ReleaseTag:
+        description: 'Release Tag'
+        required: false
+        #default: "ubuntu24/20250302.1"
+
+jobs:
+  BasicInformations:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+      
+    steps:
+      - name: Checkout new created branch
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          commit-message: ${{ steps.ubuntu2404readme.outputs.content }}
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          delete-branch: false
+          title: ${{ needs.BasicInformations.outputs.ReleaseName }}
+          branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          draft: false
