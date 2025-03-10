@@ -79,19 +79,19 @@ jobs:
       - name: Run `packer init`
         id: init
         #run: "packer init ./images/ubuntu/templates/ubuntu-minimal.pkr.hcl"
-        run: "packer init ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl"
+        run: packer init ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl
 
       - name: Run `packer validate`
         id: validate
         #run: "packer validate ./images/ubuntu/templates/ubuntu-minimal.pkr.hcl"
-        run: "packer validate ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl"
+        run: packer validate ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl -var managed_image_name="${{ needs.BasicInformations.outputs.ReleaseTag }}"
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
       - name: Run `packer build`
         id: build
         #run: "packer build ./images/ubuntu/templates/ubuntu-minimal.pkr.hcl"
-        run: "packer build ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl"
+        run: packer build ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl -var managed_image_name="${{ needs.BasicInformations.outputs.ReleaseTag }}"
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           
