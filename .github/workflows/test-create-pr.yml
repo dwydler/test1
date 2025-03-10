@@ -35,5 +35,5 @@ jobs:
           signoff: false
           delete-branch: false
           title: ${{ needs.BasicInformations.outputs.ReleaseName }}
-          branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          branch: ubuntu24/20250310.1
           draft: false
