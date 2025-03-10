@@ -34,8 +34,6 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           commit-message: test1
-          committer: test2
-          author: test3
           signoff: false
           delete-branch: false
           title: test4
