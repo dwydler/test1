@@ -21,21 +21,27 @@ jobs:
       pull-requests: write
       
     steps:
-      - name: Checkout new created branch
-        uses: actions/checkout@v4
-        with:
-          ref: ubuntu24/20250310.1
-      - name: Write new version number to file
-        run: echo "hallo"  > test1
+#      - name: Checkout new created branch
+#        uses: actions/checkout@v4
+#        with:
+#          ref: ubuntu24/20250310.1
+#      - name: Write new version number to file
+#        run: echo "hallo"  > test1
       
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GH_TOKEN }}
-          commit-message: test1
-          signoff: false
-          delete-branch: false
-          title: test4
-          branch: master
-          draft: false
+#      - name: Create Pull Request
+#        id: cpr
+#        uses: peter-evans/create-pull-request@v7
+#        with:
+#          token: ${{ secrets.GH_TOKEN }}
+#          commit-message: test1
+ #         signoff: false
+#          delete-branch: false
+#          title: test4
+#          branch: master
+#          draft: false
+      - name: Create PR
+        uses: poorva17/create-pr-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_BRANCH: ubuntu24/20250310.1
+          BASE_BRANCH: master
