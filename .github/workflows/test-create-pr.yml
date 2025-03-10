@@ -19,8 +19,6 @@ jobs:
     steps:
       - name: Checkout new created branch
         uses: actions/checkout@v4
-        with:
-          ref: ubuntu24/20250310.1
 
       - name: Create PR
         uses: poorva17/create-pr-action@main
