@@ -19,8 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-#        with:
-#          fetch-depth: '0'
+        with:
+          fetch-depth: '0'
           
 #      - run: exit 0
 
