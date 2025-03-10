@@ -91,7 +91,7 @@ jobs:
       - name: Run `packer build`
         id: build
         #run: "packer build ./images/ubuntu/templates/ubuntu-minimal.pkr.hcl"
-        run: packer build -var managed_image_name="${{ needs.BasicInformations.outputs.ReleaseTag }}" ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl
+        run: packer build -var managed_image_name=${{ needs.BasicInformations.outputs.ReleaseTag }} ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           
