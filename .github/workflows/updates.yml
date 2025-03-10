@@ -81,13 +81,19 @@ jobs:
         #run: "packer init ./images/ubuntu/templates/ubuntu-minimal.pkr.hcl"
         run: packer init ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl
 
+      - name: character-replacement-test
+        run: |
+          REPO=${{ needs.BasicInformations.outputs.ReleaseTag }}
+          DB_NAME="${REPO////-}"
+          echo $DB_NAME        
+
       - name: Run `packer validate`
         id: validate
         #run: "packer validate ./images/ubuntu/templates/ubuntu-minimal.pkr.hcl"
         run: packer validate ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          HCLOUD_SNAPSHOT_NAME: ${{ needs.BasicInformations.outputs.ReleaseTag }}"
+          HCLOUD_SNAPSHOT_NAME: ${{ needs.BasicInformations.outputs.ReleaseTag }}
 
       - name: Run `packer build`
         id: build
@@ -95,7 +101,7 @@ jobs:
         run: packer build ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          HCLOUD_SNAPSHOT_NAME: ${{ needs.BasicInformations.outputs.ReleaseTag }}"
+          HCLOUD_SNAPSHOT_NAME: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           
 
       - name: Commit & Push changes
