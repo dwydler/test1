@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           commit-message: test2
           signoff: false
-          branch: test1
+          branch: ubuntu24/20250310.1
           delete-branch: false
           title: test3
           body: |
