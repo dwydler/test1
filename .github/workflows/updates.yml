@@ -133,6 +133,8 @@ jobs:
           signoff: false
           delete-branch: false
           title: ${{ needs.BasicInformations.outputs.ReleaseName }}
+          branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          base: master
           #body: |
           #  Update report
           #  - Updated with *today's* date
