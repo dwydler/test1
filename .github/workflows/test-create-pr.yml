@@ -17,11 +17,11 @@ jobs:
     runs-on: ubuntu-latest
       
     steps:
-      - uses: actions/checkout@master
-        with:
-          fetch-depth: '0'
+#      - uses: actions/checkout@master
+#        with:
+#          fetch-depth: '0'
           
-      - run: exit 0
+#      - run: exit 0
 
       - name: Run the Action
         uses: devops-infra/action-pull-request@master
