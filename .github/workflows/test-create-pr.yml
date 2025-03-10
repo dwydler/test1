@@ -21,10 +21,10 @@ jobs:
       pull-requests: write
       
     steps:
-#      - name: Checkout new created branch
-#        uses: actions/checkout@v4
-#        with:
-#          ref: ubuntu24/20250310.1
+      - name: Checkout new created branch
+        uses: actions/checkout@v4
+        with:
+          ref: ubuntu24/20250310.1
 #      - name: Write new version number to file
 #        run: echo "hallo"  > test1
       
