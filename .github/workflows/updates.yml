@@ -81,11 +81,18 @@ jobs:
         #run: "packer init ./images/ubuntu/templates/ubuntu-minimal.pkr.hcl"
         run: packer init ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl
 
+#      - name: character-replacement-test
+#        run: |
+#          REPO=${{ needs.BasicInformations.outputs.ReleaseTag }}
+#          HCLOUD_SNAPSHOT_NAME="${REPO////-}"
+#          echo $HCLOUD_SNAPSHOT_NAME        
       - name: character-replacement-test
-        run: |
-          REPO=${{ needs.BasicInformations.outputs.ReleaseTag }}
-          HCLOUD_SNAPSHOT_NAME="${REPO////-}"
-          echo $HCLOUD_SNAPSHOT_NAME        
+        id: hcloudvmname
+        uses: mad9000/actions-find-and-replace-string@5
+        with:
+            source: ${{ needs.BasicInformations.outputs.ReleaseTag }} # this translates to ref/heads/main on the main branch, but can be any arbitrary string 
+            find: '/'        # we want to remove ref/heads/ from source 
+            replace: '-'
 
       - name: Run `packer validate`
         id: validate
@@ -93,7 +100,7 @@ jobs:
         run: packer validate ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          #HCLOUD_SNAPSHOT_NAME: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
 
       - name: Run `packer build`
         id: build
@@ -101,7 +108,7 @@ jobs:
         run: packer build ./images/ubuntu/templates/ubuntu-24.04.pkr.hcl
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          #HCLOUD_SNAPSHOT_NAME: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
           
 
       - name: Commit & Push changes
