@@ -22,13 +22,33 @@ jobs:
           fetch-depth: '0'
           
       - run: exit 0
+
+- name: Run the Action
+      uses: devops-infra/action-pull-request@master
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        source_branch: ubuntu24/20250310.1
+        target_branch: master
+        title: My pull request
+#        template: .github/PULL_REQUEST_TEMPLATE.md
+        body: "**Automated pull request**"
+#        reviewer: octocat
+#        assignee: octocat
+#        label: enhancement
+#        milestone: My milestone
+        draft: false
+#        old_string: "<!-- Add your description here -->"
+#        new_string: "** Automatic pull request**"
+#        get_diff: true
+#        ignore_users: "dependabot"
+        allow_no_diff: false
       
-      - name: Create PR
-        uses: poorva17/create-pr-action@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          HEAD_BRANCH: ubuntu24/20250310.1
-#      - name: Checkout new created branch
+#      - name: Create PR
+#        uses: poorva17/create-pr-action@main
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+#          HEAD_BRANCH: ubuntu24/20250310.1
+##      - name: Checkout new created branch
 #        uses: actions/checkout@v4
 #        with:
 #          ref: ubuntu24/20250310.1
