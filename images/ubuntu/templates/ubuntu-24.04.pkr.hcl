@@ -1,7 +1,3 @@
-locals {
-  managed_image_name = var.managed_image_name != "" ? var.managed_image_name : "${ var.os_image_name }-${ var.image_edition }-${formatdate("YYYYMMDD-HHmmss", timestamp())}"
-}
-
 packer {
   required_plugins {
     hcloud = {
@@ -69,6 +65,8 @@ variable "ssh_username" {
 
 variable "managed_image_name" {
   type    = string
+  default   = "${env("HCLOUD_SNAPSHOT_NAME")}"
+  
 }
 
 
