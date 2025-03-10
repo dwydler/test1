@@ -23,9 +23,11 @@ jobs:
     steps:
       - name: Checkout new created branch
         uses: actions/checkout@v4
-        with:
-          ref: master
-
+#        with:
+#          ref: master
+      - name: Write new version number to file
+        run: echo "hallo"  > test1
+      
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
