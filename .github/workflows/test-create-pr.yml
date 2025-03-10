@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout new created branch
         uses: actions/checkout@v4
+        with:
+          ref: ubuntu24/20250310.1
 
       - name: Create Pull Request
         id: cpr
@@ -35,5 +37,5 @@ jobs:
           signoff: false
           delete-branch: false
           title: ${{ needs.BasicInformations.outputs.ReleaseName }}
-          branch: ubuntu24/20250310.1
+          branch: master
           draft: false
