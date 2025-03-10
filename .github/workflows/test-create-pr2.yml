@@ -12,7 +12,6 @@ jobs:
         with:
           ref: ubuntu24/20250310.1
 
-      - name: Write new version number to file
       
       - name: Create Pull Request for the change
         id: cpr
