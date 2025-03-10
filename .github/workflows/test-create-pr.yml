@@ -33,11 +33,11 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GH_TOKEN }}
-          commit-message: ${{ steps.ubuntu2404readme.outputs.content }}
-          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+          commit-message: test1
+          committer: test2
+          author: test3
           signoff: false
           delete-branch: false
-          title: ${{ needs.BasicInformations.outputs.ReleaseName }}
+          title: test4
           branch: ubuntu24/20250310.1
           draft: false
