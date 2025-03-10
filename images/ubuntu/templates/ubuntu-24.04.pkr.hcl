@@ -1,3 +1,7 @@
+locals {
+  managed_image_name = var.managed_image_name != "" ? var.managed_image_name : "${ var.os_image_name }-${ var.image_edition }-${formatdate("YYYYMMDD-HHmmss", timestamp())}"
+}
+
 packer {
   required_plugins {
     hcloud = {
@@ -63,6 +67,10 @@ variable "ssh_username" {
   default   = "root"
 }
 
+variable "managed_image_name" {
+  type    = string
+}
+
 
 source "hcloud" "gh-shr-ubuntu" {
   token = var.hcloud_token
@@ -70,13 +78,13 @@ source "hcloud" "gh-shr-ubuntu" {
   location    = var.server_location
   image       = var.os_image_name
   server_type = var.server_type
-  server_name = "${ var.os_image_name }-${ var.image_edition }-${formatdate("YYYYMMDD-HHmmss", timestamp())}"
+  server_name = "${ var.managed_image_name }"
 
   temporary_key_pair_type = "ed25519"
   user_data_file = "./images/ubuntu/templates/cloud-init.cfg"
   ssh_username = var.ssh_username
 
-  snapshot_name = "${ var.os_image_name }-${ var.image_edition }-${formatdate("YYYYMMDD-HHmmss", timestamp())}"
+  snapshot_name = "${ var.managed_image_name }"
   snapshot_labels = {
     app = "github-self-hosted-runner",
     os = var.os_image_name,
