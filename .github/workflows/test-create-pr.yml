@@ -28,4 +28,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           HEAD_BRANCH: ubuntu24/20250310.1
-          BASE_BRANCH: master
+          BASE_BRANCH: ubuntu24/20250310.1
