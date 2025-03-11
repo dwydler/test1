@@ -162,14 +162,6 @@ jobs:
           branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           path: images/ubuntu/Ubuntu2404-Readme.md
 
-      - name: Create a new release
-        uses: ncipollo/release-action@v1.14.0
-        with:
-          tag: ${{ needs.BasicInformations.outputs.ReleaseTag }}
-          name: ${{ needs.BasicInformations.outputs.ReleaseName }}
-          body: ${{ steps.ubuntu2404readme.outputs.content }}
-          token: ${{ secrets.GH_TOKEN }}
-
       - name: Run the Action
         uses: devops-infra/action-pull-request@master
         with:
@@ -179,5 +171,12 @@ jobs:
           title: ${{ needs.BasicInformations.outputs.ReleaseName }}
           body: ${{ steps.ubuntu2404readme.outputs.content }}
 
-      
+
+      - name: Create a new release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          tag: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          name: ${{ needs.BasicInformations.outputs.ReleaseName }}
+          body: ${{ steps.ubuntu2404readme.outputs.content }}
+          token: ${{ secrets.GH_TOKEN }}      
 
