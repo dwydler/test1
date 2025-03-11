@@ -153,7 +153,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: '0'
-          ref: ubuntu24/20250311.1
+          ref: ${{ needs.BasicInformations.outputs.ReleaseTag }}
 
 #      - name: Read ubuntu2404-Readme.md
 #        id: ubuntu2404readme
@@ -174,9 +174,9 @@ jobs:
         uses: devops-infra/action-pull-request@master
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          source_branch: ubuntu24/20250311.1
+          source_branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           target_branch: master
-          title: test1
+          title: ${{ needs.BasicInformations.outputs.ReleaseName }}
           body: test2
 
       
