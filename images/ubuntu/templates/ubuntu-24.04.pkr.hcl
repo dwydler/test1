@@ -36,7 +36,7 @@ variable "installer_script_folder" {
 
 variable "server_location" {
   type    = string
-  default = "fsn1"
+  default = "hel1"
 }
 
 variable "os_image_name" {
