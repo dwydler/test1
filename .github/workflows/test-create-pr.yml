@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
         with:
-#          fetch-depth: '0'
+          fetch-depth: '0'
           ref: ubuntu24/20250310.1
           
 #      - run: exit 0
