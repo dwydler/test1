@@ -155,12 +155,12 @@ jobs:
           fetch-depth: '0'
           ref: ${{ needs.BasicInformations.outputs.ReleaseTag }}
 
-#      - name: Read ubuntu2404-Readme.md
-#        id: ubuntu2404readme
-#        uses: jaywcjlove/github-action-read-file@v2.0.0
-#        with:
-#          branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
-#          path: images/ubuntu/Ubuntu2404-Readme.md
+      - name: Read ubuntu2404-Readme.md
+        id: ubuntu2404readme
+        uses: jaywcjlove/github-action-read-file@v2.0.0
+        with:
+          branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          path: images/ubuntu/Ubuntu2404-Readme.md
 
 #      - name: Create a new release
 #        uses: ncipollo/release-action@v1.14.0
@@ -177,7 +177,7 @@ jobs:
           source_branch: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           target_branch: master
           title: ${{ needs.BasicInformations.outputs.ReleaseName }}
-          body: test2
+          body: ${{ steps.ubuntu2404readme.outputs.content }}
 
       
 
