@@ -45,10 +45,11 @@ jobs:
           #exclude: '*-rc*'
           #commit-ish: 'HEAD'
           exact-match: 'false'
+          no-tags-text: 'false'
           # if you unshallow in a separate step, use the following option:
           # skip-unshallow: 'true'
       - name: Show Tag
-        if: steps.tagger.outputs.tag != 'NO_TAGS'
+        if: steps.tagger.outputs.tag == 'false'
         #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
         id: display
         run: |
