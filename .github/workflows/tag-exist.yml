@@ -33,10 +33,22 @@ jobs:
     steps:
 #      - name: Send greeting
 #        run: echo "${{ github.event.inputs.os }}"
-#      - name: condition 1
-#        if: ${{ github.event.inputs.os }} == 'ubuntu22'
-#        run: script for condition 1
-
+      - name: condition 1
+        id: test1
+        #if: ${{ github.event.inputs.os }} == 'ubuntu22'
+        #run: echo "Ubuntu 22.04" >> $GITHUB_OUTPUT
+        #env: 
+        #  os: ${{ github.event.inputs.os }}
+        run: |
+          if [ ${{ github.event.inputs.os }} == 'ubuntu22' ]; then
+            echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
+          else
+            echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: condition 1 Check
+        run: |
+          echo 'Output from Find Tag: ${{steps.test1.outputs.osname}}'
       
       - name: Checkout
         uses: actions/checkout@v2
