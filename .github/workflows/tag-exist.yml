@@ -2,9 +2,9 @@ name: Test tag exist
 on:
   workflow_dispatch:
     inputs:
-      name:
+      os:
         type: choice
-        description: Ubuntu OS
+        description: Ubuntu Server OS
         options: 
           - ubuntu22
           - ubuntu24
@@ -31,6 +31,9 @@ jobs:
     runs-on: ubuntu-latest
       
     steps:
+      - name: Send greeting
+        run: echo "${{ github.event.inputs.os }}"
+      
       - name: Checkout
         uses: actions/checkout@v2
     
