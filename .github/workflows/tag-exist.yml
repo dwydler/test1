@@ -25,6 +25,24 @@ jobs:
           #tag: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           tag: ubuntu24/20250311.1
           repo: 'dwydler/test1'
-      
-      - run: echo "Tag exists!"
+
+      - name: Split branch name
+        env:
+          BRANCH: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+        id: split
+        run: echo "fragment=${BRANCH##*/}" >> $GITHUB_OUTPUT
+
+      - name: Test variable
+        run: |
+          echo ${{ steps.split.outputs.fragment }}
+        
+      - name: determine docker tag by splitting branch name on slash
         if: steps.check-tag.outputs.exists == 'true'
+        id: docker-tag
+        shell: bash
+        run: |
+          split=(${needs.BasicInformations.outputs.ReleaseTag//\// })
+          index=$((${#split[@]}-1))
+          DOCKER_TAG=${split[$index]}
+          echo DOCKER_TAG=$DOCKER_TAG >> $GITHUB_ENV
+          echo "::set-output name=DOCKER_TAG::$DOCKER_TAG"
