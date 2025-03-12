@@ -82,7 +82,15 @@ jobs:
         if: steps.tagger.outputs.tag != 'false'
         id: date
         #run: echo "::set-output name=date::$(date +'%Y%m%d').1"
-        run: echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
+        #run: echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
+        run: |
+          if [ ${{ steps.tagger.outputs.tag }} == 'false' ]; then
+            echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
+          else
+            #mails=$(echo steps.tagger.outputs.tag | tr ".")
+            echo "${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 1,2
+            #echo $mails
+          fi
               
     outputs:
       ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
