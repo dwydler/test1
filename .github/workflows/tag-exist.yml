@@ -87,9 +87,9 @@ jobs:
           if [ "${{ steps.tagger.outputs.tag }}" == "'false'" ]; then
             echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
           else
-            ver=echo "ubuntu24/20250312.2" | cut -d '.' -f 2
+            ver=$(echo "ubuntu24/20250312.2" | cut -d '.' -f 2)
             #ver=$ver+1
-            #ver=`expr $ver + 1`
+            ver=`expr $ver + 1`
             echo "date=$(date +'%Y%m%d').$ver" >> $GITHUB_OUTPUT
           fi
               
