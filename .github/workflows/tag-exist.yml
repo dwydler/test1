@@ -24,12 +24,16 @@ jobs:
         
 
       - name: Define the name of the OS
-        id: osname
+        id: os
         run: |
           if [ "${{ github.event.inputs.os }}" == "ubuntu22" ]; then
             echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
+            echo "packerfile=ubuntu-22.04.pkr.hcl" >> $GITHUB_OUTPUT
+            
           elif [ "${{ github.event.inputs.os }}" == "ubuntu24" ]; then
             echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
+            echo "packerfile=ubuntu-24.04.pkr.hcl" >> $GITHUB_OUTPUT
+            
           else
             exit 1
           fi
@@ -60,9 +64,10 @@ jobs:
           fi
               
     outputs:
-      ReleaseName: ${{ steps.osname.outputs.osname }} (${{ steps.releasetagname.outputs.var }}) Image Update
+      ReleaseName: ${{ steps.os.outputs.osname }} (${{ steps.releasetagname.outputs.var }}) Image Update
       ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.releasetagname.outputs.var }}
       #ReleaseDate: ${{ steps.date.outputs.date }}
+      HclFile:  ${{ steps.os.outputs.packerfile }}
 
 
   CreateTest:
@@ -79,3 +84,6 @@ jobs:
 
       - name: Write ReleaseTag
         run: echo "${{ needs.BasicInformations.outputs.ReleaseTag }}"
+
+      - name: Write HCL filename
+        run: echo "${{ needs.BasicInformations.outputs.HclFile }}"
