@@ -4,10 +4,11 @@ on:
     inputs:
       name:
         type: choice
-        description: Who to greet
+        description: Ubuntu OS
         options: 
-        - ubuntu22
-        - ubuntu24
+          - ubuntu22
+          - ubuntu24
+        required: false
 jobs:
 #  BasicInformations:
 #    runs-on: ubuntu-latest
