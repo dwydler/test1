@@ -88,7 +88,9 @@ jobs:
             echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
           else
             #mails=$(echo steps.tagger.outputs.tag | tr ".")
-            echo "${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 2 >> $GITHUB_OUTPUT
+            ver="${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 2
+            ver=$ver+1
+            echo "date=$(date +'%Y%m%d').$ver" >> $GITHUB_OUTPUT
           fi
               
     outputs:
