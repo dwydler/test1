@@ -20,6 +20,7 @@ jobs:
       ReleaseDate: "20250311"
 
   Test:
+    needs: BasicInformations
     runs-on: ubuntu-latest
       
     steps:
