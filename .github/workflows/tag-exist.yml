@@ -94,7 +94,7 @@ jobs:
           fi
               
     outputs:
-      ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
+      ReleaseName: ${{ steps.test1.outputs.osname }} (${{ steps.date.outputs.date }}) Image Update
       ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.date.outputs.date }}
       ReleaseDate: ${{ steps.date.outputs.date }}
 
