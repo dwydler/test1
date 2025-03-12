@@ -31,13 +31,15 @@ jobs:
     runs-on: ubuntu-latest
       
     steps:
-      - name: Get current date
+      - name: Get the current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y%m%d')"
+
 #      - name: Send greeting
 #        run: echo "${{ github.event.inputs.os }}"
-      - name: condition 1
-        id: test1
+
+      - name: Define the name of the OS
+        id: osname
         #if: ${{ github.event.inputs.os }} == 'ubuntu22'
         #run: echo "Ubuntu 22.04" >> $GITHUB_OUTPUT
         #env: 
@@ -49,24 +51,21 @@ jobs:
             echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
           fi
           
-      - name: condition 1 Check
-        run: |
-          echo 'Output from Find Tag: ${{steps.test1.outputs.osname}}'
+#      - name: condition 1 Check
+#        run: |
+#          echo 'Output from Find Tag: ${{steps.test1.outputs.osname}}'
       
-      - name: Checkout
+      - name: Checkout the current repository
         uses: actions/checkout@v2
     
-      - name: Find Tag
+      - name: Find newest Git Tag
         id: tagger
         uses: digital-ai/query-tag-action@v2
         with:
           include: ${{ github.event.inputs.os }}/${{ steps.date.outputs.date }}.*
-          #exclude: '*-rc*'
-          #commit-ish: 'HEAD'
           exact-match: 'false'
           no-tags-text: 'false'
-          # if you unshallow in a separate step, use the following option:
-          # skip-unshallow: 'true'
+
 #      - name: Show Tag 1
 #        if: steps.tagger.outputs.tag == 'false'
 #        #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
@@ -81,7 +80,7 @@ jobs:
 #        run: |
 #          echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
 
-      - name: Create a new release name
+      - name: Create a new release name/tag
         #if: steps.tagger.outputs.tag != 'false'
         id: releasename
         #run: echo "::set-output name=date::$(date +'%Y%m%d').1"
@@ -102,7 +101,6 @@ jobs:
       ReleaseDate: ${{ steps.date.outputs.date }}
 
 
-
   CreateTest:
     needs: BasicInformations
     runs-on: ubuntu-latest
@@ -117,31 +115,3 @@ jobs:
 
       - name: Write ReleaseTag
         run: echo "${{ needs.BasicInformations.outputs.ReleaseTag }}"
-    
-#      - uses: mukunku/tag-exists-action@v1.6.0
-#        id: check-tag
-#        with: 
-#          #tag: ${{ needs.BasicInformations.outputs.ReleaseTag }}
-#          tag: ubuntu24/20250311.*
-#          repo: 'dwydler/test1'
-
-#      - name: Split branch name
-#        env:
-#          BRANCH: ${{ needs.BasicInformations.outputs.ReleaseTag }}
-#        id: split
-#        run: echo "fragment=${BRANCH##*/}" >> $GITHUB_OUTPUT
-#
-#      - name: Test variable
-#        run: |
-#          echo ${{ steps.split.outputs.fragment }}
-#        
-#      - name: determine docker tag by splitting branch name on slash
-#        if: steps.check-tag.outputs.exists == 'true'
-#        id: docker-tag
-#        shell: bash
-#        run: |
-#          split=(${needs.BasicInformations.outputs.ReleaseTag//\// })
-#          index=$((${#split[@]}-1))
-#          DOCKER_TAG=${split[$index]}
-#          echo DOCKER_TAG=$DOCKER_TAG >> $GITHUB_ENV
-#          echo "::set-output name=DOCKER_TAG::$DOCKER_TAG"
