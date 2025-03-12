@@ -19,8 +19,8 @@ jobs:
     steps:
       - name: Get the current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d')"
-        #run: echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
+        #run: echo "::set-output name=date::$(date +'%Y%m%d')"
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
         
 
       - name: Define the name of the OS
