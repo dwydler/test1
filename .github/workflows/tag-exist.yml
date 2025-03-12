@@ -8,7 +8,7 @@ on:
         options:
           - ubuntu24
           - ubuntu22
-        required: false
+        required: true
 jobs:
 #  BasicInformations:
 #    runs-on: ubuntu-latest
