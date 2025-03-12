@@ -12,9 +12,12 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y%m%d')"
         
     outputs:
-      ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
-      ReleaseTag: ubuntu24/${{ steps.date.outputs.date }}.1
-      ReleaseDate: ${{ steps.date.outputs.date }}
+      #ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
+      #ReleaseTag: ubuntu24/${{ steps.date.outputs.date }}.1
+      #ReleaseDate: ${{ steps.date.outputs.date }}
+      ReleaseName: "Ubuntu 24.04 (20250311.1) Image Update"
+      ReleaseTag: "ubuntu24/20250311.1"
+      ReleaseDate: "20250311"
 
   Test:
     runs-on: ubuntu-latest
