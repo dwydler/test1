@@ -28,8 +28,9 @@ jobs:
         run: |
           if [ "${{ github.event.inputs.os }}" == "ubuntu22" ]; then
             echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.inputs.os }}" == "ubuntu24" ]; then
           else
-            echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
+            exit 1
           fi
 
       
