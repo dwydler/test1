@@ -1,7 +1,13 @@
 name: Test tag exist
 on:
   workflow_dispatch:
-  
+    inputs:
+      name:
+        type: choice
+        description: Who to greet
+        options: 
+        - ubuntu22
+        - ubuntu24
 jobs:
 #  BasicInformations:
 #    runs-on: ubuntu-latest
