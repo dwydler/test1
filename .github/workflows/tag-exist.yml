@@ -31,7 +31,7 @@ jobs:
         id: tagger
         uses: digital-ai/query-tag-action@v2
         with:
-          include: 'ubuntu24/${{ needs.BasicInformations.outputs.ReleaseDate }}*'
+          include: ubuntu24/${{ needs.BasicInformations.outputs.ReleaseDate }}*
           #exclude: '*-rc*'
           #commit-ish: 'HEAD'
           exact-match: 'false'
