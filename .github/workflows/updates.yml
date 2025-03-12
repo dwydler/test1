@@ -26,7 +26,7 @@ jobs:
         run: echo "::set-output name=date::$(date +'%Y%m%d')"
         
     outputs:
-      ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
+      ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}.1) Image Update
       ReleaseTag: ubuntu24/${{ steps.date.outputs.date }}.1
 
 
