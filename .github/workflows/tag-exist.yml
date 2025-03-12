@@ -23,7 +23,7 @@ jobs:
         id: check-tag
         with: 
           #tag: ${{ needs.BasicInformations.outputs.ReleaseTag }}
-          tag: ubuntu24/20250311.1
+          tag: ubuntu24/20250311.*
           repo: 'dwydler/test1'
 
       - name: Split branch name
