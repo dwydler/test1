@@ -33,9 +33,9 @@ jobs:
     steps:
 #      - name: Send greeting
 #        run: echo "${{ github.event.inputs.os }}"
-      - name: condition 1
-        if: ${{ github.event.inputs.os }} == 'ubuntu22'
-        run: script for condition 1
+#      - name: condition 1
+#        if: ${{ github.event.inputs.os }} == 'ubuntu22'
+#        run: script for condition 1
 
       
       - name: Checkout
