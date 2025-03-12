@@ -22,7 +22,8 @@ jobs:
       - uses: mukunku/tag-exists-action@v1.6.0
         id: check-tag
         with: 
-          tag: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          #tag: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          tag: ubuntu24/20250311.1
           repo: 'dwydler/test1'
       
       - run: echo "Tag exists!"
