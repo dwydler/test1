@@ -55,12 +55,24 @@ jobs:
         run: |
           echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
 
-      - name: Show Tag 2
+#      - name: Show Tag 2
+#        if: steps.tagger.outputs.tag != 'false'
+#        #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
+#        id: display2
+#        run: |
+#          echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
+
+      - name: Get current date
         if: steps.tagger.outputs.tag != 'false'
-        #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
-        id: display2
-        run: |
-          echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y%m%d')"
+              
+    outputs:
+      ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
+      ReleaseTag: ubuntu24/${{ steps.date.outputs.date }}.1
+      ReleaseDate: ${{ steps.date.outputs.date }}
+
+
     
 #      - uses: mukunku/tag-exists-action@v1.6.0
 #        id: check-tag
