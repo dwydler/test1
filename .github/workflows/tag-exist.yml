@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
       
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+    
       - name: Find Tag
         id: tagger
         uses: digital-ai/query-tag-action@v2
