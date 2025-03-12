@@ -51,14 +51,14 @@ jobs:
       - name: Show Tag 1
         if: steps.tagger.outputs.tag == 'false'
         #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
-        id: display
+        id: display1
         run: |
           echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
 
       - name: Show Tag 2
         if: steps.tagger.outputs.tag != 'false'
         #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
-        id: display
+        id: display2
         run: |
           echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
     
