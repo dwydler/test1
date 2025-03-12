@@ -60,7 +60,7 @@ jobs:
         id: tagger
         uses: digital-ai/query-tag-action@v2
         with:
-          include: ${{ github.event.inputs.os }}/${{steps.date.outputs.date}}.*
+          include: ${{ github.event.inputs.os }}/${{ steps.date.outputs.date }}.*
           #exclude: '*-rc*'
           #commit-ish: 'HEAD'
           exact-match: 'false'
