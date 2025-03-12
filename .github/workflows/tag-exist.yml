@@ -3,24 +3,24 @@ on:
   workflow_dispatch:
   
 jobs:
-  BasicInformations:
-    runs-on: ubuntu-latest
-      
-    steps:
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d')"
+#  BasicInformations:
+#    runs-on: ubuntu-latest
+#      
+#    steps:
+#      - name: Get current date
+#        id: date
+#        run: echo "::set-output name=date::$(date +'%Y%m%d')"
         
-    outputs:
+#    outputs:
       #ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
       #ReleaseTag: ubuntu24/${{ steps.date.outputs.date }}.1
       #ReleaseDate: ${{ steps.date.outputs.date }}
-      ReleaseName: "Ubuntu 24.04 (20250311.1) Image Update"
-      ReleaseTag: "ubuntu24/20250311.1"
-      ReleaseDate: "20250311"
+#      ReleaseName: "Ubuntu 24.04 (20250311.1) Image Update"
+#      ReleaseTag: "ubuntu24/20250311.1"
+#      ReleaseDate: "20250311"
 
   Test:
-    needs: BasicInformations
+#    needs: BasicInformations
     runs-on: ubuntu-latest
       
     steps:
