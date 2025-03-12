@@ -82,23 +82,23 @@ jobs:
 
       - name: Create a new release name/tag
         #if: steps.tagger.outputs.tag != 'false'
-        id: releasename
+        id: releasetagname
         #run: echo "::set-output name=date::$(date +'%Y%m%d').1"
         #run: echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
         run: |
           if [ "${{ steps.tagger.outputs.tag }}" == "'false'" ]; then
-            echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
+            echo "var=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
           else
             ver=$(echo "ubuntu24/20250312.2" | cut -d '.' -f 2)
             #ver=$ver+1
             ver=`expr $ver + 1`
-            echo "date=$(date +'%Y%m%d').$ver" >> $GITHUB_OUTPUT
+            echo "var=$(date +'%Y%m%d').$ver" >> $GITHUB_OUTPUT
           fi
               
     outputs:
-      ReleaseName: ${{ steps.test1.outputs.osname }} (${{ steps.releasename.outputs.date }}) Image Update
-      ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.releasename.outputs.date }}
-      ReleaseDate: ${{ steps.date.outputs.date }}
+      ReleaseName: ${{ steps.osname.outputs.osname }} (${{ steps.releasetagname.outputs.var }}) Image Update
+      ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.releasetagname.outputs.var }}
+      #ReleaseDate: ${{ steps.date.outputs.date }}
 
 
   CreateTest:
