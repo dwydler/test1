@@ -31,8 +31,12 @@ jobs:
     runs-on: ubuntu-latest
       
     steps:
-      - name: Send greeting
-        run: echo "${{ github.event.inputs.os }}"
+#      - name: Send greeting
+#        run: echo "${{ github.event.inputs.os }}"
+      - name: condition 1
+        if: ${{ github.event.inputs.os }} == 'ubuntu22'
+        run: script for condition 1
+
       
       - name: Checkout
         uses: actions/checkout@v2
@@ -65,7 +69,9 @@ jobs:
       - name: Get current date
         if: steps.tagger.outputs.tag != 'false'
         id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d').1"
+        #run: echo "::set-output name=date::$(date +'%Y%m%d').1"
+        #
+        run: echo "{date}={$(date +'%Y%m%d').1}" >> $GITHUB_OUTPUT
               
     outputs:
       ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
