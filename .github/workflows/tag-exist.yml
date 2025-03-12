@@ -5,9 +5,9 @@ on:
       os:
         type: choice
         description: Ubuntu Server OS
-        options: 
-          - ubuntu22
+        options:
           - ubuntu24
+          - ubuntu22
         required: false
 jobs:
 #  BasicInformations:
