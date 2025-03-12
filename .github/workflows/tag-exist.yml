@@ -31,6 +31,9 @@ jobs:
     runs-on: ubuntu-latest
       
     steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y%m%d')"
 #      - name: Send greeting
 #        run: echo "${{ github.event.inputs.os }}"
       - name: condition 1
@@ -57,19 +60,19 @@ jobs:
         id: tagger
         uses: digital-ai/query-tag-action@v2
         with:
-          include: ${{ github.event.inputs.os }}/20250312.*
+          include: ${{ github.event.inputs.os }}/${{steps.date.outputs.date}}.*
           #exclude: '*-rc*'
           #commit-ish: 'HEAD'
           exact-match: 'false'
           no-tags-text: 'false'
           # if you unshallow in a separate step, use the following option:
           # skip-unshallow: 'true'
-      - name: Show Tag 1
-        if: steps.tagger.outputs.tag == 'false'
-        #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
-        id: display1
-        run: |
-          echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
+#      - name: Show Tag 1
+#        if: steps.tagger.outputs.tag == 'false'
+#        #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
+#        id: display1
+#        run: |
+#          echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
 
 #      - name: Show Tag 2
 #        if: steps.tagger.outputs.tag != 'false'
@@ -80,7 +83,7 @@ jobs:
 
       - name: Create a new release name
         #if: steps.tagger.outputs.tag != 'false'
-        id: date
+        id: releasename
         #run: echo "::set-output name=date::$(date +'%Y%m%d').1"
         #run: echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
         run: |
@@ -94,8 +97,8 @@ jobs:
           fi
               
     outputs:
-      ReleaseName: ${{ steps.test1.outputs.osname }} (${{ steps.date.outputs.date }}) Image Update
-      ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.date.outputs.date }}
+      ReleaseName: ${{ steps.test1.outputs.osname }} (${{ steps.releasename.outputs.date }}) Image Update
+      ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.releasename.outputs.date }}
       ReleaseDate: ${{ steps.date.outputs.date }}
 
 
