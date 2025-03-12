@@ -71,7 +71,7 @@ jobs:
         id: date
         #run: echo "::set-output name=date::$(date +'%Y%m%d').1"
         #
-        run: echo "{date}={$(date +'%Y%m%d').1}" >> $GITHUB_OUTPUT
+        run: echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
               
     outputs:
       ReleaseName: Ubuntu 24.04 (${{ steps.date.outputs.date }}) Image Update
