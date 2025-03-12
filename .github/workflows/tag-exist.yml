@@ -66,11 +66,10 @@ jobs:
 #        run: |
 #          echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
 
-      - name: Get current date
+      - name: Create a new release name
         if: steps.tagger.outputs.tag != 'false'
         id: date
         #run: echo "::set-output name=date::$(date +'%Y%m%d').1"
-        #
         run: echo "date=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
               
     outputs:
