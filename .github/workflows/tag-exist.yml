@@ -48,7 +48,14 @@ jobs:
           no-tags-text: 'false'
           # if you unshallow in a separate step, use the following option:
           # skip-unshallow: 'true'
-      - name: Show Tag
+      - name: Show Tag 1
+        if: steps.tagger.outputs.tag == 'false'
+        #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
+        id: display
+        run: |
+          echo 'Output from Find Tag: ${{steps.tagger.outputs.tag}}'
+
+      - name: Show Tag 2
         if: steps.tagger.outputs.tag != 'false'
         #if: ${{ (steps.tagger.outputs.tag != 'NO_TAGS') }}
         id: display
