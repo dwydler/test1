@@ -1,4 +1,4 @@
-name: Generate new GitHub SHR Image
+name: Generate SHR Image (Ubuntu 24.04)
 on:
   workflow_dispatch:
     inputs:
@@ -89,7 +89,7 @@ jobs:
 
   TriggerImageBuilder:
     needs: GetBasicInformations
-    uses: ./.github/workflows/trigger-ubuntu-build.yml
+    uses: ./.github/workflows/trigger-build-workflow-ubuntu.yml
     with:
       release_name: ${{ needs.GetBasicInformations.outputs.ReleaseName }}
       release_tag: ${{ needs.GetBasicInformations.outputs.ReleaseTag }}
