@@ -1,0 +1,88 @@
+name: Generate new GitHub SHR Image
+on:
+  workflow_dispatch:
+    inputs:
+      os:
+        #type: choice
+        type: string
+        description: Ubuntu Server OS
+        #options:
+        #  - ubuntu24
+        #  - ubuntu22
+        required: true
+        default: "ubuntu24"
+
+
+jobs:
+  GetBasicInformations:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: Get the current date
+        id: date
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+        
+
+      - name: Define the name of the OS
+        id: os
+        run: |
+          if [ "${{ github.event.inputs.os }}" == "ubuntu22" ]; then
+            echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
+            echo "packerfile=ubuntu-22.04.pkr.hcl" >> $GITHUB_OUTPUT
+            
+          elif [ "${{ github.event.inputs.os }}" == "ubuntu24" ]; then
+            echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
+            echo "packerfile=ubuntu-24.04.pkr.hcl" >> $GITHUB_OUTPUT
+            
+          else
+            exit 1
+          fi
+
+      
+      - name: Checkout the current repository
+        uses: actions/checkout@v2
+    
+      - name: Find newest Git Tag
+        id: tagger
+        uses: digital-ai/query-tag-action@v2
+        #uses: jimschubert/query-tag-action@v2
+        with:
+          include: ${{ github.event.inputs.os }}/${{ steps.date.outputs.date }}.*
+          exact-match: 'false'
+          no-tags-text: 'false'
+
+
+      - name: Create a new release name/tag
+        id: releasetagname
+        run: |
+          if [ "${{ steps.tagger.outputs.tag }}" == "'false'" ]; then
+            echo "var=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
+          else
+            #ver=$(echo "ubuntu24/20250312.2" | cut -d '.' -f 2)
+            ver=$(echo "${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 2)
+            #ver=$ver+1
+            ver=`expr $ver + 1`
+            echo "var=$(date +'%Y%m%d').$ver" >> $GITHUB_OUTPUT
+          fi
+              
+    outputs:
+      ReleaseName: ${{ steps.os.outputs.osname }} (${{ steps.releasetagname.outputs.var }}) Image Update
+      ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.releasetagname.outputs.var }}
+      #ReleaseDate: ${{ steps.date.outputs.date }}
+      HclFile:  ${{ steps.os.outputs.packerfile }}
+
+
+  OutputDebugInformations:
+    needs: GetBasicInformations
+    runs-on: ubuntu-latest
+     
+    steps:
+      - name: Write ReleaseName
+        run: echo "${{ needs.BasicInformations.outputs.ReleaseName }}"
+
+      - name: Write ReleaseTag
+        run: echo "${{ needs.BasicInformations.outputs.ReleaseTag }}"
+
+      - name: Write HCL filename
+        run: echo "${{ needs.BasicInformations.outputs.HclFile }}"
+      
