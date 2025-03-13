@@ -78,11 +78,11 @@ jobs:
      
     steps:
       - name: Write ReleaseName
-        run: echo "${{ needs.BasicInformations.outputs.ReleaseName }}"
+        run: echo "${{ needs.GetBasicInformations.outputs.ReleaseName }}"
 
       - name: Write ReleaseTag
-        run: echo "${{ needs.BasicInformations.outputs.ReleaseTag }}"
+        run: echo "${{ needs.GetBasicInformations.outputs.ReleaseTag }}"
 
       - name: Write HCL filename
-        run: echo "${{ needs.BasicInformations.outputs.HclFile }}"
+        run: echo "${{ needs.GetBasicInformations.outputs.HclFile }}"
       
