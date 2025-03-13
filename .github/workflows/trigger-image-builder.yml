@@ -1,0 +1,115 @@
+name: Trigger Build workflow
+
+on:
+  workflow_call:
+    inputs:
+      release_name:
+        required: true
+        type: string
+      release_tag:
+        required: true
+        type: string
+      hcl_filename:
+        required: true
+        type: string
+
+
+jobs:
+  CreateVmTemplate:
+    runs-on: ubuntu-latest
+
+#    permissions:
+#      contents: write
+#      pull-requests: write
+
+
+    steps:
+      - name: Checkout new created branch
+        uses: actions/checkout@v4
+        with:
+          #ref: ${{ needs.BasicInformations.outputs.ReleaseTag }}
+          ref: ${{ inputs.release_tag }}
+
+
+      - name: character-replacement-test
+        id: hcloudvmname
+        uses: mad9000/actions-find-and-replace-string@5
+        with:
+            source: ${{ inputs.release_tag }} # this translates to ref/heads/main on the main branch, but can be any arbitrary string 
+            find: '/'        # we want to remove ref/heads/ from source 
+            replace: '-'
+
+
+      - name: Setup `packer`
+        uses: hashicorp/setup-packer@main
+        id: setup
+        with:
+          version: latest
+
+      - name: Run `packer init`
+        id: init
+        run: packer init ./images/ubuntu/templates/${{ inputs.hcl_filename }}
+
+      - name: Run `packer validate`
+        id: validate
+        run: packer validate ./images/ubuntu/templates/${{ inputs.hcl_filename }}
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+          HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
+
+      - name: Run `packer build`
+        id: build
+        run: packer build ./images/ubuntu/templates/${{ inputs.hcl_filename }}
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+          HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
+          
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          branch: ${{ inputs.release_tag }}
+          github_token: ${{ secrets.GH_TOKEN }}
+          force: true
+
+
+  CreatePullRequest:
+    needs:
+      - CreateVmTemplate
+    runs-on: ubuntu-latest
+
+#    permissions:
+#      contents: write
+#      pull-requests: write
+      
+    steps:
+      - name: Checkout new created branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+          ref: ${{ inputs.release_tag }}
+
+      - name: Read ubuntu2404-Readme.md
+        id: ubuntu2404readme
+        uses: jaywcjlove/github-action-read-file@v2.0.0
+        with:
+          branch: ${{ inputs.release_tag }}
+          path: images/ubuntu/Ubuntu2404-Readme.md
+
+      - name: Run the Action
+        uses: devops-infra/action-pull-request@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          source_branch: ${{ inputs.release_tag }}
+          target_branch: master
+          title: ${{ inputs.release_name }}
+          body: ${{ steps.ubuntu2404readme.outputs.content }}
+
+
+      - name: Create a new release
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          tag: ${{ inputs.release_tag }}
+          name: ${{ inputs.release_name }}
+          body: ${{ steps.ubuntu2404readme.outputs.content }}
+          token: ${{ secrets.GH_TOKEN }}          
