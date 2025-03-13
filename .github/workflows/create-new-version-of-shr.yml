@@ -86,3 +86,12 @@ jobs:
       - name: Write HCL filename
         run: echo "${{ needs.GetBasicInformations.outputs.HclFile }}"
       
+
+  TriggerImageBuilder:
+    needs: GetBasicInformations
+    uses: ./.github/workflows/trigger-ubuntu-build.yml
+    with:
+      release_name: ${{ needs.GetBasicInformations.outputs.ReleaseName }}
+      release_tag: ${{ needs.GetBasicInformations.outputs.ReleaseTag }}
+      hcl_filename: ${{ needs.GetBasicInformations.outputs.HclFile }}
+    secrets: inherit
