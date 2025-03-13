@@ -18,8 +18,8 @@ jobs:
   CreateVmTemplate:
     runs-on: ubuntu-latest
 
-#    permissions:
-#      contents: write
+    permissions:
+      contents: write
 #      pull-requests: write
 
 
