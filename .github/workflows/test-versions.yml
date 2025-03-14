@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
 
       - name: Generate release tag
         id: generate_release_tag
