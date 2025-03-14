@@ -36,9 +36,9 @@ jobs:
     needs: CreateNewBranch
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      #pull-requests: write
+#    permissions:
+#      contents: write
+#      pull-requests: write
 
 
     steps:
