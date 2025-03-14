@@ -129,7 +129,7 @@ jobs:
       #  run: echo "${{ steps.ubuntu2404readme.outputs.content }}"
         
 #      - name: Create a new release
-#        uses: ncipollo/release-action@v1.14.0
+#        uses: ncipollo/release-action@v1.16.0
 #        with:
 #          tag: ${{ needs.BasicInformations.outputs.ReleaseTag }}
 #          name: ${{ needs.BasicInformations.outputs.ReleaseName }}
@@ -173,7 +173,7 @@ jobs:
 
 
       - name: Create a new release
-        uses: ncipollo/release-action@v1.14.0
+        uses: ncipollo/release-action@v1.16.0
         with:
           tag: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           name: ${{ needs.BasicInformations.outputs.ReleaseName }}

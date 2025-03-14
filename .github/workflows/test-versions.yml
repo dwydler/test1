@@ -36,7 +36,7 @@ jobs:
 
                 
       - name: Create a new release
-        uses: ncipollo/release-action@v1.14.0
+        uses: ncipollo/release-action@v1.16.0
         with:
           tag: ubuntu24/${{ steps.generate_release_tag.outputs.next_release_tag }}
           name: Ubuntu 24.04 (${{ steps.generate_release_name.outputs.next_release_tag }}) Image Update
