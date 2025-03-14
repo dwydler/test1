@@ -40,11 +40,11 @@ jobs:
 
       
       - name: Checkout the current repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
     
       - name: Find newest Git Tag
         id: tagger
-        uses: digital-ai/query-tag-action@v2
+        uses: digital-ai/query-tag-action@3319bb2966140fab21bc9656a6a6e23059d90dde # v2
         #uses: jimschubert/query-tag-action@v2
         with:
           include: ${{ github.event.inputs.os }}/${{ steps.date.outputs.date }}.*
