@@ -18,7 +18,7 @@ jobs:
       
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
         with:
           fetch-depth: '0'
           ref: ubuntu24/20250311.1
@@ -51,7 +51,7 @@ jobs:
 #          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 #          HEAD_BRANCH: ubuntu24/20250310.1
 ##      - name: Checkout new created branch
-#        uses: actions/checkout@v4
+#        uses: actions/checkout@v4.2.2
 #        with:
 #          ref: ubuntu24/20250310.1
 
