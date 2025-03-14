@@ -42,16 +42,16 @@ jobs:
 
 
     steps:
-      - name: Create a new branch
-        uses: peterjgrainger/action-create-branch@v2.2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        with:
-          branch: ${{ inputs.release_tag }}
+#      - name: Create a new branch
+#        uses: peterjgrainger/action-create-branch@v2.2.0
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+#        with:
+#          branch: ${{ inputs.release_tag }}
 
           
       - name: Checkout new created branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           #ref: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           ref: ${{ inputs.release_tag }}
@@ -59,7 +59,7 @@ jobs:
 
       - name: character-replacement-test
         id: hcloudvmname
-        uses: mad9000/actions-find-and-replace-string@5
+        uses: mad9000/actions-find-and-replace-string@bce4d50390d08b67e1822bd72fb54b3cf11b0ce9 # 5
         with:
             source: ${{ inputs.release_tag }} # this translates to ref/heads/main on the main branch, but can be any arbitrary string 
             find: '/'        # we want to remove ref/heads/ from source 
@@ -67,7 +67,7 @@ jobs:
 
 
       - name: Setup `packer`
-        uses: hashicorp/setup-packer@main
+        uses: hashicorp/setup-packer@1aa358be5cf73883762b302a3a03abd66e75b232 # v3.1.0
         id: setup
         with:
           version: latest
@@ -92,7 +92,7 @@ jobs:
           
 
       - name: Commit & Push changes
-        uses: actions-js/push@master
+        uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # v1.5
         with:
           branch: ${{ inputs.release_tag }}
           github_token: ${{ secrets.GH_TOKEN }}
@@ -110,20 +110,20 @@ jobs:
       
     steps:
       - name: Checkout new created branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: '0'
           ref: ${{ inputs.release_tag }}
 
       - name: Read ubuntu2404-Readme.md
         id: ubuntu2404readme
-        uses: jaywcjlove/github-action-read-file@v2.0.0
+        uses: jaywcjlove/github-action-read-file@546dbc91f1187996f2ef0f5a199a9a4af05a978b # v2.0.0
         with:
           branch: ${{ inputs.release_tag }}
           path: images/ubuntu/Ubuntu2404-Readme.md
 
       - name: Run the Action
-        uses: devops-infra/action-pull-request@master
+        uses: devops-infra/action-pull-request@ff118b4a7c24bac5a3c95acef59e9edd1fc37890 # v0.6.0
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           source_branch: ${{ inputs.release_tag }}
@@ -133,7 +133,7 @@ jobs:
 
 
       - name: Create a new release
-        uses: ncipollo/release-action@v1.14.0
+        uses: ncipollo/release-action@440c8c1cb0ed28b9f43e4d1d670870f059653174 # v1.16.0
         with:
           tag: ${{ inputs.release_tag }}
           name: ${{ inputs.release_name }}
