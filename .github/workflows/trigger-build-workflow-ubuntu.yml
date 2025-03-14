@@ -18,9 +18,9 @@ jobs:
   CreateNewBranch:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      #pull-requests: write
+#    permissions:
+#      contents: write
+#      #pull-requests: write
 
 
     steps:
@@ -104,9 +104,9 @@ jobs:
       - CreateVmTemplate
     runs-on: ubuntu-latest
 
-    permissions:
+#    permissions:
 #      contents: write
-      pull-requests: write
+#      pull-requests: write
       
     steps:
       - name: Checkout new created branch
