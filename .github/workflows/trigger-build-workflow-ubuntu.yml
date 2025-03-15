@@ -15,7 +15,7 @@ on:
 
 
 jobs:
-  CreateNewBranch:
+  Create-NewBranch:
     runs-on: ubuntu-latest
 
     permissions:
@@ -32,8 +32,8 @@ jobs:
           branch: ${{ inputs.release_tag }}
 
           
-  CreateVmTemplate:
-    needs: CreateNewBranch
+  Create-VmTemplate:
+    needs: Create-NewBranch
     runs-on: ubuntu-latest
 
     permissions:
@@ -99,9 +99,9 @@ jobs:
           force: true
 
 
-  CreatePullRequest:
+  Create-PullRequest:
     needs:
-      - CreateVmTemplate
+      - Create-VmTemplate
     runs-on: ubuntu-latest
 
     permissions:
