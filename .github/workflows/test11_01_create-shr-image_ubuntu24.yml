@@ -14,11 +14,21 @@ on:
 #        default: "ubuntu24"
 
 env:
-  somevar: 'ubuntu24'
+  os: 'ubuntu24'
   
 jobs:
-  Trigger-CollectInformations:
+  Set-Variables:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Get the current date2
+        id: os
+        run: echo "name=$OS" >> $GITHUB_OUTPUT
+
+  
+  Trigger-CollectInformations:
+    needs: Set-Variables
+    
     permissions:
       contents: read
       pull-requests: read
@@ -26,7 +36,8 @@ jobs:
     uses: ./.github/workflows/test11_05_trigger_collect_informations.yml
     with:
       #os: ${{ github.event.inputs.os }}
-      os: ${{ env.somevar }}
+      os: ${{ steps.os.outputs.name }}
+
     
   Trigger-ImageBuilder:
     needs: Trigger-CollectInformations
