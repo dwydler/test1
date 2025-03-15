@@ -14,9 +14,11 @@ jobs:
       id: info
       #run: hcloud server-type list
       #run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,DISK_SIZE" --type "snapshot" --sort "ID"
-      run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,TYPE,LABELS,AGE" --type "snapshot" -l "os=ubuntu-24.04" -s "id"
+      #run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,TYPE,LABELS,AGE" --type "snapshot" -l "os=ubuntu-24.04" -s "id"
+      run: |
+        image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=ubuntu-24.04" -s "id:desc" | head -n 1
       env:
         HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
-    - name: Write ReleaseName
-      run: echo "${{ steps.info.outputs.output }}"
+#    - name: Write ReleaseName
+#      run: echo "${{ steps.info.outputs.output }}"
