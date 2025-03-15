@@ -51,7 +51,7 @@ jobs:
         uses: digital-ai/query-tag-action@3319bb2966140fab21bc9656a6a6e23059d90dde # v2
         #uses: jimschubert/query-tag-action@v2
         with:
-          include: ${{ github.event.inputs.os }}/${{ steps.date.outputs.date }}.*
+          include: ${{ inputs.os }}/${{ steps.date.outputs.date }}.*
           exact-match: 'false'
           no-tags-text: 'false'
 
