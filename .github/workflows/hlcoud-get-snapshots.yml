@@ -17,10 +17,12 @@ jobs:
       #run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,DISK_SIZE" --type "snapshot" --sort "ID"
       #run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,TYPE,LABELS,AGE" --type "snapshot" -l "os=ubuntu-24.04" -s "id"
       run: |
-        echo "var=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=ubuntu-24.04" --s "id:desc" | head -n 1)" >> $GITHUB_OUTPUT
+        echo "var=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=ubuntu-24.04" -s "id:desc" | head -n 1)" >> $GITHUB_OUTPUT
       env:
         HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
     - name: Display Snapshot ID
-      if: steps.hcloudquery.outcome == 'success'
+      #if: steps.hcloudquery.outcome == 'success'
+      #if: (steps.hcloudquery.outputs.var != '')
+      if: ${{ steps.hcloudquery.outputs.var != '' }}
       run: echo "${{ steps.hcloudquery.outputs.var }}"
