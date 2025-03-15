@@ -14,7 +14,7 @@ on:
 #        default: "ubuntu24"
 
 env:
-  os: "ubuntu24"
+  os: 'ubuntu24'
   
 jobs:
   Trigger-CollectInformations:
@@ -26,7 +26,7 @@ jobs:
     uses: ./.github/workflows/test11_05_trigger_collect_informations.yml
     with:
       #os: ${{ github.event.inputs.os }}
-      os: $os
+      os: ${{ env.os }}
     
   Trigger-ImageBuilder:
     needs: Trigger-CollectInformations
