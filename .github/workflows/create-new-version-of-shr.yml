@@ -68,8 +68,8 @@ jobs:
     outputs:
       ReleaseName: ${{ steps.os.outputs.osname }} (${{ steps.releasetagname.outputs.var }}) Image Update
       ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.releasetagname.outputs.var }}
-      ReleaseNo: ${{ steps.releasetagname.outputs.var }}
       HclFile:  ${{ steps.os.outputs.packerfile }}
+      ReleaseNo: ${{ steps.releasetagname.outputs.var }}
 
 
   Output-DebugInformations:
@@ -102,5 +102,5 @@ jobs:
       release_name: ${{ needs.Get-BasicInformations.outputs.ReleaseName }}
       release_tag: ${{ needs.Get-BasicInformations.outputs.ReleaseTag }}
       hcl_filename: ${{ needs.Get-BasicInformations.outputs.HclFile }}
-      release: ${{ needs.Get-BasicInformations.outputs.ReleaseNo }}
+      release_no: ${{ needs.Get-BasicInformations.outputs.ReleaseNo }}
     secrets: inherit
