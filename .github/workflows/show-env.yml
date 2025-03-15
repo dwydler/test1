@@ -1,0 +1,13 @@
+name: Show env
+on:
+  workflow_dispatch:
+  
+env:
+  somevar: 'lastvar'
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Is variable exported?
+        run: |
+          echo "${{ env.somevar }}"
