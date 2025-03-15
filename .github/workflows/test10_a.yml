@@ -12,4 +12,4 @@ jobs:
      
     steps:
       - name: Write ReleaseName
-        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseName }}"
+        run: echo "${{ jobs01.build.outputs.result }}"
