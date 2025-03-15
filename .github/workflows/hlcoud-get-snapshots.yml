@@ -12,7 +12,7 @@ jobs:
       uses: hetznercloud/setup-hcloud@641015849308e9ed3e3b1f3d3b0a637068c5a2af # v1.0.1
 
     - name: Query Hetzner cloud project
-      id: info
+      id: hcloudquery
       #run: hcloud server-type list
       #run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,DISK_SIZE" --type "snapshot" --sort "ID"
       #run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,TYPE,LABELS,AGE" --type "snapshot" -l "os=ubuntu-24.04" -s "id"
@@ -22,4 +22,5 @@ jobs:
         HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
     - name: Display Snapshot ID
+      if: steps.hcloudquery.outcome == 'success'
       run: echo "${{ steps.info.outputs.var }}"
