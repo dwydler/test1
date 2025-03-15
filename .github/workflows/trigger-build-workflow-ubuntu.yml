@@ -16,7 +16,7 @@ on:
         required: true
         type: string
     secrets:
-      access-token:
+      access_token:
         description: 'The app token'
         required: true
         #secrets.access-token
@@ -33,7 +33,7 @@ jobs:
         uses: peterjgrainger/action-create-branch@10c7d268152480ae859347db45dc69086cef1d9c # v3.0.0
         env:
           #GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.access-token }}
+          GITHUB_TOKEN: ${{ secrets.access_token }}
         with:
           branch: ${{ inputs.release_tag }}
 
@@ -93,7 +93,7 @@ jobs:
         with:
           branch: ${{ inputs.release_tag }}
           #github_token: ${{ secrets.GH_TOKEN }}
-          github_token: ${{ secrets.access-token }}
+          github_token: ${{ secrets.access_token }}
           force: true
 
 
@@ -124,7 +124,7 @@ jobs:
         uses: devops-infra/action-pull-request@ff118b4a7c24bac5a3c95acef59e9edd1fc37890 # v0.6.0
         with:
           #github_token: ${{ secrets.GH_TOKEN }}
-          github_token: ${{ secrets.access-token }}
+          github_token: ${{ secrets.access_token }}
           source_branch: ${{ inputs.release_tag }}
           target_branch: master
           title: ${{ inputs.release_name }}
@@ -138,4 +138,4 @@ jobs:
           name: ${{ inputs.release_name }}
           body: ${{ steps.ubuntu2404readme.outputs.content }}
           #token: ${{ secrets.GH_TOKEN }}
-          token: ${{ secrets.access-token }}
+          token: ${{ secrets.access_token }}
