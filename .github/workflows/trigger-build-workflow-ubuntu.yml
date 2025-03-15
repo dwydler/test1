@@ -15,8 +15,11 @@ on:
       release_no:
         required: true
         type: string
-
-
+    secrets:
+      access-token:
+        description: 'The app token'
+        required: true
+        #secrets.access-token
 jobs:
   Create-NewBranch:
     runs-on: ubuntu-latest
@@ -29,7 +32,8 @@ jobs:
       - name: Create a new branch
         uses: peterjgrainger/action-create-branch@10c7d268152480ae859347db45dc69086cef1d9c # v3.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          #GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.access-token }}
         with:
           branch: ${{ inputs.release_tag }}
 
@@ -46,7 +50,6 @@ jobs:
       - name: Checkout new created branch
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          #ref: ${{ needs.BasicInformations.outputs.ReleaseTag }}
           ref: ${{ inputs.release_tag }}
 
 
@@ -89,7 +92,8 @@ jobs:
         uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # v1.5
         with:
           branch: ${{ inputs.release_tag }}
-          github_token: ${{ secrets.GH_TOKEN }}
+          #github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.access-token }}
           force: true
 
 
@@ -119,7 +123,8 @@ jobs:
       - name: Run the Action
         uses: devops-infra/action-pull-request@ff118b4a7c24bac5a3c95acef59e9edd1fc37890 # v0.6.0
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          #github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.access-token }}
           source_branch: ${{ inputs.release_tag }}
           target_branch: master
           title: ${{ inputs.release_name }}
@@ -132,4 +137,5 @@ jobs:
           tag: ${{ inputs.release_tag }}
           name: ${{ inputs.release_name }}
           body: ${{ steps.ubuntu2404readme.outputs.content }}
-          token: ${{ secrets.GH_TOKEN }}          
+          #token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.access-token }}
