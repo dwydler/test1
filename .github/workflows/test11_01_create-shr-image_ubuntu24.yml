@@ -18,16 +18,9 @@ jobs:
       - name: Write ReleaseName
         run: echo "${{ steps.os.outputs.name }}"
 
-      - name: Generate GitHub App token
-        uses: actions/create-github-app-token@21cfef2b496dd8ef5b904c159339626a10ad380e # v1.11.6
-        id: generate-token
-        with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          
     outputs:      
      OperatingSystem: ${{ steps.os.outputs.name }}
-     GitHubAppToken: ${{ steps.generate-token.outputs.token }}
+     
      
   Trigger-CollectInformations:
     needs: Set-Variables
@@ -56,5 +49,5 @@ jobs:
       release_tag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
       hcl_filename: ${{ needs.Trigger-CollectInformations.outputs.HclFile }}
       release_no: ${{ needs.Trigger-CollectInformations.outputs.ReleaseNo }}
-    secrets:
-      access_token: ${{ needs.Set-Variables.outputs.GitHubAppToken }}
+    secrets: inherit
+
