@@ -1,0 +1,91 @@
+name: Test11.05 - Trigger Collect Informations (Ubuntu)
+
+on:
+  workflow_call:
+    inputs:
+      os:
+        required: true
+        type: string
+    outputs:
+      ReleaseName: ${{ jobs.Get-BasicInformations.outputs.ReleaseName }}
+      ReleaseTag: ${{ jobs.Get-BasicInformations.outputs.ReleaseTag }}
+      HclFile:  ${{ jobs.Get-BasicInformations.outputs.HclFile }}
+      ReleaseNo: ${{ jobs.Get-BasicInformations.outputs.ReleaseNo }}
+# ${{ inputs.hcl_filename }}
+# ${{ inputs.os }}
+jobs:
+  Get-BasicInformations:
+    runs-on: ubuntu-latest
+      
+    steps:
+      - name: Get the current date
+        id: date
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+        
+
+      - name: Define the name of the OS
+        id: os
+        run: |
+          if [ "${{ inputs.os }}" == "ubuntu22" ]; then
+            echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
+            echo "packerfile=ubuntu-22.04.pkr.hcl" >> $GITHUB_OUTPUT
+            
+          elif [ "${{ inputs.os s }}" == "ubuntu24" ]; then
+            echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
+            echo "packerfile=ubuntu-24.04.pkr.hcl" >> $GITHUB_OUTPUT
+            
+          else
+            exit 1
+          fi
+
+      
+      - name: Checkout the current repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+    
+      - name: Find newest Git Tag
+        id: tagger
+        uses: digital-ai/query-tag-action@3319bb2966140fab21bc9656a6a6e23059d90dde # v2
+        #uses: jimschubert/query-tag-action@v2
+        with:
+          include: ${{ github.event.inputs.os }}/${{ steps.date.outputs.date }}.*
+          exact-match: 'false'
+          no-tags-text: 'false'
+
+
+      - name: Create a new release name/tag
+        id: releasetagname
+        run: |
+          if [ "${{ steps.tagger.outputs.tag }}" == "'false'" ]; then
+            echo "var=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
+          else
+            #ver=$(echo "${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 2)
+            ver=$(echo "${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 2)
+            #ver=$ver+1
+            ver=`expr $ver + 1`
+            echo "var=$(date +'%Y%m%d').$ver" >> $GITHUB_OUTPUT
+          fi
+              
+    outputs:
+      ReleaseName: ${{ steps.os.outputs.osname }} (${{ steps.releasetagname.outputs.var }}) Image Update
+      ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.releasetagname.outputs.var }}
+      HclFile:  ${{ steps.os.outputs.packerfile }}
+      ReleaseNo: ${{ steps.releasetagname.outputs.var }}
+
+
+  Output-DebugInformations:
+    needs: Get-BasicInformations
+    runs-on: ubuntu-latest
+     
+    steps:
+      - name: Write ReleaseName
+        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseName }}"
+
+      - name: Write ReleaseTag
+        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseTag }}"
+
+      - name: Write HCL filename
+        run: echo "${{ needs.Get-BasicInformations.outputs.HclFile }}"
+
+      - name: Write Release name
+        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseNo }}"
+      
