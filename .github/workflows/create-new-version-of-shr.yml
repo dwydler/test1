@@ -78,24 +78,25 @@ jobs:
      
     steps:
       - name: Write ReleaseName
-        run: echo "${{ needs.GetBasicInformations.outputs.ReleaseName }}"
+        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseName }}"
 
       - name: Write ReleaseTag
-        run: echo "${{ needs.GetBasicInformations.outputs.ReleaseTag }}"
+        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseTag }}"
 
       - name: Write HCL filename
-        run: echo "${{ needs.GetBasicInformations.outputs.HclFile }}"
+        run: echo "${{ needs.Get-BasicInformations.outputs.HclFile }}"
       
 
   Trigger-ImageBuilder:
+    needs: Get-BasicInformations
+    
     permissions:
       contents: write
       pull-requests: write
-      
-    needs: Get-BasicInformations
+    
     uses: ./.github/workflows/trigger-build-workflow-ubuntu.yml
     with:
-      release_name: ${{ needs.GetBasicInformations.outputs.ReleaseName }}
-      release_tag: ${{ needs.GetBasicInformations.outputs.ReleaseTag }}
-      hcl_filename: ${{ needs.GetBasicInformations.outputs.HclFile }}
+      release_name: ${{ needs.Get-BasicInformations.outputs.ReleaseName }}
+      release_tag: ${{ needs.Get-BasicInformations.outputs.ReleaseTag }}
+      hcl_filename: ${{ needs.Get-BasicInformations.outputs.HclFile }}
     secrets: inherit
