@@ -27,6 +27,7 @@ jobs:
 
       - name: Write ReleaseName
         run: echo "${{ steps.os.outputs.name }}"
+        
     outputs:      
      OperatingSystem: ${{ steps.os.outputs.name }}
 
