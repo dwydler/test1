@@ -13,4 +13,4 @@ jobs:
     
     steps:
       - name: Write ReleaseName
-        run: echo "${{ needs.jobs01.outputs.result.value }}"
+        run: echo "${{ needs.jobs01.outputs.result }}"
