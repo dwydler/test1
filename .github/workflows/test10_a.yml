@@ -1,0 +1,15 @@
+name: Test10-Startpunkt
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job01:
+    uses: ./.github/workflows/test10.yml
+
+  job02:
+    runs-on: ubuntu-latest
+     
+    steps:
+      - name: Write ReleaseName
+        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseName }}"
