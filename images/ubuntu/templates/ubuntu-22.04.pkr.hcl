@@ -89,7 +89,7 @@ source "hcloud" "gh-shr-ubuntu" {
   server_name = "${ var.managed_image_name }"
   
   temporary_key_pair_type = "ed25519"
-  user_data_file = "./images/ubuntu/templates/cloud-init.cfg"
+  user_data_file = "./images/ubuntu/templates/cloud-init22.cfg"
   ssh_username = var.ssh_username
 
   snapshot_name = "${ var.managed_image_name }"
