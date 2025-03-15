@@ -68,7 +68,7 @@ jobs:
     outputs:
       ReleaseName: ${{ steps.os.outputs.osname }} (${{ steps.releasetagname.outputs.var }}) Image Update
       ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.releasetagname.outputs.var }}
-      Release: ${{ steps.releasetagname.outputs.var }}
+      ReleaseNo: ${{ steps.releasetagname.outputs.var }}
       HclFile:  ${{ steps.os.outputs.packerfile }}
 
 
@@ -87,7 +87,7 @@ jobs:
         run: echo "${{ needs.Get-BasicInformations.outputs.HclFile }}"
 
       - name: Write Release name
-        run: echo "${{ needs.Get-BasicInformations.outputs.Release }}"
+        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseNo }}"
       
 
   Trigger-ImageBuilder:
@@ -102,5 +102,5 @@ jobs:
       release_name: ${{ needs.Get-BasicInformations.outputs.ReleaseName }}
       release_tag: ${{ needs.Get-BasicInformations.outputs.ReleaseTag }}
       hcl_filename: ${{ needs.Get-BasicInformations.outputs.HclFile }}
-      release: ${{ needs.Get-BasicInformations.outputs.Release }}
+      release: ${{ needs.Get-BasicInformations.outputs.ReleaseNo }}
     secrets: inherit
