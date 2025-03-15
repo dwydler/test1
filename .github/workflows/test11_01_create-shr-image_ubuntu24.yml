@@ -26,7 +26,7 @@ jobs:
         run: echo "name=$OS" >> $GITHUB_OUTPUT
 
       - name: Write ReleaseName
-        run: echo "${{ steops.os.outputs.name }}"
+        run: echo "${{ steps.os.outputs.name }}"
         
   Trigger-CollectInformations:
     needs: Set-Variables
