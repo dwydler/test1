@@ -79,6 +79,7 @@ variable "managed_image_name" {
   default   = "${env("HCLOUD_SNAPSHOT_NAME")}"
 }
 
+
 source "hcloud" "gh-shr-ubuntu" {
   token = var.hcloud_token
 
