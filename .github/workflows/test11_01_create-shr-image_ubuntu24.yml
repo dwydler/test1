@@ -2,16 +2,6 @@ name: Test11.01 - Create SHR Image (Ubuntu 24)
 
 on:
   workflow_dispatch:
-#    inputs:
-#      os:
-#        #type: choice
-#        type: string
-#        description: Ubuntu Server OS
-#        #options:
-#        #  - ubuntu24
-#        #  - ubuntu22
-#        required: true
-#        default: "ubuntu24"
 
 env:
   os: 'ubuntu24'
@@ -41,8 +31,6 @@ jobs:
 
     uses: ./.github/workflows/test11_05_trigger_collect_informations.yml
     with:
-#      #os: ${{ github.event.inputs.os }}
-#      #os: ${{ needs.Set-Variables.os.outputs.name }}
       os: ${{ needs.Set-Variables.outputs.OperatingSystem }}
 
     
