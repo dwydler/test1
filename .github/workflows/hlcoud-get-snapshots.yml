@@ -21,7 +21,13 @@ jobs:
       env:
         HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
-    - name: Display Snapshot ID
+    - name: Display Snapshot ID1
+      #if: steps.hcloudquery.outcome == 'success'
+      #if: (steps.hcloudquery.outputs.var != '')
+      if: ${{ steps.hcloudquery.outputs.var == '' }}
+      run: exit 1
+      
+    - name: Display Snapshot ID2
       #if: steps.hcloudquery.outcome == 'success'
       #if: (steps.hcloudquery.outputs.var != '')
       if: ${{ steps.hcloudquery.outputs.var != '' }}
