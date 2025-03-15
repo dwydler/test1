@@ -26,17 +26,17 @@ jobs:
       os: ${{ github.event.inputs.os }}
 
     
-#  Trigger-ImageBuilder:
-#    needs: Trigger-CollectInformations
-#    
-#    permissions:
-#      contents: write
-#      pull-requests: write
-#    
-#    uses: ./.github/workflows/trigger-build-workflow-ubuntu.yml
-#    with:
-#      release_name: ${{ needs.Trigger-CollectInformations.outputs.ReleaseName }}
-#      release_tag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
-#      hcl_filename: ${{ needs.Trigger-CollectInformations.outputs.HclFile }}
-#      release_no: ${{ needs.Trigger-CollectInformations.outputs.ReleaseNo }}
-#    secrets: inherit
+  Trigger-ImageBuilder:
+    needs: Trigger-CollectInformations
+    
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    uses: ./.github/workflows/trigger-build-workflow-ubuntu.yml
+    with:
+      release_name: ${{ needs.Trigger-CollectInformations.outputs.ReleaseName }}
+      release_tag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
+      hcl_filename: ${{ needs.Trigger-CollectInformations.outputs.HclFile }}
+      release_no: ${{ needs.Trigger-CollectInformations.outputs.ReleaseNo }}
+    secrets: inherit
