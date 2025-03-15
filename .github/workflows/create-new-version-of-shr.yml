@@ -88,9 +88,9 @@ jobs:
       
 
   TriggerImageBuilder:
-#    permissions:
-#      contents: write
-#      pull-requests: write
+    permissions:
+      contents: write
+      pull-requests: write
       
     needs: GetBasicInformations
     uses: ./.github/workflows/trigger-build-workflow-ubuntu.yml
