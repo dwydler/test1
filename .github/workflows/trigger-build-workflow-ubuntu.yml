@@ -12,6 +12,9 @@ on:
       hcl_filename:
         required: true
         type: string
+      release_no:
+        required: true
+        type: string
 
 
 jobs:
@@ -79,6 +82,7 @@ jobs:
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
+          IMAGE_VERSION: ${{ inputs.release_no }}
           
 
       - name: Commit & Push changes
