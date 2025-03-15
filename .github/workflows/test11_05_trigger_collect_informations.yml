@@ -7,10 +7,14 @@ on:
         required: true
         type: string
     outputs:
-      ReleaseName: ${{ jobs.Get-BasicInformations.outputs.ReleaseName }}
-      ReleaseTag: ${{ jobs.Get-BasicInformations.outputs.ReleaseTag }}
-      HclFile:  ${{ jobs.Get-BasicInformations.outputs.HclFile }}
-      ReleaseNo: ${{ jobs.Get-BasicInformations.outputs.ReleaseNo }}
+      ReleaseName:
+        value: ${{ jobs.Get-BasicInformations.outputs.ReleaseName }}
+      ReleaseTag:
+        value: ${{ jobs.Get-BasicInformations.outputs.ReleaseTag }}
+      HclFile:
+        value: ${{ jobs.Get-BasicInformations.outputs.HclFile }}
+      ReleaseNo:
+        value: ${{ jobs.Get-BasicInformations.outputs.ReleaseNo }}
 # ${{ inputs.hcl_filename }}
 # ${{ inputs.os }}
 jobs:
