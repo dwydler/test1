@@ -73,7 +73,7 @@ jobs:
 
 
   Output-DebugInformations:
-    needs: GetBasicInformations
+    needs: Get-BasicInformations
     runs-on: ubuntu-latest
      
     steps:
@@ -92,7 +92,7 @@ jobs:
       contents: write
       pull-requests: write
       
-    needs: GetBasicInformations
+    needs: Get-BasicInformations
     uses: ./.github/workflows/trigger-build-workflow-ubuntu.yml
     with:
       release_name: ${{ needs.GetBasicInformations.outputs.ReleaseName }}
