@@ -1,0 +1,18 @@
+name: Test10-Trigger-workflow_call
+
+on:
+  workflow_call:
+    outputs:
+      result:
+        value: ${{ jobs.build.outputs.result }} # set this to call on the result value in the outputs in the build job
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs: 
+      result: ${{ steps.hello-world.outputs.result}} # Define the output here with using the step id
+    steps:
+      - id: hello-world # provide an id to the step you are wanting to call on
+        run: |
+          result='hello world!' 
+          echo "result=$result" >> $GITHUB_OUTPUT # Set the variable as GitHub output
