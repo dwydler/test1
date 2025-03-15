@@ -30,7 +30,7 @@ jobs:
             echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
             echo "packerfile=ubuntu-22.04.pkr.hcl" >> $GITHUB_OUTPUT
             
-          elif [ "${{ inputs.os s }}" == "ubuntu24" ]; then
+          elif [ "${{ inputs.os }}" == "ubuntu24" ]; then
             echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
             echo "packerfile=ubuntu-24.04.pkr.hcl" >> $GITHUB_OUTPUT
             
