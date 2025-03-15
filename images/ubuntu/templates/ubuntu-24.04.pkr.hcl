@@ -46,7 +46,7 @@ variable "os_image_name" {
 
 variable "image_version" {
   type    = string
-  default = "dev"
+  default = "${env("IMAGE_VERSION")}"
 }
 variable "image_edition" {
   type    = string
