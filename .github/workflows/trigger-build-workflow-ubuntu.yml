@@ -15,10 +15,10 @@ on:
       release_no:
         required: true
         type: string
-    secrets:
-      access_token:
-        description: 'The app token'
-        required: true
+#    secrets:
+#      access_token:
+#        description: 'The app token'
+#        required: true
         #secrets.access-token
 jobs:
   Create-NewBranch:
@@ -29,11 +29,18 @@ jobs:
       pull-requests: read
 
     steps:
+      - name: Generate app token
+        uses: actions/create-github-app-token@21cfef2b496dd8ef5b904c159339626a10ad380e # v1.11.6
+        id: generate-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+    
       - name: Create a new branch
         uses: peterjgrainger/action-create-branch@10c7d268152480ae859347db45dc69086cef1d9c # v3.0.0
         env:
           #GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.access_token }}
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         with:
           branch: ${{ inputs.release_tag }}
 
@@ -46,7 +53,14 @@ jobs:
       contents: write
       pull-requests: read
 
-    steps:         
+    steps:
+      - name: Generate app token
+        uses: actions/create-github-app-token@21cfef2b496dd8ef5b904c159339626a10ad380e # v1.11.6
+        id: generate-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          
       - name: Checkout new created branch
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -93,7 +107,7 @@ jobs:
         with:
           branch: ${{ inputs.release_tag }}
           #github_token: ${{ secrets.GH_TOKEN }}
-          github_token: ${{ secrets.access_token }}
+          github_token: ${{ steps.generate-token.outputs.token }}
           force: true
 
 
@@ -107,6 +121,13 @@ jobs:
       pull-requests: write
       
     steps:
+      - name: Generate app token
+        uses: actions/create-github-app-token@21cfef2b496dd8ef5b904c159339626a10ad380e # v1.11.6
+        id: generate-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          
       - name: Checkout new created branch
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -124,7 +145,7 @@ jobs:
         uses: devops-infra/action-pull-request@ff118b4a7c24bac5a3c95acef59e9edd1fc37890 # v0.6.0
         with:
           #github_token: ${{ secrets.GH_TOKEN }}
-          github_token: ${{ secrets.access_token }}
+          github_token: ${{ steps.generate-token.outputs.token }}
           source_branch: ${{ inputs.release_tag }}
           target_branch: master
           title: ${{ inputs.release_name }}
@@ -138,4 +159,4 @@ jobs:
           name: ${{ inputs.release_name }}
           body: ${{ steps.ubuntu2404readme.outputs.content }}
           #token: ${{ secrets.GH_TOKEN }}
-          token: ${{ secrets.access_token }}
+          token: ${{ steps.generate-token.outputs.token }}
