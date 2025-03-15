@@ -23,4 +23,4 @@ jobs:
 
     - name: Display Snapshot ID
       if: steps.hcloudquery.outcome == 'success'
-      run: echo "${{ steps.info.outputs.var }}"
+      run: echo "${{ steps.hcloudquery.outputs.var }}"
