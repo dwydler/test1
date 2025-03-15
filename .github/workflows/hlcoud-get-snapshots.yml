@@ -1,0 +1,20 @@
+name: Test12 - Test Hetzner Cloud API
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Get-Templates:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - uses: hetznercloud/setup-hcloud@v1
+
+    - name: Query Hetzner cloud project
+      id: info
+      run: hcloud server-type list
+      env:
+        HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+
+    - name: Write ReleaseName
+      run: echo "${{ steps.info.outputs }}"
