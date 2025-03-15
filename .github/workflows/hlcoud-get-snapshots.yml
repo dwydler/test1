@@ -12,9 +12,10 @@ jobs:
 
     - name: Query Hetzner cloud project
       id: info
-      run: hcloud server-type list
+      #run: hcloud server-type list
+      run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,DISK_SIZE" --type "snapshot" 
       env:
         HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
     - name: Write ReleaseName
-      run: echo "${{ steps.info.outputs }}"
+      run: echo "${{ steps.info.outputs.output }}"
