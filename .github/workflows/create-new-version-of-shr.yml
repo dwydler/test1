@@ -102,4 +102,5 @@ jobs:
       release_name: ${{ needs.Get-BasicInformations.outputs.ReleaseName }}
       release_tag: ${{ needs.Get-BasicInformations.outputs.ReleaseTag }}
       hcl_filename: ${{ needs.Get-BasicInformations.outputs.HclFile }}
+      release: ${{ needs.Get-BasicInformations.outputs.Release }}
     secrets: inherit
