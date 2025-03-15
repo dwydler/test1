@@ -13,7 +13,7 @@ jobs:
     - name: Query Hetzner cloud project
       id: info
       #run: hcloud server-type list
-      run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,DISK_SIZE" --type "snapshot" 
+      run: hcloud image list --output "columns=ID,DESCRIPTION,ARCHITECTURE,DISK_SIZE" --type "snapshot" --sort "ID"
       env:
         HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
 
