@@ -39,11 +39,16 @@ jobs:
       contents: read
       pull-requests: read
 
-    uses: ./.github/workflows/test11_05_trigger_collect_informations.yml
-    with:
-      #os: ${{ github.event.inputs.os }}
-      #os: ${{ needs.Set-Variables.os.outputs.name }}
-      os: ${{ needs.Set-Variables.outputs.OperatingSystem }}
+    runs-on: ubuntu-latest
+     
+      steps:
+        - name: Write ReleaseName
+          run: echo "${{ needs.Set-Variables.outputs.OperatingSystem }}"
+#    uses: ./.github/workflows/test11_05_trigger_collect_informations.yml
+#    with:
+#      #os: ${{ github.event.inputs.os }}
+#      #os: ${{ needs.Set-Variables.os.outputs.name }}
+#      os: ${{ needs.Set-Variables.outputs.OperatingSystem }}
 
     
   Trigger-ImageBuilder:
