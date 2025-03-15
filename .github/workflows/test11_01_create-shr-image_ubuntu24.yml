@@ -2,16 +2,16 @@ name: Test11.01 - Create SHR Image (Ubuntu 24)
 
 on:
   workflow_dispatch:
-    inputs:
-      os:
-        #type: choice
-        type: string
-        description: Ubuntu Server OS
-        #options:
-        #  - ubuntu24
-        #  - ubuntu22
-        required: true
-        default: "ubuntu24"
+#    inputs:
+#      os:
+#        #type: choice
+#        type: string
+#        description: Ubuntu Server OS
+#        #options:
+#        #  - ubuntu24
+#        #  - ubuntu22
+#        required: true
+#        default: "ubuntu24"
 
 env:
   os: "ubuntu24"
