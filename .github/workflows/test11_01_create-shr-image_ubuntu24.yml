@@ -27,7 +27,10 @@ jobs:
 
       - name: Write ReleaseName
         run: echo "${{ steps.os.outputs.name }}"
-        
+    outputs:      
+     OperatingSystem: ${{ steps.os.outputs.name }}
+
+     
   Trigger-CollectInformations:
     needs: Set-Variables
     
@@ -38,7 +41,8 @@ jobs:
     uses: ./.github/workflows/test11_05_trigger_collect_informations.yml
     with:
       #os: ${{ github.event.inputs.os }}
-      os: ${{ needs.Set-Variables.os.outputs.name }}
+      #os: ${{ needs.Set-Variables.os.outputs.name }}
+      os: ${{ needs.Set-Variables.outputs.OperatingSystem }}
 
     
   Trigger-ImageBuilder:
