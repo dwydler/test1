@@ -71,7 +71,7 @@ jobs:
               
     outputs:
       ReleaseName: ${{ steps.os.outputs.osname }} (${{ steps.releasetagname.outputs.var }}) Image Update
-      ReleaseTag: ${{ github.event.inputs.os }}/${{ steps.releasetagname.outputs.var }}
+      ReleaseTag: ${{ inputs.os }}/${{ steps.releasetagname.outputs.var }}
       HclFile:  ${{ steps.os.outputs.packerfile }}
       ReleaseNo: ${{ steps.releasetagname.outputs.var }}
 
