@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Get the current date2
         id: os
-        run: echo "name=$OS" >> $GITHUB_OUTPUT
+        run: echo "name=$os" >> $GITHUB_OUTPUT
 
       - name: Write ReleaseName
         run: echo "${{ steps.os.outputs.name }}"
