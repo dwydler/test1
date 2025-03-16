@@ -54,7 +54,7 @@ jobs:
           include: ${{ inputs.os }}/${{ steps.date.outputs.date }}.*
           exact-match: 'false'
           no-tags-text: 'false'
-          commit-ish: ''
+          commit-ish: 'HEAD'
 
 
       - name: Create a new release name/tag
