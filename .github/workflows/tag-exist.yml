@@ -44,8 +44,8 @@ jobs:
     
       - name: Find newest Git Tag
         id: tagger
-        #uses: digital-ai/query-tag-action@v2
-        uses: dwydler/query-tag-action@2.1.2
+        uses: digital-ai/query-tag-action@v2
+        #uses: dwydler/query-tag-action@2.1.2
         #uses: jimschubert/query-tag-action@v2
         with:
           include: ${{ github.event.inputs.os }}/${{ steps.date.outputs.date }}.*
