@@ -56,6 +56,7 @@ variable "image_edition" {
 variable "server_type" {
   type    = string
   default = "ccx13"
+#  default = "cax11"
 }
 
 variable "ssh_username" {
