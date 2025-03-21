@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Get the current date
         id: date
-        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+        run: echo "date=$(TZ='Europe/Berlin' date +'%Y%m%d')" >> $GITHUB_OUTPUT
         
 
       - name: Define the name of the OS
