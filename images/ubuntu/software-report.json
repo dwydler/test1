@@ -10,12 +10,12 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Kernel Version:",
-      "Version": "5.15.0-133-generic"
+      "Version": "5.15.0-134-generic"
     },
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "dev"
+      "Version": "20250321.1"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -98,7 +98,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Julia",
-              "Version": "1.11.3"
+              "Version": "1.11.4"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -154,12 +154,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Helm",
-              "Version": "3.17.1"
+              "Version": "3.17.2"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Homebrew",
-              "Version": "4.4.23"
+              "Version": "4.4.25"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -199,7 +199,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Vcpkg",
-              "Version": "(build from commit 300239058e)"
+              "Version": "(build from commit 93c2011767)"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -255,7 +255,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Sbt",
-              "Version": "1.10.10"
+              "Version": "1.10.11"
             }
           ]
         },
@@ -291,7 +291,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Bicep",
-              "Version": "0.33.93"
+              "Version": "0.34.1"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -321,7 +321,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Docker-Buildx",
-              "Version": "0.21.2"
+              "Version": "0.22.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -336,12 +336,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Fastlane",
-              "Version": "2.226.0"
+              "Version": "2.227.0"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Git",
-              "Version": "2.48.1"
+              "Version": "2.49.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -361,7 +361,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Heroku",
-              "Version": "10.2.0"
+              "Version": "10.4.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -376,7 +376,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Kubectl",
-              "Version": "1.32.2"
+              "Version": "1.32.3"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -416,7 +416,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "nvm",
-              "Version": "0.40.1"
+              "Version": "0.40.2"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -431,7 +431,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Parcel",
-              "Version": "2.13.3"
+              "Version": "2.14.1"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -441,7 +441,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Pulumi",
-              "Version": "3.154.0"
+              "Version": "3.157.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -466,12 +466,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Terraform",
-              "Version": "1.11.1"
+              "Version": "1.11.2"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "yamllint",
-              "Version": "1.35.1"
+              "Version": "1.36.2"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -497,12 +497,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Alibaba Cloud CLI",
-              "Version": "3.0.256"
+              "Version": "3.0.260"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.24.20"
+              "Version": "2.25.1"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -512,7 +512,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS SAM CLI",
-              "Version": "1.134.0"
+              "Version": "1.135.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -527,22 +527,22 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "GitHub CLI",
-              "Version": "2.68.1"
+              "Version": "2.69.0"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Google Cloud CLI",
-              "Version": "513.0.0"
+              "Version": "515.0.0"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Netlify CLI",
-              "Version": "19.0.2"
+              "Version": "19.0.3"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "OpenShift CLI",
-              "Version": "4.18.3"
+              "Version": "4.18.5"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -552,7 +552,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Vercel CLI",
-              "Version": "41.3.2"
+              "Version": "41.4.1"
             }
           ]
         },
@@ -611,7 +611,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "GHC",
-              "Version": "9.12.1"
+              "Version": "9.12.2"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -632,17 +632,17 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Cargo",
-              "Version": "1.85.0"
+              "Version": "1.85.1"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Rust",
-              "Version": "1.85.0"
+              "Version": "1.85.1"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Rustdoc",
-              "Version": "1.85.0"
+              "Version": "1.85.1"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -671,7 +671,7 @@
                 {
                   "NodeType": "ToolVersionNode",
                   "ToolName": "Cargo outdated",
-                  "Version": "0.16.0"
+                  "Version": "0.17.0"
                 },
                 {
                   "NodeType": "ToolVersionNode",
@@ -694,12 +694,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Google Chrome",
-              "Version": "134.0.6998.35"
+              "Version": "134.0.6998.165"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "ChromeDriver",
-              "Version": "134.0.6998.35"
+              "Version": "134.0.6998.165"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -709,12 +709,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Microsoft Edge",
-              "Version": "134.0.3124.51"
+              "Version": "134.0.3124.83"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Microsoft Edge WebDriver",
-              "Version": "134.0.3124.51"
+              "Version": "134.0.3124.68"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -724,7 +724,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Mozilla Firefox",
-              "Version": "136.0"
+              "Version": "136.0.2"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -756,8 +756,8 @@
               "ToolName": ".NET Core SDK",
               "Versions": [
                 "6.0.428",
-                "8.0.406",
-                "9.0.200"
+                "8.0.407",
+                "9.0.202"
               ],
               "MajorVersionRegex": "^\\d+\\.\\d+\\.\\d",
               "ListType": "Inline"
@@ -846,7 +846,7 @@
               "ToolName": "Node.js",
               "Versions": [
                 "18.20.7",
-                "20.18.3",
+                "20.19.0",
                 "22.14.0"
               ],
               "MajorVersionRegex": "^\\d+",
@@ -944,7 +944,7 @@
                   "NodeType": "ToolVersionsListNode",
                   "ToolName": "PSScriptAnalyzer",
                   "Versions": [
-                    "1.23.0"
+                    "1.24.0"
                   ],
                   "MajorVersionRegex": "^\\d+",
                   "ListType": "Inline"
@@ -974,9 +974,9 @@
               "Headers": "Package Name|Version",
               "Rows": [
                 "Android Command Line Tools|9.0",
-                "Android SDK Build-tools|35.0.0 35.0.1<br>34.0.0<br>33.0.0 33.0.1 33.0.2 33.0.3<br>32.0.0<br>31.0.0",
+                "Android SDK Build-tools|36.0.0<br>35.0.0 35.0.1<br>34.0.0<br>33.0.0 33.0.1 33.0.2 33.0.3<br>32.0.0<br>31.0.0",
                 "Android SDK Platform-Tools|35.0.2",
-                "Android SDK Platforms|android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3)<br>android-33-ext5 (rev 1)<br>android-33-ext4 (rev 1)<br>android-33 (rev 3)<br>android-32 (rev 1)<br>android-31 (rev 1)",
+                "Android SDK Platforms|android-36 (rev 1)<br>android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3)<br>android-33-ext5 (rev 1)<br>android-33-ext4 (rev 1)<br>android-33 (rev 3)<br>android-32 (rev 1)<br>android-31 (rev 1)",
                 "Android Support Repository|47.0.0",
                 "CMake|3.18.1<br>3.22.1<br>3.31.5",
                 "Google Play services|49",
@@ -1014,13 +1014,13 @@
               "alpine:3.18|sha256:de0eb0b3f2a47ba1eb89389859a9bd88b28e82f5826b6969ad604979713c2d4f |2025-02-14",
               "alpine:3.19|sha256:e5d0aea7f7d2954678a9a6269ca2d06e06591881161961ea59e974dff3f12377 |2025-02-14",
               "debian:10|sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225 |2024-06-13",
-              "debian:11|sha256:a6cec654bb08bdc6a563cd7507b62f57c916290e195142e79a0d41a70ebb26fa |2025-02-24",
+              "debian:11|sha256:5c028c19adaab78491711830600749729a8276b9839416716d5d7339ec3d7216 |2025-03-17",
               "moby/buildkit:latest|sha256:c5137fdd77377ea102a2622714df55459fe42e5867ba180bda07291aa7952d9b |2025-03-05",
-              "node:18|sha256:ba756f198b4b1e0114b53b23121c8ae27f7ae4d5d95ca4a0554b0649cc9c7dcf |2025-02-20",
+              "node:18|sha256:7f6bcd8e08a1f81bfbb29f5948de5c5507624788ddb50cadb94ddd439426b7c4 |2025-02-20",
               "node:18-alpine|sha256:e0340f26173b41066d68e3fe9bfbdb6571ab3cad0a4272919a52e36f4ae56925 |2025-02-20",
-              "node:20|sha256:bcf90f85634194bc51e92f8add1221c7fdeeff94b7f1ff360aeaa7498086d641 |2025-02-10",
-              "node:20-alpine|sha256:053c1d99e608fe9fa0db6821edd84276277c0a663cd181f4a3e59ee20f5f07ea |2025-02-10",
-              "node:22|sha256:f6b9c31ace05502dd98ef777aaa20464362435dcc5e312b0e213121dcf7d8b95 |2025-02-13",
+              "node:20|sha256:735b1ba7e4550c415f98568efbf527e3f75828ac4f10692e490ca78e11d89f6e |2025-03-13",
+              "node:20-alpine|sha256:8bda036ddd59ea51a23bc1a1035d3b5c614e72c01366d989f4120e8adca196d4 |2025-03-13",
+              "node:22|sha256:c7fd844945a76eeaa83cb372e4d289b4a30b478a1c80e16c685b62c54156285b |2025-02-13",
               "node:22-alpine|sha256:9bef0ef1e268f60627da9ba7d7605e8831d5b56ad07487d24d1aa386336d1944 |2025-02-13",
               "ubuntu:20.04|sha256:8e5c4f0285ecbb4ead070431d29b576a530d3166df73ec44affc1cd27555141b |2024-10-11",
               "ubuntu:22.04|sha256:ed1544e454989078f5dec1bfdabd8c5cc9c48e0705d07b678ab6ae3fb61952d2 |2025-01-26"
