@@ -48,7 +48,6 @@ jobs:
       - name: Create a new branch
         uses: peterjgrainger/action-create-branch@10c7d268152480ae859347db45dc69086cef1d9c # v3.0.0
         env:
-          #GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         with:
           branch: ${{ inputs.release_tag }}
@@ -100,7 +99,6 @@ jobs:
         run: packer validate ./images/ubuntu/templates/${{ inputs.hcl_filename }}
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          #HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
           HCLOUD_OBJECT_NAME: ${{ inputs.hcloud_name }}
           HCLOUD_SERVER_LOCATION: ${{ inputs.hcloud_server_location }}
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
@@ -112,7 +110,6 @@ jobs:
         run: packer build ./images/ubuntu/templates/${{ inputs.hcl_filename }}
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          #HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
           HCLOUD_OBJECT_NAME: ${{ inputs.hcloud_name }}
           HCLOUD_SERVER_LOCATION: ${{ inputs.hcloud_server_location }}
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
@@ -161,7 +158,6 @@ jobs:
       - name: Run the Action
         uses: devops-infra/action-pull-request@ff118b4a7c24bac5a3c95acef59e9edd1fc37890 # v0.6.0
         with:
-          #github_token: ${{ secrets.GH_TOKEN }}
           github_token: ${{ steps.generate-token.outputs.token }}
           source_branch: ${{ inputs.release_tag }}
           target_branch: master
@@ -175,5 +171,4 @@ jobs:
           tag: ${{ inputs.release_tag }}
           name: ${{ inputs.release_name }}
           body: ${{ steps.ubuntu2404readme.outputs.content }}
-          #token: ${{ secrets.GH_TOKEN }}
           token: ${{ steps.generate-token.outputs.token }}
