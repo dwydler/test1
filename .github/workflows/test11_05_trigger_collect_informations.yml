@@ -78,6 +78,7 @@ jobs:
       ReleaseTag: ${{ inputs.os }}/${{ steps.releasetagname.outputs.var }}
       HclFile:  ${{ steps.os.outputs.packerfile }}
       ReleaseNo: ${{ steps.releasetagname.outputs.var }}
+      HCloudName: ${{ inputs.os }}-${{ steps.releasetagname.outputs.var }}
 
 
   Output-DebugInformations:
@@ -96,4 +97,7 @@ jobs:
 
       - name: Write Release name
         run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseNo }}"
+
+      - name: Write Release name
+        run: echo "${{ needs.Get-BasicInformations.outputs.HCloudName }}"
       
