@@ -46,12 +46,14 @@ variable "installer_script_folder" {
 
 variable "server_location" {
   type    = string
-  default = "hel1"
+  #default = "hel1"
+  default   = "${env("HCLOUD_SERVER_LOCATION")}"
 }
 
 variable "os_image_name" {
   type    = string
-  default = "ubuntu-22.04"
+  #default = "ubuntu-22.04"
+  default   = "${env("HCLOUD_SERVER_IMAGE")}"
 }
 
 variable "image_version" {
@@ -59,14 +61,10 @@ variable "image_version" {
   default = "${env("IMAGE_VERSION")}"
 }
 
-variable "image_edition" {
-  type    = string
-  default = "default"
-}
-
 variable "server_type" {
   type    = string
-  default = "ccx13"
+  #default = "ccx13"
+  default   = "${env("HCLOUD_SERVER_TYPE")}"
 }
 
 variable "ssh_username" {
@@ -95,8 +93,7 @@ source "hcloud" "gh-shr-ubuntu" {
   snapshot_name = "${ var.managed_image_name }"
   snapshot_labels = {
     app = "github-self-hosted-runner",
-    os = var.os_image_name,
-    edition = var.image_edition
+    os = var.os_image_name
   }
 }
 
