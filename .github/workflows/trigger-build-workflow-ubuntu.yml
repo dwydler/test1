@@ -53,7 +53,7 @@ jobs:
           branch: ${{ inputs.release_tag }}
 
           
-  Create-VmTemplate:
+  Create-ServerTemplate:
     needs: Create-NewBranch
     runs-on: ubuntu-latest
 
@@ -127,7 +127,7 @@ jobs:
 
   Create-PullRequest:
     needs:
-      - Create-VmTemplate
+      - Create-ServerTemplate
     runs-on: ubuntu-latest
 
     permissions:
