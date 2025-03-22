@@ -103,7 +103,7 @@ jobs:
           HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
           HCLOUD_SERVER_LOCATION: ${{ inputs.hcloud_server_location }}
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
-          HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
+          HCLOUD_SERVER_TYPE: ${{ inputss.hcloud_server_type }}
           IMAGE_VERSION: ${{ inputs.release_no }}
 
       - name: Run `packer build`
