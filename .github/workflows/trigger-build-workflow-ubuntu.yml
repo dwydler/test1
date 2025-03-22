@@ -75,15 +75,6 @@ jobs:
           ref: ${{ inputs.release_tag }}
 
 
-#      - name: character-replacement-test
-#        id: hcloudvmname
-#        uses: mad9000/actions-find-and-replace-string@bce4d50390d08b67e1822bd72fb54b3cf11b0ce9 # 5
-#        with:
-#            source: ${{ inputs.release_tag }} # this translates to ref/heads/main on the main branch, but can be any arbitrary string 
-#            find: '/'        # we want to remove ref/heads/ from source 
-#            replace: '-'
-
-
       - name: Setup `packer`
         uses: hashicorp/setup-packer@1aa358be5cf73883762b302a3a03abd66e75b232 # v3.1.0
         id: setup
