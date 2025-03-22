@@ -74,5 +74,26 @@ jobs:
       hcloud_server_location: ${{ needs.Set-Variables.outputs.HCloudServerLocation }}
       hcloud_server_image: ${{ needs.Set-Variables.outputs.HCloudServerImage }}
       hcloud_server_type: ${{ needs.Set-Variables.outputs.HCloudServerType }}
+      hcloud_name: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}
       
     secrets: inherit
+
+
+  Trigger-CleanupOnFailure:
+    if: ${{ failure() || cancelled() }}
+
+    needs:
+      - Set-Variables
+      - Trigger-CollectInformations
+      - Trigger-ImageBuilder
+
+    permissions:
+      contents: write
+
+    uses: ./.github/workflows/test11_09_trigger-cleanup-onfailure.yml
+    with:
+      ReleaseTag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
+      HCloudObjectName: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}
+
+    secrets: inherit      
+    
