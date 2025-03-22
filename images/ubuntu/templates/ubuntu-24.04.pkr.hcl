@@ -82,13 +82,14 @@ source "hcloud" "gh-shr-ubuntu" {
   ssh_username = var.ssh_username
   temporary_key_pair_type = "ed25519"
   ssh_keys_labels = {
-    server = var.os_image_name
+    server = var.managed_image_name
   }
 
   snapshot_name = "${ var.managed_image_name }"
   snapshot_labels = {
     app = "github-self-hosted-runner",
     os = var.os_image_name,
+    server = var.managed_image_name
   }
 }
 
