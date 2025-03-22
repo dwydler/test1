@@ -79,7 +79,7 @@ jobs:
     secrets: inherit
 
 
-  CleanupOnFailure:
+  Trigger-CleanupOnFailure:
     if: ${{ failure() || cancelled() }}
 
     needs:
