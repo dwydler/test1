@@ -15,7 +15,7 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20250322.1"
+      "Version": "20250322.2"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -184,7 +184,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Vcpkg",
-              "Version": "(build from commit 93c2011767)"
+              "Version": "(build from commit 670f6dddaa)"
             },
             {
               "NodeType": "ToolVersionNode",
