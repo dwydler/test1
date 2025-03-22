@@ -86,42 +86,52 @@ jobs:
       - Set-Variables
       - Trigger-CollectInformations
       - Trigger-ImageBuilder
-      
-    runs-on: ubuntu-latest
 
-    steps:
-      - name: Generate app token
-        uses: actions/create-github-app-token@af35edadc00be37caa72ed9f3e6d5f7801bfdf09 # v1.11.7
-        id: generate-token
-        with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          
-      - name: Delete previously created branch
-        uses: dawidd6/action-delete-branch@v3
-        with:
-          github_token: ${{ steps.generate-token.outputs.token }}
-          branches: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
+    permissions:
+      contents: write
 
-      - name: Install Hetzner Cloud Cli
-        uses: hetznercloud/setup-hcloud@641015849308e9ed3e3b1f3d3b0a637068c5a2af # v1.0
-        
-      - name: Delete temporary SSH Key on Hetzner Cloud
-        run: |
-          sshkey_id=$(hcloud ssh-key list --output "columns=ID" --output "noheader" -l "server=$HCLOUD_NAME")
+    uses: ./.github/workflows/test11_09_trigger-cleanup-onfailure.yml
+    with:
+      release_tag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
+      HCloudObjectName: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}
 
-          if [ ! -z "$sshkey_id" ]; then
-            hcloud ssh-key delete $sshkey_id
-            echo "The ssh key was succcessfully deleted."
-          fi
-        env:
-          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          HCLOUD_NAME: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}
-
-      - name: Delete Server on Hetzner Cloud
-        run: |
-          server_id=$(hcloud server list --output "columns=ID" --output "noheader" -l "server=$HCLOUD_NAME")
-
+    secrets: inherit      
+#      
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Generate app token
+#        uses: actions/create-github-app-token@af35edadc00be37caa72ed9f3e6d5f7801bfdf09 # v1.11.7
+#        id: generate-token
+#        with:
+#          app-id: ${{ secrets.APP_ID }}
+#          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+#          
+#      - name: Delete previously created branch
+#        uses: dawidd6/action-delete-branch@v3
+#        with:
+#          github_token: ${{ steps.generate-token.outputs.token }}
+#          branches: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
+#
+#      - name: Install Hetzner Cloud Cli
+#        uses: hetznercloud/setup-hcloud@641015849308e9ed3e3b1f3d3b0a637068c5a2af # v1.0
+#        
+#      - name: Delete temporary SSH Key on Hetzner Cloud
+#        run: |
+#          sshkey_id=$(hcloud ssh-key list --output "columns=ID" --output "noheader" -l "server=$HCLOUD_NAME")
+#
+#          if [ ! -z "$sshkey_id" ]; then
+#            hcloud ssh-key delete $sshkey_id
+#            echo "The ssh key was succcessfully deleted."
+#          fi
+#        env:
+#          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+#          HCLOUD_NAME: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}
+#
+#      - name: Delete Server on Hetzner Cloud
+#        run: |
+#          server_id=$(hcloud server list --output "columns=ID" --output "noheader" -l "server=$HCLOUD_NAME")
+#
           if [ ! -z "$server_id" ]; then
             hcloud server delete $server_id
             echo "The server was succcessfully deleted."
