@@ -111,7 +111,7 @@ jobs:
 
           if [ ! -z "$sshkey_id" ]; then
             hcloud ssh-key delete $sshkey_id
-            echo "The ssh key was succcessfully deleted.
+            echo "The ssh key was succcessfully deleted."
           fi
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
@@ -122,7 +122,7 @@ jobs:
 
           if [ ! -z "$server_id" ]; then
             hcloud server delete $server_id
-            echo "The server was succcessfully deleted.
+            echo "The server was succcessfully deleted."
           fi
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
