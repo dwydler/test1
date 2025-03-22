@@ -76,6 +76,9 @@ source "hcloud" "gh-shr-ubuntu" {
   image       = var.os_image_name
   server_type = var.server_type
   server_name = "${ var.managed_image_name }"
+  server_labels  = {
+    server = var.managed_image_name
+  }
 
   user_data_file = "./images/ubuntu/templates/cloud-init.cfg"
 
