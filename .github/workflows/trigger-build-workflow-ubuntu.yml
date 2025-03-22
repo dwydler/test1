@@ -24,7 +24,10 @@ on:
       hcloud_server_type:
         required: true
         type: string
-
+      hcloud_name:
+        required: true
+        type: string
+        
 
 jobs:
   Create-NewBranch:
@@ -73,13 +76,13 @@ jobs:
           ref: ${{ inputs.release_tag }}
 
 
-      - name: character-replacement-test
-        id: hcloudvmname
-        uses: mad9000/actions-find-and-replace-string@bce4d50390d08b67e1822bd72fb54b3cf11b0ce9 # 5
-        with:
-            source: ${{ inputs.release_tag }} # this translates to ref/heads/main on the main branch, but can be any arbitrary string 
-            find: '/'        # we want to remove ref/heads/ from source 
-            replace: '-'
+#      - name: character-replacement-test
+#        id: hcloudvmname
+#        uses: mad9000/actions-find-and-replace-string@bce4d50390d08b67e1822bd72fb54b3cf11b0ce9 # 5
+#        with:
+#            source: ${{ inputs.release_tag }} # this translates to ref/heads/main on the main branch, but can be any arbitrary string 
+#            find: '/'        # we want to remove ref/heads/ from source 
+#            replace: '-'
 
 
       - name: Setup `packer`
@@ -97,7 +100,8 @@ jobs:
         run: packer validate ./images/ubuntu/templates/${{ inputs.hcl_filename }}
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
+          #HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
+          HCLOUD_SNAPSHOT_NAME: ${{ inputs.hcloud_name }}
           HCLOUD_SERVER_LOCATION: ${{ inputs.hcloud_server_location }}
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
@@ -108,7 +112,8 @@ jobs:
         run: packer build ./images/ubuntu/templates/${{ inputs.hcl_filename }}
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
+          #HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
+          HCLOUD_SNAPSHOT_NAME: ${{ inputs.hcloud_name }}
           HCLOUD_SERVER_LOCATION: ${{ inputs.hcloud_server_location }}
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
@@ -119,7 +124,6 @@ jobs:
         uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # v1.5
         with:
           branch: ${{ inputs.release_tag }}
-          #github_token: ${{ secrets.GH_TOKEN }}
           github_token: ${{ steps.generate-token.outputs.token }}
           force: true
 
