@@ -1,4 +1,4 @@
-name: Test11.01 - Create SHR Image (Ubuntu 20)
+name: Test11.03 - Create SHR Image (Ubuntu 20)
 
 on:
   workflow_dispatch:
