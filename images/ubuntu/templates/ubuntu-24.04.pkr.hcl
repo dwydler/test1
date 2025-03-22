@@ -54,7 +54,7 @@ variable "image_version" {
 variable "server_type" {
   type    = string
   #default = "ccx13"
-  default   = "${env("HCLOUD_SERVER_TYPE")}"
+  default   = "${env("HCLOUD_OBJECT_NAME")}"
 }
 
 variable "ssh_username" {
