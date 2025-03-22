@@ -101,3 +101,15 @@ jobs:
         with:
           github_token: ${{ steps.generate-token.outputs.token }}
           branches: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
+
+      - name: Delete Server on HEtzner Cloud
+        run: |
+          sshkey_id=$(./hcloud ssh-key list --output "columns=ID" --output "noheader" -l "server=ubuntu24-20250322.5")
+
+          if [ ! -z "$sshkey_id" ]; then
+            hcloud ssh-key delete $sshkey_id
+          fi
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+          
+          
