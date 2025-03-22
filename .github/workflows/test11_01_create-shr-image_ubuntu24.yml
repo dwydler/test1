@@ -79,6 +79,12 @@ jobs:
 
   CleanupFailureCanceld:
     if: ${{ failure() || cancelled() }}
+
+    needs:
+      - Set-Variables
+      - Trigger-CollectInformations
+      - Trigger-ImageBuilder
+      
     runs-on: ubuntu-latest
 
     steps:
