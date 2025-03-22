@@ -101,7 +101,7 @@ jobs:
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           #HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
-          HCLOUD_SNAPSHOT_NAME: ${{ inputs.hcloud_name }}
+          HCLOUD_OBJECT_NAME: ${{ inputs.hcloud_name }}
           HCLOUD_SERVER_LOCATION: ${{ inputs.hcloud_server_location }}
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
@@ -113,7 +113,7 @@ jobs:
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           #HCLOUD_SNAPSHOT_NAME: ${{ steps.hcloudvmname.outputs.value }}
-          HCLOUD_SNAPSHOT_NAME: ${{ inputs.hcloud_name }}
+          HCLOUD_OBJECT_NAME: ${{ inputs.hcloud_name }}
           HCLOUD_SERVER_LOCATION: ${{ inputs.hcloud_server_location }}
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
