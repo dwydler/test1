@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250322.1
+- Image Version: 20250322.3
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -165,7 +165,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - ChromeDriver 134.0.6998.165
 - Chromium 134.0.6998.0
 - Microsoft Edge 134.0.3124.83
-- Microsoft Edge WebDriver 134.0.3124.68
+- Microsoft Edge WebDriver 134.0.3124.83
 - Selenium server 4.30.0
 - Mozilla Firefox 136.0.2
 - Geckodriver 0.36.0
