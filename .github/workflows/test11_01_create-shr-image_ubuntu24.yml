@@ -77,3 +77,10 @@ jobs:
       
     secrets: inherit
 
+  CleanupFailureCanceld:
+    if: ${{ failure() || cancelled() }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display text
+        run: echo "Hallo"
