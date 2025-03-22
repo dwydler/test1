@@ -98,6 +98,6 @@ jobs:
       - name: Write Release name
         run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseNo }}"
 
-      - name: Write Release name
+      - name: Write Hetzner Name (Server, Snapshot, Labels,etc.)
         run: echo "${{ needs.Get-BasicInformations.outputs.HCloudName }}"
       
