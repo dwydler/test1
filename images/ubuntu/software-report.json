@@ -15,7 +15,7 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20250322.1"
+      "Version": "20250322.2"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -734,7 +734,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Microsoft Edge WebDriver",
-              "Version": "134.0.3124.68"
+              "Version": "134.0.3124.83"
             },
             {
               "NodeType": "ToolVersionNode",
