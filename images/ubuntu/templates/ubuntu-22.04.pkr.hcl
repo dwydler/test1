@@ -74,7 +74,7 @@ variable "ssh_username" {
 
 variable "managed_image_name" {
   type    = string
-  default   = "${env("HCLOUD_SNAPSHOT_NAME")}"
+  default   = "${env("HCLOUD_OBJECT_NAME")}"
 }
 
 
