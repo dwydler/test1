@@ -59,11 +59,6 @@ variable "image_version" {
   default = "${env("IMAGE_VERSION")}"
 }
 
-variable "image_edition" {
-  type    = string
-  default = "default"
-}
-
 variable "server_type" {
   type    = string
   default = "ccx13"
@@ -95,8 +90,7 @@ source "hcloud" "gh-shr-ubuntu" {
   snapshot_name = "${ var.managed_image_name }"
   snapshot_labels = {
     app = "github-self-hosted-runner",
-    os = var.os_image_name,
-    edition = var.image_edition
+    os = var.os_image_name
   }
 }
 
