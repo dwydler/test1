@@ -102,6 +102,9 @@ jobs:
           github_token: ${{ steps.generate-token.outputs.token }}
           branches: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
 
+      - name: Install Hetzner Cloud Cli
+        uses: hetznercloud/setup-hcloud@641015849308e9ed3e3b1f3d3b0a637068c5a2af # v1.0
+        
       - name: Delete Server on HEtzner Cloud
         run: |
           sshkey_id=$(hcloud ssh-key list --output "columns=ID" --output "noheader" -l "server=ubuntu24-20250322.5")
