@@ -74,6 +74,7 @@ jobs:
       hcloud_server_location: ${{ needs.Set-Variables.outputs.HCloudServerLocation }}
       hcloud_server_image: ${{ needs.Set-Variables.outputs.HCloudServerImage }}
       hcloud_server_type: ${{ needs.Set-Variables.outputs.HCloudServerType }}
+      hcloud_name: ${{ needs.Set-Variables.outputs.HCloudName }}
       
     secrets: inherit
 
