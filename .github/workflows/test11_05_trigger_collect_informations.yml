@@ -15,6 +15,8 @@ on:
         value: ${{ jobs.Get-BasicInformations.outputs.HclFile }}
       ReleaseNo:
         value: ${{ jobs.Get-BasicInformations.outputs.ReleaseNo }}
+      HCloudName:
+        value: ${{ jobs.Get-BasicInformations.outputs.HCloudName }}
 # ${{ inputs.hcl_filename }}
 # ${{ inputs.os }}
 jobs:
