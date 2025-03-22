@@ -24,13 +24,17 @@ jobs:
     steps:
       - name: Get the current date
         id: date
-        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+        run: echo "date=$(TZ='Europe/Berlin' date +'%Y%m%d')" >> $GITHUB_OUTPUT
         
 
       - name: Define the name of the OS
         id: os
         run: |
-          if [ "${{ inputs.os }}" == "ubuntu22" ]; then
+          if [ "${{ inputs.os }}" == "ubuntu20" ]; then
+            echo "osname=Ubuntu 20.04" >> $GITHUB_OUTPUT
+            echo "packerfile=ubuntu-20.04.pkr.hcl" >> $GITHUB_OUTPUT
+            
+          elif [ "${{ inputs.os }}" == "ubuntu22" ]; then
             echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
             echo "packerfile=ubuntu-22.04.pkr.hcl" >> $GITHUB_OUTPUT
             
@@ -42,7 +46,6 @@ jobs:
             exit 1
           fi
 
-      
       - name: Checkout the current repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
     
@@ -61,13 +64,13 @@ jobs:
         id: releasetagname
         run: |
           if [ "${{ steps.tagger.outputs.tag }}" == "'false'" ]; then
-            echo "var=$(date +'%Y%m%d').1" >> $GITHUB_OUTPUT
+            echo "var=$(TZ='Europe/Berlin' date +'%Y%m%d').1" >> $GITHUB_OUTPUT
           else
             #ver=$(echo "${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 2)
             ver=$(echo "${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 2)
             #ver=$ver+1
             ver=`expr $ver + 1`
-            echo "var=$(date +'%Y%m%d').$ver" >> $GITHUB_OUTPUT
+            echo "var=$(TZ='Europe/Berlin' date +'%Y%m%d').$ver" >> $GITHUB_OUTPUT
           fi
               
     outputs:
