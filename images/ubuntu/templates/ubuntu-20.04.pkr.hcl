@@ -82,15 +82,23 @@ source "hcloud" "gh-shr-ubuntu" {
   image       = var.os_image_name
   server_type = var.server_type
   server_name = "${ var.managed_image_name }"
-  
-  temporary_key_pair_type = "ed25519"
+  server_labels  = {
+    server = var.managed_image_name
+  }
+
   user_data_file = "./images/ubuntu/templates/cloud-init.cfg"
+
   ssh_username = var.ssh_username
+  temporary_key_pair_type = "ed25519"
+  ssh_keys_labels = {
+    server = var.managed_image_name
+  }
 
   snapshot_name = "${ var.managed_image_name }"
   snapshot_labels = {
     app = "github-self-hosted-runner",
-    os = var.os_image_name
+    os = var.os_image_name,
+    server = var.managed_image_name
   }
 }
 
