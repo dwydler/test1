@@ -77,9 +77,13 @@ source "hcloud" "gh-shr-ubuntu" {
   server_type = var.server_type
   server_name = "${ var.managed_image_name }"
 
-  temporary_key_pair_type = "ed25519"
   user_data_file = "./images/ubuntu/templates/cloud-init.cfg"
+
   ssh_username = var.ssh_username
+  temporary_key_pair_type = "ed25519"
+  ssh_keys_labels = {
+    server = var.os_image_name
+  }
 
   snapshot_name = "${ var.managed_image_name }"
   snapshot_labels = {
