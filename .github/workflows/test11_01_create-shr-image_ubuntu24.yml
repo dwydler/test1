@@ -108,7 +108,7 @@ jobs:
         
       - name: Delete temporary SSH Key on Hetzner Cloud
         run: |
-          sshkey_id=$(hcloud ssh-key list --output "columns=ID" --output "noheader" -l "server=ubuntu24-20250322.5")
+          sshkey_id=$(hcloud ssh-key list --output "columns=ID" --output "noheader" -l "$HCLOUD_NAME")
 
           if [ ! -z "$sshkey_id" ]; then
             hcloud ssh-key delete $sshkey_id
@@ -116,10 +116,11 @@ jobs:
           fi
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+          HCLOUD_NAME: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}
 
       - name: Delete Server on Hetzner Cloud
         run: |
-          server_id=$(hcloud server list --output "columns=ID" --output "noheader" -l "server=ubuntu24-20250322.5")
+          server_id=$(hcloud server list --output "columns=ID" --output "noheader" -l "$HCLOUD_NAME")
 
           if [ ! -z "$server_id" ]; then
             hcloud server delete $server_id
@@ -127,5 +128,5 @@ jobs:
           fi
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          
-          
+          HCLOUD_NAME: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}        
+  
