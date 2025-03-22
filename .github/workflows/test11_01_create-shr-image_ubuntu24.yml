@@ -132,11 +132,11 @@ jobs:
 #        run: |
 #          server_id=$(hcloud server list --output "columns=ID" --output "noheader" -l "server=$HCLOUD_NAME")
 #
-          if [ ! -z "$server_id" ]; then
-            hcloud server delete $server_id
-            echo "The server was succcessfully deleted."
-          fi
-        env:
-          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          HCLOUD_NAME: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}        
+#          if [ ! -z "$server_id" ]; then
+#            hcloud server delete $server_id
+#            echo "The server was succcessfully deleted."
+#          fi
+#        env:
+#          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+#          HCLOUD_NAME: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}        
   
