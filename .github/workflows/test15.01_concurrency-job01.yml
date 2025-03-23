@@ -9,9 +9,9 @@ concurrency:
 
   
 jobs:
-  Set-Variables:
+  Test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Assign ENV variable to workflow variable
+      - name: Waiting for 1 minute(s)
         run: sleep 1m &&  ls
