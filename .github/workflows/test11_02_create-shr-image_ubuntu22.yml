@@ -2,7 +2,8 @@ name: Test11.02 - Create SHR Image (Ubuntu 22)
 
 on:
   workflow_dispatch:
-
+  workflow_call:
+  
 env:
   os: "ubuntu22"
   
