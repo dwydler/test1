@@ -6,7 +6,16 @@ on:
       os:
         required: true
         type: string
-
+        
+   workflow_dispatch:
+     inputs:
+       os:
+         type: choice
+#         description: Who to greet
+         options: 
+           - ubuntu20
+           - ubuntu22
+           - ubuntu24
 env:
 #  os: 'ubuntu20'
 
