@@ -155,13 +155,16 @@ jobs:
           target_branch: master
           title: ${{ inputs.release_name }}
           body: ${{ steps.ubuntu2404readme.outputs.content }}
+          label: ${{ inputs.release_tag }}
 
-      - name: Auto Approve the pull request
+      - name: Merge the pull request
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
           PULL_REQUEST: ${{ steps.pullrequest.outputs.pr_number }}
-        
+          MERGE_LABELS: ${{ inputs.release_tag }}
+          UPDATE_LABELS: ${{ inputs.release_tag }}
+#             - name: Auto Approve the pull request        
         #if: github.actor == 'runner-images-hetzner-cloud'
   #      uses: hmarr/auto-approve-action@v4
   #      with:
@@ -176,3 +179,4 @@ jobs:
           name: ${{ inputs.release_name }}
           body: ${{ steps.ubuntu2404readme.outputs.content }}
           token: ${{ steps.generate-token.outputs.token }}
+        
