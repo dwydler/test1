@@ -146,7 +146,8 @@ jobs:
           branch: ${{ inputs.release_tag }}
           path: images/ubuntu/Ubuntu2404-Readme.md
 
-      - name: Run the Action
+      - name: Create pull request
+        id: pullrequest
         uses: devops-infra/action-pull-request@ff118b4a7c24bac5a3c95acef59e9edd1fc37890 # v0.6.0
         with:
           github_token: ${{ steps.generate-token.outputs.token }}
@@ -154,6 +155,13 @@ jobs:
           target_branch: master
           title: ${{ inputs.release_name }}
           body: ${{ steps.ubuntu2404readme.outputs.content }}
+
+      - name: Auto Approve the pull request
+        if: github.actor == "runner-images-hetzner-cloud"
+        uses: hmarr/auto-approve-action@v4
+        with:
+          github_token: ${{ steps.generate-token.outputs.token }}
+          pull-request-number: ${{ steps.pullrequest.outputs.pr_number }}
 
 
       - name: Create a new release
