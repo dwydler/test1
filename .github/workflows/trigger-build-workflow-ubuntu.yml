@@ -157,11 +157,16 @@ jobs:
           body: ${{ steps.ubuntu2404readme.outputs.content }}
 
       - name: Auto Approve the pull request
+        uses: "pascalgn/automerge-action@v0.16.4"
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+          PULL_REQUEST: ${{ steps.pullrequest.outputs.pr_number }}
+        
         #if: github.actor == 'runner-images-hetzner-cloud'
-        uses: hmarr/auto-approve-action@v4
-        with:
-          github_token: ${{ steps.generate-token.outputs.token }}
-          pull-request-number: ${{ steps.pullrequest.outputs.pr_number }}
+  #      uses: hmarr/auto-approve-action@v4
+  #      with:
+  #        github_token: ${{ steps.generate-token.outputs.token }}
+  #        pull-request-number: ${{ steps.pullrequest.outputs.pr_number }}
 
 
       - name: Create a new release
