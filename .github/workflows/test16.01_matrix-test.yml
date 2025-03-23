@@ -36,8 +36,11 @@ jobs:
       max-parallel: 1
       matrix:
         os: ['ubuntu20', 'ubuntu22', 'ubuntu24']
-    
+        image: ['ubuntu-20.04', 'ubuntu-22.04', 'ubuntu-24.04']
+
     uses: ./.github/workflows/test11_04_create-shr-image_ubuntuXX.yml
     with:
       os: ${{ matrix.os }}
+      image: ${{ matrix.image }}
+      location: "hel1"
     secrets: inherit
