@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: group-name
-  cancel-in-progress: false
+#  group: group-name
+#  cancel-in-progress: false
 
   
 jobs:
