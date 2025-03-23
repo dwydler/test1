@@ -32,4 +32,7 @@ jobs:
         os: ['test11_01_create-shr-image_ubuntu24', 'test11_02_create-shr-image_ubuntu22', 'test11_03_create-shr-image_ubuntu20']
     runs-on: ubuntu-latest
     steps:
-      - uses: "./.github/workflows/${{ matrix.os }}.yml"
+#      - uses: "./.github/workflows/${{ matrix.os }}.yml"
+      - name: Run matrix for ${{ matrix.os }}
+        run: |
+          echo "OS: ${{ matrix.os }}"
