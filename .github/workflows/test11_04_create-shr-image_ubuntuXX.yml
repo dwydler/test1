@@ -6,6 +6,12 @@ on:
       os:
         required: true
         type: string
+      image:
+        required: true
+        type: string
+      location:
+        required: true
+        type: string
         
    workflow_dispatch:
      inputs:
@@ -16,11 +22,17 @@ on:
            - ubuntu20
            - ubuntu22
            - ubuntu24
+       location:
+         type: choice
+#         description: Who to greet
+         options: 
+           - hel1
+           - fsn1
+           - nbg1
 env:
 #  os: 'ubuntu20'
-
-  hcloud_server_location: "hel1"
-  hcloud_server_image: "ubuntu-20.04"
+#  hcloud_server_location: "hel1"
+#  hcloud_server_image: "ubuntu-20.04"
   hcloud_server_type: "ccx13"
   
 jobs:
@@ -33,8 +45,8 @@ jobs:
         run: |
           echo "os=${{ inputs.os }}" >> $GITHUB_OUTPUT
 
-          echo "serverlocation=$hcloud_server_location" >> $GITHUB_OUTPUT
-          echo "serverimage=$hcloud_server_image" >> $GITHUB_OUTPUT
+          echo "serverlocation=${{ inputs.location }}" >> $GITHUB_OUTPUT
+          echo "serverimage=${{ inputs.image }}" >> $GITHUB_OUTPUT
           echo "servertype=$hcloud_server_type" >> $GITHUB_OUTPUT
 
       - name: Display Variable os
