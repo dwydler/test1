@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250323.1
+- Image Version: 20250323.2
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -37,7 +37,7 @@
 - Pip3 20.0.2
 - Pipx 1.7.1
 - RubyGems 3.1.2
-- Vcpkg (build from commit 670f6dddaa)
+- Vcpkg (build from commit a76b33254a)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -96,7 +96,7 @@ to accomplish this.
 - nvm 0.40.2
 - OpenSSL 1.1.1f-1ubuntu2.24
 - Packer 1.12.0
-- Parcel 2.14.1
+- Parcel 2.14.2
 - PhantomJS 2.1.1 2.1.1
 - Podman 3.4.2
 - Pulumi 3.157.0
