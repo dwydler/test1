@@ -3,20 +3,20 @@ name: Test16.01 - Matrix Test
 on:
   workflow_dispatch:
 
-jobs:
-  test:
-    name: Generate all Ubuntu Server Templates
+#jobs:
+#  test:
+#    name: Generate all Ubuntu Server Templates
         
-    strategy:
-      fail-fast: false
-      max-parallel: 1
-      matrix:
-        dockerfile: ['test11_01_create-shr-image_ubuntu24', 'test11_02_create-shr-image_ubuntu22', 'test11_03_create-shr-image_ubuntu20']
+#    strategy:
+#      fail-fast: false
+#      max-parallel: 1
+#      matrix:
+#        dockerfile: ['test11_01_create-shr-image_ubuntu24', 'test11_02_create-shr-image_ubuntu22', 'test11_03_create-shr-image_ubuntu20']#
 
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: ./.github/workflows/${{ matrix.dockerfile }}.yml
+#    runs-on: ubuntu-latest
+#    
+#    steps:
+#      - uses: ./.github/workflows/${{ matrix.dockerfile }}.yml
         
 #      - name: Build image
 #        uses: docker/build-push-action@v5
@@ -24,3 +24,12 @@ jobs:
 #          context: ${{ matrix.context }}
 #          dockerfile: ${{ matrix.dockerfile }}
 #          platforms: linux/amd64,linux/arm64        
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: ['test11_01_create-shr-image_ubuntu24', 'test11_02_create-shr-image_ubuntu22', 'test11_03_create-shr-image_ubuntu20']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/workflows/${{ matrix.os }}.yml
