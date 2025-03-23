@@ -14,9 +14,8 @@ jobs:
       matrix:
         dockerfile: ['test11_01_create-shr-image_ubuntu24.yml', 'test11_02_create-shr-image_ubuntu22.yml', 'test11_03_create-shr-image_ubuntu20.yml']
 
-    steps:
-      - name: "Test1"
-        uses: ./.github/workflows/${{ matrix.dockerfile }}
+  steps:
+    uses: ./.github/workflows/${{ matrix.dockerfile }}
         
 #      - name: Build image
 #        uses: docker/build-push-action@v5
