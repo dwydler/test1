@@ -29,11 +29,9 @@ jobs:
   test:
     strategy:
       matrix:
-        os: ['test11_01_create-shr-image_ubuntu24', 'test11_02_create-shr-image_ubuntu22', 'test11_03_create-shr-image_ubuntu20']
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run matrix for ${{ matrix.os }}
-        run: |
-          echo "OS: ${{ matrix.os }}"
-
-      - uses: "./.github/workflows/${{ matrix.os }}.yml"
+        os: ['ubuntu20', 'ubuntu22', 'ubuntu24']
+    
+    uses: ./.github/workflows/test11_04_create-shr-image_ubuntuXX.yml
+    with:
+      os: ${{ matrix.os }}
+    secrets: inherit
