@@ -1,0 +1,26 @@
+name: Test16.01 - Matrix Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Generate all Ubuntu Server Templates
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        dockerfile: ['test11_01_create-shr-image_ubuntu24.yml', 'test11_02_create-shr-image_ubuntu22.yml', 'test11_03_create-shr-image_ubuntu20.yml']
+
+    steps:
+      - name: "Test1"
+        uses: ./.github/workflows/${{ matrix.dockerfile }}
+        
+#      - name: Build image
+#        uses: docker/build-push-action@v5
+#        with:
+#          context: ${{ matrix.context }}
+#          dockerfile: ${{ matrix.dockerfile }}
+#          platforms: linux/amd64,linux/arm64        
