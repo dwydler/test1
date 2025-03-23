@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-134-generic
-- Image Version: 20250321.1
+- Image Version: 20250323.1
 - Systemd version: 249.11-0ubuntu3.12
 
 ## Installed Software
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.7.1
 - RubyGems 3.3.5
-- Vcpkg (build from commit 93c2011767)
+- Vcpkg (build from commit 670f6dddaa)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -101,7 +101,7 @@ to accomplish this.
 - Sphinx Open Source Search Server 2.2.11
 - SVN 1.14.1
 - Terraform 1.11.2
-- yamllint 1.36.2
+- yamllint 1.37.0
 - yq 4.45.1
 - zstd 1.5.7
 - Ninja 1.12.1
@@ -139,7 +139,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 ### Haskell Tools
 - Cabal 3.14.1.1
 - GHC 9.12.2
-- GHCup 0.1.40.0
+- GHCup 0.1.50.0
 - Stack 3.3.1
 
 ### Rust Tools
@@ -161,8 +161,8 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - ChromeDriver 134.0.6998.165
 - Chromium 134.0.6998.0
 - Microsoft Edge 134.0.3124.83
-- Microsoft Edge WebDriver 134.0.3124.68
-- Selenium server 4.29.0
+- Microsoft Edge WebDriver 134.0.3124.83
+- Selenium server 4.30.0
 - Mozilla Firefox 136.0.2
 - Geckodriver 0.36.0
 
