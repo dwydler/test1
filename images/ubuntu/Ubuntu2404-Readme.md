@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250322.3
+- Image Version: 20250323.4
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -91,7 +91,7 @@ to accomplish this.
 - Pulumi 3.157.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
-- yamllint 1.36.2
+- yamllint 1.37.0
 - yq 4.45.1
 - zstd 1.5.7
 - Ninja 1.12.1
@@ -124,7 +124,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 ### Haskell Tools
 - Cabal 3.14.1.1
 - GHC 9.12.2
-- GHCup 0.1.40.0
+- GHCup 0.1.50.0
 - Stack 3.3.1
 
 ### Rust Tools
@@ -141,7 +141,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - ChromeDriver 134.0.6998.165
 - Chromium 134.0.6998.0
 - Microsoft Edge 134.0.3124.83
-- Microsoft Edge WebDriver 134.0.3124.68
+- Microsoft Edge WebDriver 134.0.3124.83
 - Selenium server 4.30.0
 - Mozilla Firefox 136.0.2
 - Geckodriver 0.36.0
