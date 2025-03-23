@@ -1,11 +1,13 @@
 name: Test11.04 - Create SHR Image (Ubuntu XX)
 
 on:
-  workflow_call:
+   workflow_call:
     inputs:
       os:
+        required: true
+        type: string
 
-#env:
+env:
 #  os: 'ubuntu20'
 
   hcloud_server_location: "hel1"
