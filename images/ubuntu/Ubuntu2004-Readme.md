@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250323.2
+- Image Version: 20250324.2
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -29,7 +29,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.17.2
-- Homebrew 4.4.25
+- Homebrew 4.4.26
 - Miniconda 25.1.1
 - Npm 10.8.2
 - NuGet 6.6.1.2
@@ -37,7 +37,7 @@
 - Pip3 20.0.2
 - Pipx 1.7.1
 - RubyGems 3.1.2
-- Vcpkg (build from commit a76b33254a)
+- Vcpkg (build from commit b1d8051c92)
 - Yarn 1.22.22
 
 #### Environment variables
