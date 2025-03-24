@@ -108,7 +108,7 @@ jobs:
       hcloud_server_location: ${{ inputs.location }}
       hcloud_server_type: ${{ inputs.servertype }}
       
-      hcloud_name: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}
+      hcloud_name: ${{ needs.Trigger-CollectInformations.outputs.HCloudObjectName }}
       hcloud_server_image: ${{ needs.Trigger-CollectInformations.outputs.HCloudServerImage }}
       
     secrets: inherit
