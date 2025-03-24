@@ -15,9 +15,10 @@ on:
         value: ${{ jobs.Get-BasicInformations.outputs.HclFile }}
       ReleaseNo:
         value: ${{ jobs.Get-BasicInformations.outputs.ReleaseNo }}
-      HCloudName:
-        value: ${{ jobs.Get-BasicInformations.outputs.HCloudName }}
-
+      HCloudObjectName:
+        value: ${{ jobs.Get-BasicInformations.outputs.HCloudObjectName }}
+      HCloudServerImage:
+        value: ${{ jobs.Get-BasicInformations.outputs.HCloudServerImage }}
 
 jobs:
   Get-BasicInformations:
@@ -35,14 +36,17 @@ jobs:
           if [ "${{ inputs.os }}" == "ubuntu20" ]; then
             echo "osname=Ubuntu 20.04" >> $GITHUB_OUTPUT
             echo "packerfile=ubuntu-20.04.pkr.hcl" >> $GITHUB_OUTPUT
+            echo "osimage=ubuntu-20.04" >> $GITHUB_OUTPUT
             
           elif [ "${{ inputs.os }}" == "ubuntu22" ]; then
             echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
             echo "packerfile=ubuntu-22.04.pkr.hcl" >> $GITHUB_OUTPUT
+            echo "osimage=ubuntu-22.04" >> $GITHUB_OUTPUT
             
           elif [ "${{ inputs.os }}" == "ubuntu24" ]; then
             echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
             echo "packerfile=ubuntu-24.04.pkr.hcl" >> $GITHUB_OUTPUT
+            echo "osimage=ubuntu-24.04" >> $GITHUB_OUTPUT
             
           else
             exit 1
@@ -80,7 +84,8 @@ jobs:
       ReleaseTag: ${{ inputs.os }}/${{ steps.releasetagname.outputs.var }}
       HclFile:  ${{ steps.os.outputs.packerfile }}
       ReleaseNo: ${{ steps.releasetagname.outputs.var }}
-      HCloudName: ${{ inputs.os }}-${{ steps.releasetagname.outputs.var }}
+      HCloudObjectName: ${{ inputs.os }}-${{ steps.releasetagname.outputs.var }}
+      HCloudServerImage: ${{ steps.os.outputs.osimage }}
 
 
   Output-DebugInformations:
@@ -100,6 +105,8 @@ jobs:
       - name: Write Release name
         run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseNo }}"
 
-      - name: Write Hetzner Name (Server, Snapshot, Labels,etc.)
+      - name: Display Hetzner Object Name (Server, Snapshot, Labels,etc.)
+        run: echo "${{ needs.Get-BasicInformations.outputs.HCloudObjectName }}"
+
+      - name:  Display Hetzner Sever Image name
         run: echo "${{ needs.Get-BasicInformations.outputs.HCloudName }}"
-      
