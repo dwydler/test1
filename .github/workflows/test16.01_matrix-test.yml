@@ -41,5 +41,5 @@ jobs:
     with:
       os: ${{ matrix.os }}
       location: "hel1"
-      servertype: "cxx13"
+      servertype: "ccx13"
     secrets: inherit
