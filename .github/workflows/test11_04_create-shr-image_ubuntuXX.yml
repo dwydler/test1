@@ -6,9 +6,9 @@ on:
       os:
         required: true
         type: string
-      image:
-        required: true
-        type: string
+#      image:
+#        required: true
+#        type: string
       location:
         required: true
         type: string
