@@ -109,4 +109,4 @@ jobs:
         run: echo "${{ needs.Get-BasicInformations.outputs.HCloudObjectName }}"
 
       - name:  Display Hetzner Sever Image name
-        run: echo "${{ needs.Get-BasicInformations.outputs.HCloudName }}"
+        run: echo "${{ needs.Get-BasicInformations.outputs.HCloudServerImage }}"
