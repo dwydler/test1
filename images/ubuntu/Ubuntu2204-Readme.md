@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-134-generic
-- Image Version: 20250324.2
+- Image Version: 20250324.1
 - Systemd version: 249.11-0ubuntu3.12
 
 ## Installed Software
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.7.1
 - RubyGems 3.3.5
-- Vcpkg (build from commit e4e0ab6b59)
+- Vcpkg (build from commit 5e61fbe0fe)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -65,7 +65,7 @@ to accomplish this.
 - AzCopy 10.28.0 - available by `azcopy` and `azcopy10` aliases
 - Bazel 8.1.1
 - Bazelisk 1.25.0
-- Bicep 0.34.1
+- Bicep 0.34.44
 - Buildah 1.23.1
 - CMake 3.31.6
 - CodeQL Action Bundle 2.20.1
@@ -108,7 +108,7 @@ to accomplish this.
 
 ### CLI Tools
 - Alibaba Cloud CLI 3.0.260
-- AWS CLI 2.25.1
+- AWS CLI 2.25.2
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.135.0
 - Azure CLI 2.70.0
@@ -160,7 +160,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Google Chrome 134.0.6998.165
 - ChromeDriver 134.0.6998.165
 - Chromium 134.0.6998.0
-- Microsoft Edge 134.0.3124.83
+- Microsoft Edge 134.0.3124.85
 - Microsoft Edge WebDriver 134.0.3124.83
 - Selenium server 4.30.0
 - Mozilla Firefox 136.0.2
@@ -281,7 +281,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | alpine:3.19          | sha256:e5d0aea7f7d2954678a9a6269ca2d06e06591881161961ea59e974dff3f12377  | 2025-02-14 |
 | debian:10            | sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225  | 2024-06-13 |
 | debian:11            | sha256:5c028c19adaab78491711830600749729a8276b9839416716d5d7339ec3d7216  | 2025-03-17 |
-| moby/buildkit:latest | sha256:c5137fdd77377ea102a2622714df55459fe42e5867ba180bda07291aa7952d9b  | 2025-03-05 |
+| moby/buildkit:latest | sha256:c457984bd29f04d6acc90c8d9e717afe3922ae14665f3187e0096976fe37b1c8  | 2025-03-24 |
 | node:18              | sha256:7f6bcd8e08a1f81bfbb29f5948de5c5507624788ddb50cadb94ddd439426b7c4  | 2025-02-20 |
 | node:18-alpine       | sha256:e0340f26173b41066d68e3fe9bfbdb6571ab3cad0a4272919a52e36f4ae56925  | 2025-02-20 |
 | node:20              | sha256:735b1ba7e4550c415f98568efbf527e3f75828ac4f10692e490ca78e11d89f6e  | 2025-03-13 |
