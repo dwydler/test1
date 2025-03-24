@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-134-generic
-- Image Version: 20250323.1
+- Image Version: 20250324.2
 - Systemd version: 249.11-0ubuntu3.12
 
 ## Installed Software
@@ -27,7 +27,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.17.2
-- Homebrew 4.4.25
+- Homebrew 4.4.26
 - Miniconda 25.1.1
 - Npm 10.8.2
 - NuGet 6.6.1.2
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.7.1
 - RubyGems 3.3.5
-- Vcpkg (build from commit 670f6dddaa)
+- Vcpkg (build from commit e4e0ab6b59)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -93,7 +93,7 @@ to accomplish this.
 - nvm 0.40.2
 - OpenSSL 3.0.2-0ubuntu1.19
 - Packer 1.12.0
-- Parcel 2.14.1
+- Parcel 2.14.2
 - Podman 3.4.4
 - Pulumi 3.157.0
 - R 4.4.3
