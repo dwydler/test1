@@ -128,7 +128,7 @@ jobs:
     uses: ./.github/workflows/test11_09_trigger-cleanup-onfailure.yml
     with:
       ReleaseTag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
-      HCloudObjectName: ${{ needs.Trigger-CollectInformations.outputs.HCloudName }}
+      HCloudObjectName: ${{ needs.Trigger-CollectInformations.outputs.HCloudObjectName  }}
 
     secrets: inherit      
     
