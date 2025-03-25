@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250324.2
+- Image Version: 20250325.1
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -32,7 +32,7 @@
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit b1d8051c92)
+- Vcpkg (build from commit 21816e0df9)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -60,7 +60,7 @@ to accomplish this.
 - AzCopy 10.28.0 - available by `azcopy` and `azcopy10` aliases
 - Bazel 8.1.1
 - Bazelisk 1.25.0
-- Bicep 0.34.1
+- Bicep 0.34.44
 - Buildah 1.33.7
 - CMake 3.31.6
 - CodeQL Action Bundle 2.20.1
@@ -88,7 +88,7 @@ to accomplish this.
 - Packer 1.12.0
 - Parcel 2.14.2
 - Podman 4.9.3
-- Pulumi 3.157.0
+- Pulumi 3.158.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.37.0
@@ -97,13 +97,13 @@ to accomplish this.
 - Ninja 1.12.1
 
 ### CLI Tools
-- AWS CLI 2.25.1
+- AWS CLI 2.25.2
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.135.0
 - Azure CLI 2.70.0
 - Azure CLI (azure-devops) 1.0.1
 - GitHub CLI 2.69.0
-- Google Cloud CLI 515.0.0
+- Google Cloud CLI 516.0.0
 
 ### Java
 | Version             | Environment Variable |
@@ -124,7 +124,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 ### Haskell Tools
 - Cabal 3.14.1.1
 - GHC 9.12.2
-- GHCup 0.1.50.0
+- GHCup 0.1.50.1
 - Stack 3.3.1
 
 ### Rust Tools
@@ -140,8 +140,8 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Google Chrome 134.0.6998.165
 - ChromeDriver 134.0.6998.165
 - Chromium 134.0.6998.0
-- Microsoft Edge 134.0.3124.83
-- Microsoft Edge WebDriver 134.0.3124.83
+- Microsoft Edge 134.0.3124.85
+- Microsoft Edge WebDriver 134.0.3124.85
 - Selenium server 4.30.0
 - Mozilla Firefox 136.0.2
 - Geckodriver 0.36.0
