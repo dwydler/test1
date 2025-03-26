@@ -15,7 +15,7 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20250326.1"
+      "Version": "20250326.2"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -276,7 +276,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AzCopy",
-              "Version": "10.28.0 - available by `azcopy` and `azcopy10` aliases"
+              "Version": "10.28.1 - available by `azcopy` and `azcopy10` aliases"
             },
             {
               "NodeType": "ToolVersionNode",
