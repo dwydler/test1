@@ -130,5 +130,19 @@ jobs:
       ReleaseTag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
       HCloudObjectName: ${{ needs.Trigger-CollectInformations.outputs.HCloudObjectName  }}
 
-    secrets: inherit      
+    secrets: inherit 
+
     
+  Wait-CleanupOnSuccess:
+    if: ${{ success() }}
+
+    needs:
+      - Set-Variables
+      - Trigger-CollectInformations
+      - Trigger-ImageBuilder
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display Variable os
+        run: sleep 60
