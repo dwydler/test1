@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-134-generic
-- Image Version: 20250325.1
+- Image Version: 20250326.1
 - Systemd version: 249.11-0ubuntu3.12
 
 ## Installed Software
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.7.1
 - RubyGems 3.3.5
-- Vcpkg (build from commit 21816e0df9)
+- Vcpkg (build from commit d172727ef0)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -100,15 +100,15 @@ to accomplish this.
 - Skopeo 1.4.1
 - Sphinx Open Source Search Server 2.2.11
 - SVN 1.14.1
-- Terraform 1.11.2
+- Terraform 1.11.3
 - yamllint 1.37.0
 - yq 4.45.1
 - zstd 1.5.7
 - Ninja 1.12.1
 
 ### CLI Tools
-- Alibaba Cloud CLI 3.0.260
-- AWS CLI 2.25.2
+- Alibaba Cloud CLI 3.0.262
+- AWS CLI 2.25.3
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.135.0
 - Azure CLI 2.70.0
@@ -229,8 +229,8 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 3.10.16 [PyPy 7.3.19]
 
 #### Ruby
-- 3.1.6
-- 3.2.7
+- 3.1.7
+- 3.2.8
 - 3.3.7
 
 ### PowerShell Tools

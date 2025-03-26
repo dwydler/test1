@@ -15,7 +15,7 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20250325.1"
+      "Version": "20250326.1"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -199,7 +199,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Vcpkg",
-              "Version": "(build from commit 21816e0df9)"
+              "Version": "(build from commit d172727ef0)"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -466,7 +466,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Terraform",
-              "Version": "1.11.2"
+              "Version": "1.11.3"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -497,12 +497,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Alibaba Cloud CLI",
-              "Version": "3.0.260"
+              "Version": "3.0.262"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.25.2"
+              "Version": "2.25.3"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -882,8 +882,8 @@
               "NodeType": "ToolVersionsListNode",
               "ToolName": "Ruby",
               "Versions": [
-                "3.1.6",
-                "3.2.7",
+                "3.1.7",
+                "3.2.8",
                 "3.3.7"
               ],
               "MajorVersionRegex": "^\\d+\\.\\d+",
