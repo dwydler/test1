@@ -14,7 +14,11 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          
+
+      - name: Get Branch
+        id: branch
+        run: echo "git_branch=${GITHUB_REF#refs/heads/}"
+      
       - name: Create a new branch
         uses: peterjgrainger/action-create-branch@10c7d268152480ae859347db45dc69086cef1d9c # v3.0.0
         env:
