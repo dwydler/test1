@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250325.2
+- Image Version: 20250326.3
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -32,7 +32,7 @@
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit 21816e0df9)
+- Vcpkg (build from commit d172727ef0)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -56,8 +56,8 @@ to accomplish this.
 - Maven 3.9.9
 
 ### Tools
-- Ansible 2.18.3
-- AzCopy 10.28.0 - available by `azcopy` and `azcopy10` aliases
+- Ansible 2.18.4
+- AzCopy 10.28.1 - available by `azcopy` and `azcopy10` aliases
 - Bazel 8.1.1
 - Bazelisk 1.25.0
 - Bicep 0.34.44
@@ -97,7 +97,7 @@ to accomplish this.
 - Ninja 1.12.1
 
 ### CLI Tools
-- AWS CLI 2.25.2
+- AWS CLI 2.25.4
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.135.0
 - Azure CLI 2.70.0
@@ -202,7 +202,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 3.10.16 [PyPy 7.3.19]
 
 #### Ruby
-- 3.2.7
+- 3.2.8
 - 3.3.7
 
 ### PowerShell Tools
