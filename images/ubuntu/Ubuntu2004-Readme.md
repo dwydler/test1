@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250324.1
+- Image Version: 20250326.1
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -37,7 +37,7 @@
 - Pip3 20.0.2
 - Pipx 1.7.1
 - RubyGems 3.1.2
-- Vcpkg (build from commit 5e61fbe0fe)
+- Vcpkg (build from commit d172727ef0)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -64,10 +64,10 @@ to accomplish this.
 ### Tools
 - Ansible 2.13.13
 - apt-fast 1.10.0
-- AzCopy 10.28.0 - available by `azcopy` and `azcopy10` aliases
+- AzCopy 10.28.1 - available by `azcopy` and `azcopy10` aliases
 - Bazel 8.1.1
 - Bazelisk 1.25.0
-- Bicep 0.34.1
+- Bicep 0.34.44
 - Buildah 1.22.3
 - CMake 3.31.6
 - CodeQL Action Bundle 2.20.1
@@ -99,12 +99,12 @@ to accomplish this.
 - Parcel 2.14.2
 - PhantomJS 2.1.1 2.1.1
 - Podman 3.4.2
-- Pulumi 3.157.0
+- Pulumi 3.158.0
 - R 4.4.3
 - Skopeo 1.5.0
 - Sphinx Open Source Search Server 2.2.11
 - SVN 1.13.0
-- Terraform 1.11.2
+- Terraform 1.11.3
 - yamllint 1.35.1
 - yq 4.45.1
 - zstd 1.5.7
@@ -112,13 +112,13 @@ to accomplish this.
 
 ### CLI Tools
 - Alibaba Cloud CLI 3.0.174
-- AWS CLI 2.25.1
+- AWS CLI 2.25.3
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.135.0
 - Azure CLI 2.70.0
 - Azure CLI (azure-devops) 1.0.1
 - GitHub CLI 2.69.0
-- Google Cloud CLI 515.0.0
+- Google Cloud CLI 516.0.0
 - Netlify CLI 19.0.3
 - OpenShift CLI 4.15.19
 - ORAS CLI 1.2.2
@@ -143,7 +143,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 ### Haskell Tools
 - Cabal 3.14.1.1
 - GHC 9.12.2
-- GHCup 0.1.50.0
+- GHCup 0.1.50.1
 - Stack 3.3.1
 
 ### Rust Tools
@@ -165,7 +165,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - ChromeDriver 134.0.6998.165
 - Chromium 134.0.6998.0
 - Microsoft Edge 134.0.3124.85
-- Microsoft Edge WebDriver 134.0.3124.83
+- Microsoft Edge WebDriver 134.0.3124.85
 - Selenium server 4.30.0
 - Mozilla Firefox 136.0.2
 - Geckodriver 0.36.0
@@ -237,8 +237,8 @@ Use the following command as a part of your job to start the service: 'sudo syst
 
 #### Ruby
 - 3.0.7
-- 3.1.6
-- 3.2.7
+- 3.1.7
+- 3.2.8
 - 3.3.7
 
 ### PowerShell Tools
