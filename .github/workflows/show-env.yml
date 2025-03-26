@@ -15,4 +15,8 @@ jobs:
 
           
       - name: Is variable exported?
-        run: git checkout -b develop
+        run: |
+          git checkout -b MY_NEW_BRANCH_NAME origin/master
+          git push -u origin MY_NEW_BRANCH_NAME
+
+        
