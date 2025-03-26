@@ -9,5 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Is variable exported?
-        run: |
-          echo "${{ env.somevar }}"
+        run: git checkout -b develop
