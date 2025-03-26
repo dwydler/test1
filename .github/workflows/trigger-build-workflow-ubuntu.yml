@@ -141,7 +141,7 @@ jobs:
           fetch-depth: '0'
           ref: ${{ inputs.release_tag }}
 
-      - name: Read ubuntu2404-Readme.md
+      - name: Save file ${{ inputs.readme_file }} in variable
         id: readme
         uses: jaywcjlove/github-action-read-file@546dbc91f1187996f2ef0f5a199a9a4af05a978b # v2.0.0
         with:
