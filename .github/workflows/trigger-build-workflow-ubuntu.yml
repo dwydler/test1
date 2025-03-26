@@ -109,7 +109,12 @@ jobs:
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
           IMAGE_VERSION: ${{ inputs.release_no }}
           
+      - name: Remove File
+        uses: JesseTG/rm@94440f309afcc4c37e6bf63eb0feca9e94dee5a3 # v1.0.0
+        with:
+          path: images/ubuntu/software-report.json
 
+      
       - name: Commit & Push changes
         uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # v1.5
         with:
