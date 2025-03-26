@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250326.1
+- Image Version: 20250326.2
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -112,7 +112,7 @@ to accomplish this.
 
 ### CLI Tools
 - Alibaba Cloud CLI 3.0.174
-- AWS CLI 2.25.3
+- AWS CLI 2.25.4
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.135.0
 - Azure CLI 2.70.0
