@@ -26,7 +26,7 @@ on:
 #          platforms: linux/amd64,linux/arm64        
 
 jobs:
-  test:
+  Job:
     permissions:
       contents: write
       pull-requests: write
