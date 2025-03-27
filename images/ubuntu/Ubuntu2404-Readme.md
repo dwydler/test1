@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250326.3
+- Image Version: 20250327.1
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -32,7 +32,7 @@
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit d172727ef0)
+- Vcpkg (build from commit c63619856b)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -62,7 +62,7 @@ to accomplish this.
 - Bazelisk 1.25.0
 - Bicep 0.34.44
 - Buildah 1.33.7
-- CMake 3.31.6
+- CMake 4.0.0
 - CodeQL Action Bundle 2.20.1
 - Docker Amazon ECR Credential Helper 0.9.1
 - Docker Compose v2 2.27.1
@@ -88,7 +88,7 @@ to accomplish this.
 - Packer 1.12.0
 - Parcel 2.14.2
 - Podman 4.9.3
-- Pulumi 3.158.0
+- Pulumi 3.159.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.37.0
@@ -285,7 +285,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | mercurial              | 6.7.2-1ubuntu2.2            |
 | net-tools              | 2.10-0.1ubuntu4             |
 | netcat                 | 1.226-1ubuntu2              |
-| openssh-client         | 1:9.6p1-3ubuntu13.8         |
+| openssh-client         | 1:9.6p1-3ubuntu13.9         |
 | p7zip-full             | 16.02+transitional.1        |
 | p7zip-rar              | 16.02+transitional.1        |
 | parallel               | 20231122+ds-1               |
@@ -299,7 +299,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | shellcheck             | 0.9.0-1                     |
 | sphinxsearch           | 2.2.11-8build1              |
 | sqlite3                | 3.45.1-1ubuntu2.1           |
-| ssh                    | 1:9.6p1-3ubuntu13.8         |
+| ssh                    | 1:9.6p1-3ubuntu13.9         |
 | sshpass                | 1.09-1                      |
 | sudo                   | 1.9.15p5-3ubuntu5           |
 | swig                   | 4.2.0-2ubuntu1              |
@@ -310,7 +310,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | time                   | 1.9-0.2build1               |
 | tk                     | 8.6.14build1                |
 | tree                   | 2.1.1-2ubuntu3              |
-| tzdata                 | 2024b-0ubuntu0.24.04.1      |
+| tzdata                 | 2025a-0ubuntu0.24.04        |
 | unzip                  | 6.0-28ubuntu4.1             |
 | upx                    | 4.2.2-3                     |
 | wget                   | 1.21.4-1ubuntu4.1           |
