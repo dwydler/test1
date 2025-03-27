@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250327.1
+- Image Version: 20250327.2
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -97,9 +97,9 @@ to accomplish this.
 - Ninja 1.12.1
 
 ### CLI Tools
-- AWS CLI 2.25.4
+- AWS CLI 2.25.5
 - AWS CLI Session Manager Plugin 1.2.707.0
-- AWS SAM CLI 1.135.0
+- AWS SAM CLI 1.136.0
 - Azure CLI 2.70.0
 - Azure CLI (azure-devops) 1.0.1
 - GitHub CLI 2.69.0
@@ -140,8 +140,8 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Google Chrome 134.0.6998.165
 - ChromeDriver 134.0.6998.165
 - Chromium 134.0.6998.0
-- Microsoft Edge 134.0.3124.85
-- Microsoft Edge WebDriver 134.0.3124.85
+- Microsoft Edge 134.0.3124.95
+- Microsoft Edge WebDriver 134.0.3124.95
 - Selenium server 4.30.0
 - Mozilla Firefox 136.0.2
 - Geckodriver 0.36.0
@@ -221,17 +221,17 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | nginx   | 1.24.0  | /etc/nginx/nginx.conf     | inactive      | 80         |
 
 ### Android
-| Package Name               | Version                                                                                                                                                                                                                                                         |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Android Command Line Tools | 12.0                                                                                                                                                                                                                                                            |
-| Android SDK Build-tools    | 36.0.0<br>35.0.0 35.0.1<br>34.0.0                                                                                                                                                                                                                               |
-| Android SDK Platform-Tools | 35.0.2                                                                                                                                                                                                                                                          |
-| Android SDK Platforms      | android-36 (rev 1)<br>android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3)<br>android-33-ext5 (rev 1)<br>android-33-ext4 (rev 1) |
-| Android Support Repository | 47.0.0                                                                                                                                                                                                                                                          |
-| CMake                      | 3.31.5                                                                                                                                                                                                                                                          |
-| Google Play services       | 49                                                                                                                                                                                                                                                              |
-| Google Repository          | 58                                                                                                                                                                                                                                                              |
-| NDK                        | 26.3.11579264<br>27.2.12479018 (default)<br>28.0.13004108                                                                                                                                                                                                       |
+| Package Name               | Version                                                                                                                                                                                                                                                                                     |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Android Command Line Tools | 12.0                                                                                                                                                                                                                                                                                        |
+| Android SDK Build-tools    | 36.0.0<br>35.0.0 35.0.1<br>34.0.0                                                                                                                                                                                                                                                           |
+| Android SDK Platform-Tools | 35.0.2                                                                                                                                                                                                                                                                                      |
+| Android SDK Platforms      | android-36 (rev 1)<br>android-35-ext15 (rev 1)<br>android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3)<br>android-33-ext5 (rev 1)<br>android-33-ext4 (rev 1) |
+| Android Support Repository | 47.0.0                                                                                                                                                                                                                                                                                      |
+| CMake                      | 3.31.5                                                                                                                                                                                                                                                                                      |
+| Google Play services       | 49                                                                                                                                                                                                                                                                                          |
+| Google Repository          | 58                                                                                                                                                                                                                                                                                          |
+| NDK                        | 26.3.11579264<br>27.2.12479018 (default)<br>28.0.13004108                                                                                                                                                                                                                                   |
 
 #### Environment variables
 | Name                    | Value                                        |
