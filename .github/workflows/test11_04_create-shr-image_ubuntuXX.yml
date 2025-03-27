@@ -134,16 +134,16 @@ jobs:
     secrets: inherit 
 
     
-  Wait-CleanupOnSuccess:
-    if: ${{ success() }}
+#  Wait-CleanupOnSuccess:
+#    if: ${{ success() }}
 
-    needs:
-      - Set-Variables
-      - Trigger-CollectInformations
-      - Trigger-ImageBuilder
+#    needs:
+#      - Set-Variables
+#      - Trigger-CollectInformations
+#      - Trigger-ImageBuilder
 
-    runs-on: ubuntu-latest
+#    runs-on: ubuntu-latest
 
-    steps:
-      - name: Display Variable os
-        run: sleep 60
+#    steps:
+#      - name: Display Variable os
+#        run: sleep 60
