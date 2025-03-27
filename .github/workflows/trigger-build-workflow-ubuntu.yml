@@ -110,7 +110,7 @@ jobs:
           IMAGE_VERSION: ${{ inputs.release_no }}
           
       - name: Remove File
-        uses: JesseTG/rm@94440f309afcc4c37e6bf63eb0feca9e94dee5a3 # v1.0.0
+        uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
         with:
           path: images/ubuntu/software-report.json
 
