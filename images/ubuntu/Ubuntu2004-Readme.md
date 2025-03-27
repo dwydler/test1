@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250326.2
+- Image Version: 20250327.1
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -20,7 +20,7 @@
 - Kotlin 2.1.10-release-473
 - Mono 6.12.0.200
 - MSBuild 16.10.1.31701 (Mono 6.12.0.200)
-- Node.js 18.20.7
+- Node.js 18.20.8
 - Perl 5.30.0
 - Python 3.8.10
 - Ruby 2.7.0p0
@@ -37,7 +37,7 @@
 - Pip3 20.0.2
 - Pipx 1.7.1
 - RubyGems 3.1.2
-- Vcpkg (build from commit d172727ef0)
+- Vcpkg (build from commit 2c519763ac)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -99,7 +99,7 @@ to accomplish this.
 - Parcel 2.14.2
 - PhantomJS 2.1.1 2.1.1
 - Podman 3.4.2
-- Pulumi 3.158.0
+- Pulumi 3.159.0
 - R 4.4.3
 - Skopeo 1.5.0
 - Sphinx Open Source Search Server 2.2.11
@@ -119,7 +119,7 @@ to accomplish this.
 - Azure CLI (azure-devops) 1.0.1
 - GitHub CLI 2.69.0
 - Google Cloud CLI 516.0.0
-- Netlify CLI 19.0.3
+- Netlify CLI 19.1.3
 - OpenShift CLI 4.15.19
 - ORAS CLI 1.2.2
 - Vercel CLI 41.4.1
@@ -292,8 +292,8 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | debian:11            | sha256:5c028c19adaab78491711830600749729a8276b9839416716d5d7339ec3d7216  | 2025-03-17 |
 | debian:9             | sha256:c5c5200ff1e9c73ffbf188b4a67eb1c91531b644856b4aefe86a58d2f0cb05be  | 2022-06-23 |
 | moby/buildkit:latest | sha256:c457984bd29f04d6acc90c8d9e717afe3922ae14665f3187e0096976fe37b1c8  | 2025-03-24 |
-| node:18              | sha256:7f6bcd8e08a1f81bfbb29f5948de5c5507624788ddb50cadb94ddd439426b7c4  | 2025-02-20 |
-| node:18-alpine       | sha256:e0340f26173b41066d68e3fe9bfbdb6571ab3cad0a4272919a52e36f4ae56925  | 2025-02-20 |
+| node:18              | sha256:84e5da8fe3937f84a1134e5db48d345f0ef44ea4a0c3af1d8f6d60ed3202ba15  | 2025-03-27 |
+| node:18-alpine       | sha256:618ef8de6e428830bfc652b4c1fbbfb86c861b3edf1a40bf1c20b9a237c49c27  | 2025-03-27 |
 | node:20              | sha256:735b1ba7e4550c415f98568efbf527e3f75828ac4f10692e490ca78e11d89f6e  | 2025-03-13 |
 | node:20-alpine       | sha256:8bda036ddd59ea51a23bc1a1035d3b5c614e72c01366d989f4120e8adca196d4  | 2025-03-13 |
 | node:22              | sha256:c7fd844945a76eeaa83cb372e4d289b4a30b478a1c80e16c685b62c54156285b  | 2025-02-13 |
@@ -383,7 +383,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | texinfo                | 6.7.0.dfsg.2-5                    |
 | time                   | 1.7-25.1build1                    |
 | tk                     | 8.6.9+1                           |
-| tzdata                 | 2024b-0ubuntu0.20.04.1            |
+| tzdata                 | 2025a-0ubuntu0.20.04              |
 | unzip                  | 6.0-25ubuntu1.2                   |
 | upx                    | 3.95-2build1                      |
 | wget                   | 1.20.3-1ubuntu2.1                 |
