@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-134-generic
-- Image Version: 20250326.2
+- Image Version: 20250327.1
 - Systemd version: 249.11-0ubuntu3.12
 
 ## Installed Software
@@ -18,7 +18,7 @@
 - Kotlin 2.1.10-release-473
 - Mono 6.12.0.200
 - MSBuild 16.10.1.31701 (Mono 6.12.0.200)
-- Node.js 18.20.7
+- Node.js 18.20.8
 - Perl 5.34.0
 - Python 3.10.12
 - Ruby 3.0.2p107
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.7.1
 - RubyGems 3.3.5
-- Vcpkg (build from commit d172727ef0)
+- Vcpkg (build from commit c63619856b)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -95,7 +95,7 @@ to accomplish this.
 - Packer 1.12.0
 - Parcel 2.14.2
 - Podman 3.4.4
-- Pulumi 3.158.0
+- Pulumi 3.159.0
 - R 4.4.3
 - Skopeo 1.4.1
 - Sphinx Open Source Search Server 2.2.11
@@ -107,15 +107,15 @@ to accomplish this.
 - Ninja 1.12.1
 
 ### CLI Tools
-- Alibaba Cloud CLI 3.0.262
-- AWS CLI 2.25.3
+- Alibaba Cloud CLI 3.0.264
+- AWS CLI 2.25.4
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.135.0
 - Azure CLI 2.70.0
 - Azure CLI (azure-devops) 1.0.1
 - GitHub CLI 2.69.0
 - Google Cloud CLI 516.0.0
-- Netlify CLI 19.0.3
+- Netlify CLI 19.1.3
 - OpenShift CLI 4.18.6
 - ORAS CLI 1.2.2
 - Vercel CLI 41.4.1
@@ -282,8 +282,8 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | debian:10            | sha256:58ce6f1271ae1c8a2006ff7d3e54e9874d839f573d8009c20154ad0f2fb0a225  | 2024-06-13 |
 | debian:11            | sha256:5c028c19adaab78491711830600749729a8276b9839416716d5d7339ec3d7216  | 2025-03-17 |
 | moby/buildkit:latest | sha256:c457984bd29f04d6acc90c8d9e717afe3922ae14665f3187e0096976fe37b1c8  | 2025-03-24 |
-| node:18              | sha256:7f6bcd8e08a1f81bfbb29f5948de5c5507624788ddb50cadb94ddd439426b7c4  | 2025-02-20 |
-| node:18-alpine       | sha256:e0340f26173b41066d68e3fe9bfbdb6571ab3cad0a4272919a52e36f4ae56925  | 2025-02-20 |
+| node:18              | sha256:84e5da8fe3937f84a1134e5db48d345f0ef44ea4a0c3af1d8f6d60ed3202ba15  | 2025-03-27 |
+| node:18-alpine       | sha256:618ef8de6e428830bfc652b4c1fbbfb86c861b3edf1a40bf1c20b9a237c49c27  | 2025-03-27 |
 | node:20              | sha256:735b1ba7e4550c415f98568efbf527e3f75828ac4f10692e490ca78e11d89f6e  | 2025-03-13 |
 | node:20-alpine       | sha256:8bda036ddd59ea51a23bc1a1035d3b5c614e72c01366d989f4120e8adca196d4  | 2025-03-13 |
 | node:22              | sha256:c7fd844945a76eeaa83cb372e4d289b4a30b478a1c80e16c685b62c54156285b  | 2025-02-13 |
@@ -376,7 +376,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | texinfo                | 6.8-4build1                         |
 | time                   | 1.9-0.1build2                       |
 | tk                     | 8.6.11+1build2                      |
-| tzdata                 | 2024b-0ubuntu0.22.04.1              |
+| tzdata                 | 2025a-0ubuntu0.22.04                |
 | unzip                  | 6.0-26ubuntu3.2                     |
 | upx                    | 3.96-3                              |
 | wget                   | 1.21.2-2ubuntu1.1                   |
