@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250327.2
+- Image Version: 20250328.1
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -32,7 +32,7 @@
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit c63619856b)
+- Vcpkg (build from commit e2e3f654bc)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -97,7 +97,7 @@ to accomplish this.
 - Ninja 1.12.1
 
 ### CLI Tools
-- AWS CLI 2.25.5
+- AWS CLI 2.25.6
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.136.0
 - Azure CLI 2.70.0
@@ -143,7 +143,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Microsoft Edge 134.0.3124.95
 - Microsoft Edge WebDriver 134.0.3124.95
 - Selenium server 4.30.0
-- Mozilla Firefox 136.0.2
+- Mozilla Firefox 136.0.4
 - Geckodriver 0.36.0
 
 #### Environment variables
@@ -186,7 +186,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 1.23.7
 
 #### Node.js
-- 18.20.7
+- 18.20.8
 - 20.19.0
 - 22.14.0
 
