@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250327.2
+- Image Version: 20250328.1
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -37,7 +37,7 @@
 - Pip3 20.0.2
 - Pipx 1.7.1
 - RubyGems 3.1.2
-- Vcpkg (build from commit c63619856b)
+- Vcpkg (build from commit e2e3f654bc)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -114,7 +114,7 @@ to accomplish this.
 - Alibaba Cloud CLI 3.0.174
 - AWS CLI 2.25.5
 - AWS CLI Session Manager Plugin 1.2.707.0
-- AWS SAM CLI 1.135.0
+- AWS SAM CLI 1.136.0
 - Azure CLI 2.70.0
 - Azure CLI (azure-devops) 1.0.1
 - GitHub CLI 2.69.0
@@ -165,9 +165,9 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - ChromeDriver 134.0.6998.165
 - Chromium 134.0.6998.0
 - Microsoft Edge 134.0.3124.95
-- Microsoft Edge WebDriver 134.0.3124.85
+- Microsoft Edge WebDriver 134.0.3124.95
 - Selenium server 4.30.0
-- Mozilla Firefox 136.0.2
+- Mozilla Firefox 136.0.4
 - Geckodriver 0.36.0
 
 #### Environment variables
@@ -215,7 +215,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 1.23.7
 
 #### Node.js
-- 18.20.7
+- 18.20.8
 - 20.19.0
 - 22.14.0
 
