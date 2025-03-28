@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250328.1
+- Image Version: 20250328.2
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -32,7 +32,7 @@
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit e2e3f654bc)
+- Vcpkg (build from commit 7354f1c8a0)
 - Yarn 1.22.22
 
 #### Environment variables
