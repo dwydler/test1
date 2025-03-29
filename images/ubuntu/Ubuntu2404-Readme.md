@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250328.2
+- Image Version: 20250329.1
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -32,7 +32,7 @@
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit 7354f1c8a0)
+- Vcpkg (build from commit acd5bba5aa)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -86,7 +86,7 @@ to accomplish this.
 - nvm 0.40.2
 - OpenSSL 3.0.13-0ubuntu3.5
 - Packer 1.12.0
-- Parcel 2.14.2
+- Parcel 2.14.3
 - Podman 4.9.3
 - Pulumi 3.159.0
 - Skopeo 1.13.3
