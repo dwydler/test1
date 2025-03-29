@@ -108,7 +108,7 @@ jobs:
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
           IMAGE_VERSION: ${{ inputs.release_no }}
-          PACKER_LOG: "1"
+          PACKER_LOG: ${{ vars.PACKER_LOG }}
           
       - name: Remove File
         uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
