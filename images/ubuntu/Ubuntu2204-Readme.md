@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-134-generic
-- Image Version: 20250329.2
+- Image Version: 20250330.1
 - Systemd version: 249.11-0ubuntu3.12
 
 ## Installed Software
@@ -93,7 +93,7 @@ to accomplish this.
 - nvm 0.40.2
 - OpenSSL 3.0.2-0ubuntu1.19
 - Packer 1.12.0
-- Parcel 2.14.3
+- Parcel 2.14.4
 - Podman 3.4.4
 - Pulumi 3.159.0
 - R 4.4.3
@@ -140,7 +140,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Cabal 3.14.1.1
 - GHC 9.12.2
 - GHCup 0.1.50.1
-- Stack 3.3.1
+- Stack 3.5.1
 
 ### Rust Tools
 - Cargo 1.85.1
