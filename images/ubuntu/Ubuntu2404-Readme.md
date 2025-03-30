@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250329.2
+- Image Version: 20250330.1
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -86,7 +86,7 @@ to accomplish this.
 - nvm 0.40.2
 - OpenSSL 3.0.13-0ubuntu3.5
 - Packer 1.12.0
-- Parcel 2.14.3
+- Parcel 2.14.4
 - Podman 4.9.3
 - Pulumi 3.159.0
 - Skopeo 1.13.3
@@ -125,7 +125,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Cabal 3.14.1.1
 - GHC 9.12.2
 - GHCup 0.1.50.1
-- Stack 3.3.1
+- Stack 3.5.1
 
 ### Rust Tools
 - Cargo 1.85.1
