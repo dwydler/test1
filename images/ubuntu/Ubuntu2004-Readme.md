@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250330.1
+- Image Version: 20250330.2
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
