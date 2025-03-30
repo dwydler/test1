@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250329.1
+- Image Version: 20250330.1
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -96,7 +96,7 @@ to accomplish this.
 - nvm 0.40.2
 - OpenSSL 1.1.1f-1ubuntu2.24
 - Packer 1.12.0
-- Parcel 2.14.3
+- Parcel 2.14.4
 - PhantomJS 2.1.1 2.1.1
 - Podman 3.4.2
 - Pulumi 3.159.0
@@ -144,7 +144,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Cabal 3.14.1.1
 - GHC 9.12.2
 - GHCup 0.1.50.1
-- Stack 3.3.1
+- Stack 3.5.1
 
 ### Rust Tools
 - Cargo 1.85.1
