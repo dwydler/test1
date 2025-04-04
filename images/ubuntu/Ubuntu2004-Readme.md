@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250331.2
+- Image Version: 20250404.1
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -24,7 +24,7 @@
 - Perl 5.30.0
 - Python 3.8.10
 - Ruby 2.7.0p0
-- Swift 6.0.3
+- Swift 6.1
 
 ### Package Management
 - cpan 1.64
@@ -37,7 +37,7 @@
 - Pip3 20.0.2
 - Pipx 1.7.1
 - RubyGems 3.1.2
-- Vcpkg (build from commit acd5bba5aa)
+- Vcpkg (build from commit c026da0e82)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -69,8 +69,8 @@ to accomplish this.
 - Bazelisk 1.25.0
 - Bicep 0.34.44
 - Buildah 1.22.3
-- CMake 4.0.0
-- CodeQL Action Bundle 2.20.1
+- CMake 3.31.6
+- CodeQL Action Bundle 2.20.7
 - Docker Amazon ECR Credential Helper 0.9.1
 - Docker Compose v2 2.27.1
 - Docker-Buildx 0.22.0
@@ -81,7 +81,7 @@ to accomplish this.
 - Git LFS 3.6.1
 - Git-ftp 1.6.0
 - Haveged 1.9.1
-- Heroku 10.4.0
+- Heroku 10.4.1
 - HHVM (HipHop VM) 4.172.1
 - jq 1.6
 - Kind 0.27.0
@@ -99,7 +99,7 @@ to accomplish this.
 - Parcel 2.14.4
 - PhantomJS 2.1.1 2.1.1
 - Podman 3.4.2
-- Pulumi 3.159.0
+- Pulumi 3.160.0
 - R 4.4.3
 - Skopeo 1.5.0
 - Sphinx Open Source Search Server 2.2.11
@@ -112,14 +112,14 @@ to accomplish this.
 
 ### CLI Tools
 - Alibaba Cloud CLI 3.0.174
-- AWS CLI 2.25.6
+- AWS CLI 2.25.11
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.136.0
-- Azure CLI 2.70.0
+- Azure CLI 2.71.0
 - Azure CLI (azure-devops) 1.0.1
 - GitHub CLI 2.69.0
-- Google Cloud CLI 516.0.0
-- Netlify CLI 19.1.4
+- Google Cloud CLI 517.0.0
+- Netlify CLI 19.1.5
 - OpenShift CLI 4.15.19
 - ORAS CLI 1.2.2
 - Vercel CLI 41.4.1
@@ -134,7 +134,7 @@ to accomplish this.
 
 ### PHP Tools
 - PHP: 7.4.33, 8.0.30, 8.1.32, 8.2.28, 8.3.19
-- Composer 2.8.6
+- Composer 2.8.8
 - PHPUnit 8.5.41
 ```
 Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
@@ -147,25 +147,25 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Stack 3.5.1
 
 ### Rust Tools
-- Cargo 1.85.1
-- Rust 1.85.1
-- Rustdoc 1.85.1
+- Cargo 1.86.0
+- Rust 1.86.0
+- Rustdoc 1.86.0
 - Rustup 1.28.1
 
 #### Packages
 - Bindgen 0.71.1
 - Cargo audit 0.21.2
-- Cargo clippy 0.1.85
+- Cargo clippy 0.1.86
 - Cargo outdated 0.17.0
 - Cbindgen 0.28.0
 - Rustfmt 1.8.0
 
 ### Browsers and Drivers
-- Google Chrome 134.0.6998.165
-- ChromeDriver 134.0.6998.165
-- Chromium 134.0.6998.0
-- Microsoft Edge 134.0.3124.95
-- Microsoft Edge WebDriver 134.0.3124.95
+- Google Chrome 135.0.7049.52
+- ChromeDriver 135.0.7049.42
+- Chromium 135.0.7049.0
+- Microsoft Edge 135.0.3179.54
+- Microsoft Edge WebDriver 135.0.3179.54
 - Selenium server 4.30.0
 - Mozilla Firefox 136.0.4
 - Geckodriver 0.36.0
@@ -212,7 +212,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 #### Go
 - 1.21.13
 - 1.22.12
-- 1.23.7
+- 1.23.8
 
 #### Node.js
 - 18.20.8
@@ -325,7 +325,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | ftp                    | 0.17-34.1                         |
 | g++                    | 4:9.3.0-1ubuntu2                  |
 | gcc                    | 4:9.3.0-1ubuntu2                  |
-| gnupg2                 | 2.2.19-3ubuntu2.2                 |
+| gnupg2                 | 2.2.19-3ubuntu2.4                 |
 | haveged                | 1.9.1-6ubuntu1                    |
 | imagemagick            | 8:6.9.10.23+dfsg-2.1ubuntu11.10   |
 | iproute2               | 5.5.0-1ubuntu1                    |
@@ -383,12 +383,12 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | texinfo                | 6.7.0.dfsg.2-5                    |
 | time                   | 1.7-25.1build1                    |
 | tk                     | 8.6.9+1                           |
-| tzdata                 | 2025a-0ubuntu0.20.04              |
+| tzdata                 | 2025b-0ubuntu0.20.04              |
 | unzip                  | 6.0-25ubuntu1.2                   |
 | upx                    | 3.95-2build1                      |
 | wget                   | 1.20.3-1ubuntu2.1                 |
 | xorriso                | 1.5.2-1                           |
-| xvfb                   | 2:1.20.13-1ubuntu1\~20.04.19      |
+| xvfb                   | 2:1.20.13-1ubuntu1\~20.04.20      |
 | xz-utils               | 5.2.4-1ubuntu1.1                  |
 | zip                    | 3.0-11build1                      |
 | zsync                  | 0.6.2-3ubuntu1                    |
