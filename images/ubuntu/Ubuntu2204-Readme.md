@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-134-generic
-- Image Version: 20250327.2
+- Image Version: 20250331.2
 - Systemd version: 249.11-0ubuntu3.12
 
 ## Installed Software
@@ -27,7 +27,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.17.2
-- Homebrew 4.4.26
+- Homebrew 4.4.27
 - Miniconda 25.1.1
 - Npm 10.8.2
 - NuGet 6.6.1.2
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.7.1
 - RubyGems 3.3.5
-- Vcpkg (build from commit c63619856b)
+- Vcpkg (build from commit acd5bba5aa)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -93,7 +93,7 @@ to accomplish this.
 - nvm 0.40.2
 - OpenSSL 3.0.2-0ubuntu1.19
 - Packer 1.12.0
-- Parcel 2.14.2
+- Parcel 2.14.4
 - Podman 3.4.4
 - Pulumi 3.159.0
 - R 4.4.3
@@ -108,9 +108,9 @@ to accomplish this.
 
 ### CLI Tools
 - Alibaba Cloud CLI 3.0.264
-- AWS CLI 2.25.5
+- AWS CLI 2.25.6
 - AWS CLI Session Manager Plugin 1.2.707.0
-- AWS SAM CLI 1.135.0
+- AWS SAM CLI 1.136.0
 - Azure CLI 2.70.0
 - Azure CLI (azure-devops) 1.0.1
 - GitHub CLI 2.69.0
@@ -140,7 +140,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Cabal 3.14.1.1
 - GHC 9.12.2
 - GHCup 0.1.50.1
-- Stack 3.3.1
+- Stack 3.5.1
 
 ### Rust Tools
 - Cargo 1.85.1
@@ -161,9 +161,9 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - ChromeDriver 134.0.6998.165
 - Chromium 134.0.6998.0
 - Microsoft Edge 134.0.3124.95
-- Microsoft Edge WebDriver 134.0.3124.85
+- Microsoft Edge WebDriver 134.0.3124.95
 - Selenium server 4.30.0
-- Mozilla Firefox 136.0.2
+- Mozilla Firefox 136.0.4
 - Geckodriver 0.36.0
 
 #### Environment variables
@@ -210,7 +210,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 1.23.7
 
 #### Node.js
-- 18.20.7
+- 18.20.8
 - 20.19.0
 - 22.14.0
 

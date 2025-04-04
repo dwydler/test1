@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Generate app token
-        uses: actions/create-github-app-token@af35edadc00be37caa72ed9f3e6d5f7801bfdf09 # v1.11.7
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1.12.0
         id: generate-token
         with:
           app-id: ${{ secrets.APP_ID }}
@@ -65,7 +65,7 @@ jobs:
 
     steps:       
       - name: Generate app token
-        uses: actions/create-github-app-token@af35edadc00be37caa72ed9f3e6d5f7801bfdf09 # v1.11.7
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1.12.0
         id: generate-token
         with:
           app-id: ${{ secrets.APP_ID }}
@@ -108,6 +108,7 @@ jobs:
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
           IMAGE_VERSION: ${{ inputs.release_no }}
+          PACKER_LOG: ${{ vars.PACKER_LOG }}
           
       - name: Remove File
         uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
@@ -134,7 +135,7 @@ jobs:
       
     steps:
       - name: Generate app token
-        uses: actions/create-github-app-token@af35edadc00be37caa72ed9f3e6d5f7801bfdf09 # v1.11.7
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547 # v1.12.0
         id: generate-token
         with:
           app-id: ${{ secrets.APP_ID }}
