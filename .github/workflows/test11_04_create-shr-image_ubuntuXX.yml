@@ -57,16 +57,16 @@ jobs:
 #          echo "serverimage=${{ inputs.image }}" >> $GITHUB_OUTPUT
 #          echo "servertype=$hcloud_server_type" >> $GITHUB_OUTPUT
 
-      - name: Display Variable os
+      - name: Display Variable server os
         run: echo "${{ inputs.os }}"
 
-      - name: Display Variable serverlocation
+      - name: Display Variable server location
         run: echo "${{ inputs.location }}"
 
 #      - name: Display Variable serverimage
 #        run: echo "${{ steps.env.outputs.serverimage }}"
 
-      - name: Display Variable servertype
+      - name: Display Variable server type
         run: echo "${{ inputs.servertype }}"
         
 #    outputs:      
