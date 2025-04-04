@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250404.2
+- Image Version: 20250404.3
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -62,7 +62,7 @@ to accomplish this.
 - Bazelisk 1.25.0
 - Bicep 0.34.44
 - Buildah 1.33.7
-- CMake 4.0.0
+- CMake 3.31.6
 - CodeQL Action Bundle 2.20.7
 - Docker Amazon ECR Credential Helper 0.9.1
 - Docker Compose v2 2.27.1
@@ -140,8 +140,8 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Google Chrome 135.0.7049.52
 - ChromeDriver 135.0.7049.42
 - Chromium 135.0.7049.0
-- Microsoft Edge 134.0.3124.95
-- Microsoft Edge WebDriver 134.0.3124.95
+- Microsoft Edge 135.0.3179.54
+- Microsoft Edge WebDriver 135.0.3179.54
 - Selenium server 4.30.0
 - Mozilla Firefox 136.0.4
 - Geckodriver 0.36.0
