@@ -10,6 +10,6 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every week
       interval: "daily"
-      # ay: "saturday"
+      #day: "saturday"
       timezone: "Europe/Berlin"
-      time: "16:38"
+      time: "04:00"
