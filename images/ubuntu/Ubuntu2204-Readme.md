@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-134-generic
-- Image Version: 20250404.1
+- Image Version: 20250405.1
 - Systemd version: 249.11-0ubuntu3.15
 
 ## Installed Software
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.7.1
 - RubyGems 3.3.5
-- Vcpkg (build from commit c026da0e82)
+- Vcpkg (build from commit b328539dd9)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -162,7 +162,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Chromium 135.0.7049.0
 - Microsoft Edge 135.0.3179.54
 - Microsoft Edge WebDriver 135.0.3179.54
-- Selenium server 4.30.0
+- Selenium server 4.31.0
 - Mozilla Firefox 136.0.4
 - Geckodriver 0.36.0
 
