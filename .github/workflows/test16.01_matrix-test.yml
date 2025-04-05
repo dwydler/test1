@@ -3,10 +3,18 @@ name: Test16.01 - Matrix Test
 on:
   workflow_dispatch:
     inputs:
+#      location:
+#        required: false
+#        type: string
+#        default: "hel1"
       location:
-        required: false
-        type: string
-        default: "hel1"
+         required: false
+         type: choice
+         options: 
+           - hel1
+           - fsn1
+           - nbg1
+         default: "hel1"
       servertype:
         required: false
         type: string
