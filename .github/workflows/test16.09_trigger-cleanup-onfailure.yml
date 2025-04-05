@@ -1,4 +1,4 @@
-name: Test11.09 - Cleanup on Failure (Ubuntu)
+name: Test16.09 - Cleanup on Failure (Ubuntu)
 
 on:
   workflow_call:
