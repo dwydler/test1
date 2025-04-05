@@ -22,10 +22,10 @@ on:
        os:
          type: choice
 #         description: Who to greet
-         options: 
-           - ubuntu20
-           - ubuntu22
+         options:
            - ubuntu24
+           - ubuntu22
+           - ubuntu20
        location:
          type: choice
          options: 
