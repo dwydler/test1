@@ -57,7 +57,7 @@ jobs:
       contents: read
       pull-requests: read
 
-    uses: ./.github/workflows/test11_05_trigger_collect_informations.yml
+    uses: ./.github/workflows/test16.05_trigger_collect_informations.yml
     with:
       os: ${{ inputs.os }}
 
@@ -71,7 +71,7 @@ jobs:
       contents: write
       pull-requests: write
     
-    uses: ./.github/workflows/test11_07-trigger-build-workflow-ubuntu.yml
+    uses: ./.github/workflows/test16.07-trigger-build-workflow-ubuntu.yml
     with:
       release_name: ${{ needs.Trigger-CollectInformations.outputs.ReleaseName }}
       release_tag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
@@ -99,7 +99,7 @@ jobs:
     permissions:
       contents: write
 
-    uses: ./.github/workflows/test11_09_trigger-cleanup-onfailure.yml
+    uses: ./.github/workflows/test16.09_trigger-cleanup-onfailure.yml
     with:
       ReleaseTag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
       HCloudObjectName: ${{ needs.Trigger-CollectInformations.outputs.HCloudObjectName  }}
