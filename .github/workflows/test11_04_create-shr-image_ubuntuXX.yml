@@ -59,7 +59,6 @@ jobs:
 
     uses: ./.github/workflows/test11_05_trigger_collect_informations.yml
     with:
-      #os: ${{ needs.Set-Variables.outputs.OperatingSystem }}
       os: ${{ inputs.os }}
 
     
