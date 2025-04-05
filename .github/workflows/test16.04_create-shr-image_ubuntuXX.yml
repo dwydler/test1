@@ -1,4 +1,4 @@
-name: Test11.04 - Create SHR Image (Ubuntu XX)
+name: Test16.04 - Create SHR Image (Ubuntu XX)
 
 on:
    workflow_call:
