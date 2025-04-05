@@ -1,4 +1,4 @@
-name: Test11.05 - Trigger Collect Informations (Ubuntu)
+name: Test16.05 - Trigger Collect Informations (Ubuntu)
 
 on:
   workflow_call:
