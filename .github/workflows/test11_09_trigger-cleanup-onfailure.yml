@@ -56,7 +56,23 @@ jobs:
           if [ ! -z "$server_id" ]; then
             hcloud server delete $server_id
             echo "The server was succcessfully deleted."
+          else 
+            echo "No server found with the given label."
           fi
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
-          HCLOUD_NAME: ${{ inputs.HCloudObjectName }}  
+          HCLOUD_NAME: ${{ inputs.HCloudObjectName }}
+
+      - name: Delete Snapshot on Hetzner Cloud
+        run: |
+          snapshot_id=$(hcloud snapshot list --output "columns=ID" --output "noheader" -l "server=$HCLOUD_NAME")
+
+          if [ ! -z "$snapshot_id" ]; then
+            hcloud snapshot delete $snapshot_id
+            echo "The snapshot was succcessfully deleted."
+          else 
+            echo "No snapshot found with the given label."
+          fi
+        env:
+          HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+          HCLOUD_NAME: ${{ inputs.HCloudObjectName }}
