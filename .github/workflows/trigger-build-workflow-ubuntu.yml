@@ -165,6 +165,7 @@ jobs:
           title: ${{ inputs.release_name }}
           body: ${{ steps.readme.outputs.content }}
           label: ${{ inputs.release_tag }}
+          assignee: ${{ github.actor }}
 
       - name: Merge the pull request
         uses: "pascalgn/automerge-action@v0.16.4"
