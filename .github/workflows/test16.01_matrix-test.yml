@@ -34,7 +34,7 @@ jobs:
       matrix:
         os: ['ubuntu20', 'ubuntu22', 'ubuntu24']
 
-    uses: ./.github/workflows/test11_04_create-shr-image_ubuntuXX.yml
+    uses: ./.github/workflows/test16.04_create-shr-image_ubuntuXX.yml
     with:
       os: ${{ matrix.os }}
       location: ${{ inputs.location }}
