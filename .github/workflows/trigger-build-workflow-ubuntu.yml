@@ -165,7 +165,7 @@ jobs:
           body: ${{ steps.readme.outputs.content }}
           label: ${{ inputs.release_tag }}
           assignee: dwydler
-          reviewer: dwydler
+          #reviewer: dwydler
 
       - name: Merge the pull request
         uses: "pascalgn/automerge-action@v0.16.4"
