@@ -68,7 +68,7 @@ jobs:
           snapshot_id=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "server=$HCLOUD_NAME")
 
           if [ ! -z "$snapshot_id" ]; then
-            hcloud snapshot delete $snapshot_id
+            hcloud image delete $snapshot_id
             echo "The snapshot was succcessfully deleted."
           else 
             echo "No snapshot found with the given label."
