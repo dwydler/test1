@@ -145,7 +145,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: '0'
-          ref: ${{ inputs.release_tag }}
+          ref: releases/${{ inputs.release_tag }}
 
       - name: Save file ${{ inputs.readme_file }} in variable
         id: readme
