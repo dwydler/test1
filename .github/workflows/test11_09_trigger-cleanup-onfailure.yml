@@ -65,7 +65,7 @@ jobs:
 
       - name: Delete Snapshot on Hetzner Cloud
         run: |
-          snapshot_id=$(hcloud snapshot list --output "columns=ID" --output "noheader" -l "server=$HCLOUD_NAME")
+          snapshot_id=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "server=$HCLOUD_NAME")
 
           if [ ! -z "$snapshot_id" ]; then
             hcloud snapshot delete $snapshot_id
