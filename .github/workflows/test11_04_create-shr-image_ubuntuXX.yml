@@ -71,7 +71,7 @@ jobs:
       contents: write
       pull-requests: write
     
-    uses: ./.github/workflows/trigger-build-workflow-ubuntu.yml
+    uses: ./.github/workflows/test11_07-trigger-build-workflow-ubuntu.yml
     with:
       release_name: ${{ needs.Trigger-CollectInformations.outputs.ReleaseName }}
       release_tag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
