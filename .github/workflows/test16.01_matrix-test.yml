@@ -3,10 +3,6 @@ name: Test16.01 - Matrix Test
 on:
   workflow_dispatch:
     inputs:
-#      location:
-#        required: false
-#        type: string
-#        default: "hel1"
       location:
          required: false
          type: choice
@@ -16,9 +12,11 @@ on:
            - nbg1
          default: "hel1"
       servertype:
-        required: false
-        type: string
-        default: "ccx13"
+         required: false
+         type: choice
+         options: 
+           - ccx13
+         default: "ccx13"
 
   schedule:
     - cron: "0 4 * * 1"
@@ -60,8 +58,6 @@ jobs:
     uses: ./.github/workflows/test11_04_create-shr-image_ubuntuXX.yml
     with:
       os: ${{ matrix.os }}
-      #location: "hel1"
       location: ${{ inputs.location }}
-      #servertype: "ccx13"
       servertype: ${{ inputs.servertype }}
     secrets: inherit
