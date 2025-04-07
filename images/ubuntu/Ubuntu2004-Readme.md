@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250407.1
+- Image Version: 20250407.2
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -29,7 +29,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.17.2
-- Homebrew 4.4.28
+- Homebrew 4.4.29
 - Miniconda 25.1.1
 - Npm 10.8.2
 - NuGet 6.6.1.2
@@ -37,7 +37,7 @@
 - Pip3 20.0.2
 - Pipx 1.7.1
 - RubyGems 3.1.2
-- Vcpkg (build from commit 856505bb76)
+- Vcpkg (build from commit a8ec0ced26)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -122,7 +122,7 @@ to accomplish this.
 - Netlify CLI 19.1.5
 - OpenShift CLI 4.15.19
 - ORAS CLI 1.2.2
-- Vercel CLI 41.4.1
+- Vercel CLI 41.5.0
 
 ### Java
 | Version             | Environment Variable |
