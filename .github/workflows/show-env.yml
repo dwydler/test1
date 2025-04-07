@@ -16,7 +16,10 @@ on:
          options: 
            - ccx13
          default: "ccx13"
-         
+
+  schedule:
+    - cron: "40 13 * * 1"
+    
 env:
   location: ${{ github.event_name == 'schedule' && 'hel1' || github.event.inputs.location }}
   servertype: ${{ github.event_name == 'schedule' && 'ccx13' || github.event.inputs.servertype }}
