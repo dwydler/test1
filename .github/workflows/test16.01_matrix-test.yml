@@ -21,7 +21,10 @@ on:
   schedule:
     - cron: "0 4 * * 1"
 
-
+env:
+  location: ${{ github.event_name == 'schedule' && 'hel1' || github.event.inputs.location }}
+  servertype: ${{ github.event_name == 'schedule' && 'ccx13' || github.event.inputs.servertype }}
+  
 jobs:
   Job:
     permissions:
