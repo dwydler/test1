@@ -28,7 +28,7 @@ env:
 
   
 jobs:
-  Set-Variables:
+  Preparations:
     runs-on: ubuntu-latest
 
     steps:
@@ -44,7 +44,7 @@ jobs:
 
      
   Job:
-    needs: Set-Variables
+    needs: Preparations
     
     permissions:
       contents: write
@@ -59,6 +59,6 @@ jobs:
     uses: ./.github/workflows/test16.04_create-shr-image_ubuntuXX.yml
     with:
       os: ${{ matrix.os }}
-      location: ${{ needs.Set-Variables.outputs.HCloudServerLocation }}
-      servertype: ${{ needs.Set-Variables.outputs.HCloudServerType }}
+      location: ${{ needs.Preparations.outputs.HCloudServerLocation }}
+      servertype: ${{ needs.Preparations.outputs.HCloudServerType }}
     secrets: inherit
