@@ -19,14 +19,33 @@ on:
          default: "ccx13"
 
   schedule:
-    - cron: "50 18 * * 1"
+    - cron: "15 19 * * 1"
+
 
 env:
   location: ${{ github.event_name == 'schedule' && 'hel1' || github.event.inputs.location }}
   servertype: ${{ github.event_name == 'schedule' && 'ccx13' || github.event.inputs.servertype }}
+
   
 jobs:
+  Set-Variables:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Assign ENV variable to workflow variable
+        id: env
+        run: |
+          echo "location=$location" >> $GITHUB_OUTPUT
+          echo "servertype=$servertype" >> $GITHUB_OUTPUT
+
+    outputs:      
+     HCloudServerLocation: ${{ steps.env.outputs.location }}
+     HCloudServerType: ${{ steps.env.outputs.servertype }}
+
+     
   Job:
+    needs: Set-Variables
+    
     permissions:
       contents: write
       pull-requests: write
@@ -40,6 +59,6 @@ jobs:
     uses: ./.github/workflows/test16.04_create-shr-image_ubuntuXX.yml
     with:
       os: ${{ matrix.os }}
-      location: ${{ env.location }}
-      servertype: ${{ env.servertype }}
+      location: ${{ needs.Set-Variables.outputs.HCloudServerLocation }}
+      servertype: ${{ needs.Set-Variables.outputs.HCloudServerType }}
     secrets: inherit
