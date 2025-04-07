@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-55-generic
-- Image Version: 20250406.2
+- Image Version: 20250407.1
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -25,14 +25,14 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.17.2
-- Homebrew 4.4.27
+- Homebrew 4.4.29
 - Miniconda 25.1.1
 - Npm 10.8.2
 - Pip 24.0
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit 856505bb76)
+- Vcpkg (build from commit a8ec0ced26)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -63,7 +63,7 @@ to accomplish this.
 - Bicep 0.34.44
 - Buildah 1.33.7
 - CMake 3.31.6
-- CodeQL Action Bundle 2.20.7
+- CodeQL Action Bundle 2.21.0
 - Docker Amazon ECR Credential Helper 0.9.1
 - Docker Compose v2 2.27.1
 - Docker-Buildx 0.22.0
