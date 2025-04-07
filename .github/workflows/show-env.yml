@@ -21,8 +21,8 @@ on:
     - cron: "40 13 * * 1"
     
 env:
-  location: ${{ github.event_name == 'schedule' && 'hel1' || github.event.inputs.location }}
-  servertype: ${{ github.event_name == 'schedule' && 'ccx13' || github.event.inputs.servertype }}
+  location: ${{ github.event_name == 'schedule' && 'test1' || github.event.inputs.location }}
+  servertype: ${{ github.event_name == 'schedule' && 'test2' || github.event.inputs.servertype }}
   
   
 jobs:
@@ -32,4 +32,7 @@ jobs:
     steps:
       - name: Write ReleaseName
         run: echo "$location"
-        
+
+      - name: Github Event
+        run: ${{ github.event_name }}
+                
