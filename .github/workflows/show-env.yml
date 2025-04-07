@@ -34,5 +34,5 @@ jobs:
         run: echo "$location"
 
       - name: Github Event
-        run: ${{ github.event_name }}
+        run: echo "${{ github.event_name }}"
                 
