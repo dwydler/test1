@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-134-generic
-- Image Version: 20250406.2
+- Image Version: 20250407.1
 - Systemd version: 249.11-0ubuntu3.15
 
 ## Installed Software
@@ -27,7 +27,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.17.2
-- Homebrew 4.4.27
+- Homebrew 4.4.29
 - Miniconda 25.1.1
 - Npm 10.8.2
 - NuGet 6.6.1.2
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.7.1
 - RubyGems 3.3.5
-- Vcpkg (build from commit 856505bb76)
+- Vcpkg (build from commit a8ec0ced26)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -68,7 +68,7 @@ to accomplish this.
 - Bicep 0.34.44
 - Buildah 1.23.1
 - CMake 3.31.6
-- CodeQL Action Bundle 2.20.7
+- CodeQL Action Bundle 2.21.0
 - Docker Amazon ECR Credential Helper 0.9.1
 - Docker Compose v2 2.27.1
 - Docker-Buildx 0.22.0
@@ -118,7 +118,7 @@ to accomplish this.
 - Netlify CLI 19.1.5
 - OpenShift CLI 4.18.7
 - ORAS CLI 1.2.2
-- Vercel CLI 41.4.1
+- Vercel CLI 41.5.0
 
 ### Java
 | Version             | Environment Variable |
