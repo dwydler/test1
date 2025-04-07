@@ -19,7 +19,7 @@ on:
          default: "ccx13"
 
   schedule:
-    - cron: "50 11 * * 1"
+    - cron: "35 18 * * 1"
 
 env:
   location: ${{ github.event_name == 'schedule' && 'hel1' || github.event.inputs.location }}
@@ -40,6 +40,6 @@ jobs:
     uses: ./.github/workflows/test16.04_create-shr-image_ubuntuXX.yml
     with:
       os: ${{ matrix.os }}
-      location: $location
-      servertype: $servertype
+      location: ${{ env.location }}
+      servertype: ${{ env.servertype }}
     secrets: inherit
