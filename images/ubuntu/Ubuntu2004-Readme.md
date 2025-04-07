@@ -1,7 +1,7 @@
 # Ubuntu 20.04
 - OS Version: 20.04.6 LTS
 - Kernel Version: 5.4.0-208-generic
-- Image Version: 20250406.2
+- Image Version: 20250407.1
 - Systemd version: 245.4-4ubuntu3.24
 
 ## Installed Software
@@ -29,7 +29,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.17.2
-- Homebrew 4.4.27
+- Homebrew 4.4.28
 - Miniconda 25.1.1
 - Npm 10.8.2
 - NuGet 6.6.1.2
@@ -70,7 +70,7 @@ to accomplish this.
 - Bicep 0.34.44
 - Buildah 1.22.3
 - CMake 3.31.6
-- CodeQL Action Bundle 2.20.7
+- CodeQL Action Bundle 2.21.0
 - Docker Amazon ECR Credential Helper 0.9.1
 - Docker Compose v2 2.27.1
 - Docker-Buildx 0.22.0
