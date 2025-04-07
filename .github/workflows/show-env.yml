@@ -1,9 +1,26 @@
 name: Show env
 on:
   workflow_dispatch:
-  
+    inputs:
+      location:
+         required: false
+         type: choice
+         options: 
+           - hel1
+           - fsn1
+           - nbg1
+         default: "hel1"
+      servertype:
+         required: false
+         type: choice
+         options: 
+           - ccx13
+         default: "ccx13"
+         
 env:
-  somevar: 'lastvar'
+  location: ${{ github.event_name == 'schedule' && 'hel1' || github.event.inputs.location }}
+  servertype: ${{ github.event_name == 'schedule' && 'ccx13' || github.event.inputs.servertype }}
+  
   
 jobs:
   show:
@@ -11,5 +28,5 @@ jobs:
     
     steps:
       - name: Write ReleaseName
-        run: echo "$somevar"
+        run: echo "$location"
         
