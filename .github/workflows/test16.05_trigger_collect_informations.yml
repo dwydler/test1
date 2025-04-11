@@ -63,8 +63,9 @@ jobs:
     
       - name: Find newest Git Tag
         id: tagger
-        uses: digital-ai/query-tag-action@3319bb2966140fab21bc9656a6a6e23059d90dde # v2
+        #uses: digital-ai/query-tag-action@3319bb2966140fab21bc9656a6a6e23059d90dde # v2
         #uses: jimschubert/query-tag-action@v2
+        uses: dwydler/query-git-tag-action@984c631071a22e9739ab3a4b4a91f2cbfda49f79 # v2.3
         with:
           include: ${{ inputs.os }}/${{ steps.date.outputs.date }}.*
           exact-match: 'false'
