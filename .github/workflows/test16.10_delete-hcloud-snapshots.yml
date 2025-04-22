@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 
-Job: 
+jobs: 
   Preparations:
     runs-on: ubuntu-latest
 
