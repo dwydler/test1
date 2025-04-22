@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        image: ['ubuntu20', 'ubuntu22', 'ubuntu24']
+        image: ['ubuntu20-04', 'ubuntu22-04', 'ubuntu24-04']
 
     steps:
       - name: Install Hetzner Cloud Cli
