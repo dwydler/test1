@@ -24,5 +24,6 @@ jobs:
             echo "$(echo $objects | wc -w) Snapshot(s) zum Löschen gefunden."
           else
             echo "Keine Snapshots zum Löschen gefunden."
+          fi
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
