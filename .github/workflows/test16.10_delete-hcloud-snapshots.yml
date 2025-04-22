@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        image: ['ubuntu20-04', 'ubuntu22-04', 'ubuntu24-04']
+        image: ['ubuntu-20.04', 'ubuntu-22.04', 'ubuntu-24.04']
 
     steps:
       - name: Install Hetzner Cloud Cli
@@ -18,6 +18,6 @@ jobs:
       - name: Query Hetzner cloud project
         id: hlcoud_snapshot
         run: |
-          echo "id=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | head -n 1)"
+          echo "id=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +2)"
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
