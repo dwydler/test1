@@ -29,7 +29,7 @@ jobs:
             echo -e "$(echo $objects | wc -w) Snapshot(s) zum Löschen gefunden:\n"
 
             for i in $objects ; do
-              echo -e "$i\n"
+              echo ID: "$i"
             done
 
           else
