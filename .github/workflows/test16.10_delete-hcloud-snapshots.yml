@@ -20,7 +20,7 @@ jobs:
         run: |
           objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +2)"
 
-          if [ -n "$objectst" ]; then
+          if [ -n "$objects" ]; then
             echo "$(echo $objects | wc -w) Snapshot(s) zum Löschen gefunden."
           else
             echo "Keine Snapshots zum Löschen gefunden."
