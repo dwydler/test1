@@ -18,7 +18,7 @@ jobs:
       - name: Query snapshots for each OS
         id: hlcoud_snapshot
         run: |
-          objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +2)"
+          objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +2)
 
           if [ -n "$objects" ]; then
             echo "$(echo $objects | wc -w) Snapshot(s) zum Löschen gefunden."
