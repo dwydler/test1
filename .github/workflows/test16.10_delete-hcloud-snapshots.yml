@@ -18,8 +18,11 @@ jobs:
       - name: Query snapshots for given OS version
         id: hlcoud_snapshot
         run: |
-          hcloud image list --type "snapshot" -l "os=ubuntu-24.04" -s "id:desc"
-          
+          # List all snapshots
+          echo -e "$(hcloud image list --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc")\n"
+          #hcloud image list --type "snapshot" -l "os=ubuntu-24.04" -s "id:desc"
+
+          # Query
           objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +2)
 
           if [ -n "$objects" ]; then
