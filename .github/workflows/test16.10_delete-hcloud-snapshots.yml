@@ -15,9 +15,14 @@ jobs:
       - name: Install Hetzner Cloud Cli
         uses: hetznercloud/setup-hcloud@641015849308e9ed3e3b1f3d3b0a637068c5a2af # v1.0.1
         
-      - name: Query Hetzner cloud project
+      - name: Query snapshots for each OS
         id: hlcoud_snapshot
         run: |
-          echo "id=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +2)"
+          objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +2)"
+
+          if [ -n "$objectst" ]; then
+            echo "$(echo $objects | wc -w) Snapshot(s) zum Löschen gefunden."
+          else
+            echo "Keine Snapshots zum Löschen gefunden."
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
