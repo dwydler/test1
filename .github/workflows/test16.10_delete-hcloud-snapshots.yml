@@ -23,8 +23,3 @@ jobs:
         run: |
           mkdir -p pipelines
           echo ${{ matrix.kv.val }} >> outputs/${{ matrix.kv.key }}.txt
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: outputs
-          path: outputs/*.txt
