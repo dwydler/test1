@@ -4,14 +4,7 @@ on:
   workflow_dispatch:
 
 
-jobs: 
-  Preparations:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Install Hetzner Cloud Cli
-        uses: hetznercloud/setup-hcloud@641015849308e9ed3e3b1f3d3b0a637068c5a2af # v1.0.1
-
+jobs:
   Delete:
     runs-on: ubuntu-latest
     strategy:
@@ -19,6 +12,9 @@ jobs:
         image: ['ubuntu20', 'ubuntu22', 'ubuntu24']
 
     steps:
+      - name: Install Hetzner Cloud Cli
+        uses: hetznercloud/setup-hcloud@641015849308e9ed3e3b1f3d3b0a637068c5a2af # v1.0.1
+        
       - id: one
         run: |
           echo "id=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | head -n 1)" >> $GITHUB_OUTPUT
