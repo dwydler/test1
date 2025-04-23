@@ -33,13 +33,8 @@ jobs:
               echo ID: "$i"
               #result=$(hcloud image delete $i --quiet 2>&1)
               result=$(hcloud image delete $i --quiet)
-
-              if [ -n "$result" ]; then
-                echo $result
-              else
-                echo "Snapshot wurde erfolgreich gelöscht."
-              fi
               
+              echo "Snapshot wurde erfolgreich gelöscht."             
             done
 
           else
