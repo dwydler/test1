@@ -31,7 +31,7 @@ jobs:
 
             for i in $objects ; do
               echo ID: "$i"
-              result=$(hcloud image delete $i --quit)
+              result=$(hcloud image delete $i --quiet 2>&1)
 
               if [ -n "$result" ]; then
                 echo $result
