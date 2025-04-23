@@ -16,7 +16,7 @@ jobs:
       - name: Install Hetzner Cloud Cli
         uses: hetznercloud/setup-hcloud@641015849308e9ed3e3b1f3d3b0a637068c5a2af # v1.0.1
         
-      - name: Query snapshots for given OS version
+      - name: Query und delete snapshots for given OS version
         id: hlcoud_snapshot
         run: |
           # List all snapshots
