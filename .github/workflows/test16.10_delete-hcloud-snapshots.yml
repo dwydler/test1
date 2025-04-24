@@ -27,7 +27,7 @@ jobs:
 
           # Query
           #objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +2)
-          echo $(keep_snapshots+1)
+          echo $($keep_snapshots+1)
           
           if [ -n "$objects" ]; then
             echo "$(echo $objects | wc -w) Snapshot(s) zum Löschen gefunden:"
