@@ -5,7 +5,7 @@ on:
 
 env:
   # Anzahl von Snapshots, die aufbewahrt werden sollen
-  keep_snapshots: '1'
+  keep_snapshots: '2'
   
 jobs:
   Delete:
