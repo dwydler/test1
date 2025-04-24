@@ -26,8 +26,7 @@ jobs:
           #hcloud image list --type "snapshot" -l "os=ubuntu-24.04" -s "id:desc"
 
           # Query
-          #objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +2)
-          echo "$($keep_snapshots+1)"
+          objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +$(($keep_snapshots+1)) )
           
           if [ -n "$objects" ]; then
             echo "$(echo $objects | wc -w) Snapshot(s) zum Löschen gefunden:"
