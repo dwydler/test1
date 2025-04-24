@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 
 env:
+  # Anzahl von Snapshots, die aufbewahrt werden sollen
   keep_snapshots: '1'
   
 jobs:
