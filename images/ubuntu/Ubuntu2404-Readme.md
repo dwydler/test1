@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-58-generic
-- Image Version: 20250425.1
+- Image Version: 20250425.2
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -51,7 +51,7 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 8.13
+- Gradle 8.14
 - Lerna 8.2.2
 - Maven 3.9.9
 
@@ -88,7 +88,7 @@ to accomplish this.
 - Packer 1.12.0
 - Parcel 2.14.4
 - Podman 4.9.3
-- Pulumi 3.163.0
+- Pulumi 3.165.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.37.0
@@ -141,7 +141,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - ChromeDriver 135.0.7049.114
 - Chromium 135.0.7049.0
 - Microsoft Edge 135.0.3179.98
-- Microsoft Edge WebDriver 135.0.3179.85
+- Microsoft Edge WebDriver 135.0.3179.98
 - Selenium server 4.31.0
 - Mozilla Firefox 136.0.4
 - Geckodriver 0.36.0
