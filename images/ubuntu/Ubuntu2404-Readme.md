@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-58-generic
-- Image Version: 20250425.2
+- Image Version: 20250426.1
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -32,7 +32,7 @@
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit 760bfd0c8d)
+- Vcpkg (build from commit 96d5fb3de1)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -97,7 +97,7 @@ to accomplish this.
 - Ninja 1.12.1
 
 ### CLI Tools
-- AWS CLI 2.27.1
+- AWS CLI 2.27.2
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.137.1
 - Azure CLI 2.71.0
