@@ -174,7 +174,7 @@ jobs:
           PULL_REQUEST: ${{ steps.pullrequest.outputs.pr_number }}
           MERGE_LABELS: ${{ inputs.release_tag }}
           UPDATE_LABELS: ${{ inputs.release_tag }}
-          MERGE_COMMIT_MESSAGE: "${{ inputs.release_name }}
+          MERGE_COMMIT_MESSAGE: "${{ inputs.release_name }}"
           MERGE_METHOD: "squash"
 
 
