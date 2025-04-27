@@ -1,37 +1,22 @@
 name: Test16.03 - Create SHR Image (Ubuntu 22)
 
-on:
-   workflow_call:
-    inputs:
-      os:
-        required: true
-        type: string
-      location:
-        required: true
-        type: string
-      servertype:
-        required: false
-        type: string
-        default: "ccx13"
-        
+on:      
    workflow_dispatch:
      inputs:
        os:
-         type: string
-         required: true
-         default: "ubuntu22"
+        type: string
+        required: true
+        default: "ubuntu22"
        location:
-         type: choice
-         options: 
-           - hel1
-           - fsn1
-           - nbg1
+        type: string
+        required: true
+        default: "hel1"
        servertype:
          required: true
          type: string
          default: "ccx13"
-         
-  
+
+
 jobs:
   Set-Variables:
     runs-on: ubuntu-latest
