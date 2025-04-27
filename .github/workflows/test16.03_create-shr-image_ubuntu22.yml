@@ -8,22 +8,38 @@ on:
         required: true
         default: "ubuntu22"
        location:
-        type: string
+        type: choice 
         required: true
+        options: 
+          - hel1
+          - fsn1
+          - nbg1
         default: "hel1"
        servertype:
-         required: true
-         type: string
-         default: "ccx13"
+        type: choice 
+        required: true
+        options:
+          - cx32
+          - cpx21
+          - ccx13  
+        default: "cx32"
 
+
+env:
+  os: "ubuntu22"
 
 jobs:
   Set-Variables:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Assign ENV variable to workflow variable
+        id: env
+        run: |
+           echo "os=$os" >> $GITHUB_OUTPUT
+
       - name: Display Variable server os
-        run: echo "${{ inputs.os }}"
+        run: echo "${{ steps.env.outputs.os }}"
 
       - name: Display Variable server location
         run: echo "${{ inputs.location }}"
@@ -31,7 +47,10 @@ jobs:
       - name: Display Variable server type
         run: echo "${{ inputs.servertype }}"
      
-     
+    outputs:      
+      os: ${{ steps.env.outputs.os }}
+
+
   Trigger-CollectInformations:
     needs: Set-Variables
     
@@ -41,7 +60,8 @@ jobs:
 
     uses: ./.github/workflows/test16.05_trigger_collect_informations.yml
     with:
-      os: ${{ inputs.os }}
+      #os: ${{ inputs.os }}
+      os: ${{ needs.Set-Variables.outputs.os }}
 
     
   Trigger-ImageBuilder:
