@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-138-generic
-- Image Version: 20250426.3
+- Image Version: 20250427.1
 - Systemd version: 249.11-0ubuntu3.15
 
 ## Installed Software
