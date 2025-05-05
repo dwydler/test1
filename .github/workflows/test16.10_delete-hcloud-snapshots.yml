@@ -3,7 +3,7 @@ name: "Delete old hetzner snapshots"
 on:
   workflow_dispatch:
 
-env:
+#env:
   # Anzahl von Snapshots, die aufbewahrt werden sollen
   #keep_snapshots: '1'
   
