@@ -17,7 +17,8 @@ jobs:
 
     steps:
       - name: Check if variable exist
-        if: ${{ env.keep_snapshots == '' }}
+        #if: ${{ env.keep_snapshots == '' }}
+        if: contains(env.keep_snapshots, 'SomeString')
         run: |
           echo "Empty text"
           exit 1
