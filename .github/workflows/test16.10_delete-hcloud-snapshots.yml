@@ -3,9 +3,6 @@ name: "Delete old hetzner snapshots"
 on:
   workflow_dispatch:
 
-#env:
-  # Anzahl von Snapshots, die aufbewahrt werden sollen
-  #keep_snapshots: '1'
   
 jobs:
   Delete:
@@ -17,8 +14,6 @@ jobs:
 
     steps:
       - name: "Check if variable 'keep_snapshots' exist"
-        #if: ${{ env.keep_snapshots == '' }}
-        #if: "!contains(env.keep_snapshots, '1')"
         if: "${{ vars.KEEP_SNAPSHOTS == '' }}"
         run: |
           echo "Variable nicht gefunden. Job wird abgebrochen."
