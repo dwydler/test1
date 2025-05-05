@@ -19,7 +19,7 @@ jobs:
       - name: "Check if variable 'keep_snapshots' exist"
         #if: ${{ env.keep_snapshots == '' }}
         #if: "!contains(env.keep_snapshots, '1')"
-        if: "${{ vars.keep_snapshots == '' }}"
+        if: "${{ vars.KEEP_SNAPSHOTS == '' }}"
         run: |
           echo "Variable nicht gefunden. Job wird abgebrochen."
           exit 1
@@ -35,7 +35,7 @@ jobs:
           #hcloud image list --type "snapshot" -l "os=ubuntu-24.04" -s "id:desc"
 
           # Query
-          objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +$(($vars.keep_snapshots+1)) )
+          objects=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "os=${{ matrix.image }}" -s "id:desc" | tail -n +$((KEEP_SNAPSHOTS+1)) )
           
           if [ -n "$objects" ]; then
             echo "$(echo $objects | wc -w) Snapshot(s) zum Löschen gefunden:"
@@ -53,3 +53,4 @@ jobs:
           fi
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
+          KEEP_SNAPSHOTS: ${{ vars.KEEP_SNAPSHOTS }}
