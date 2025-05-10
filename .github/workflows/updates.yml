@@ -144,9 +144,8 @@ jobs:
       - CreateVmTemplate
     runs-on: ubuntu-latest
 
-#    permissions:
-#      contents: write
-#      pull-requests: write
+    permissions:
+      contents: write
       
     steps:
       - name: Checkout new created branch
