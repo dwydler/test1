@@ -1,6 +1,4 @@
-# CI Validation
-
-name: Linter
+name: "Manage - Linter"
 
 on:
   pull_request:
@@ -11,6 +9,9 @@ jobs:
   build:
     name: Lint JSON & MD files
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
 
     steps:
       - name: Generate app token
@@ -29,7 +30,6 @@ jobs:
         uses: github/super-linter/slim@v7
         env:
           VALIDATE_ALL_CODEBASE: false
-#          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
           VALIDATE_JSON: true
           VALIDATE_MARKDOWN: true
