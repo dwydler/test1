@@ -13,12 +13,12 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
 
       - name: Lint Code Base
-        uses: github/super-linter/slim@v4
+        uses: github/super-linter/slim@80ecaa58ad5f9480c66e3c77af5c955831861a41fb78ce7e0ffb1b443eca0f0f # v4.10.1
         env:
           VALIDATE_ALL_CODEBASE: false
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
