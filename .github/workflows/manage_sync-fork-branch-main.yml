@@ -11,8 +11,8 @@ jobs:
     name: Sync Fork
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
+#    permissions:
+#      contents: write
 
     steps:
 #      - name: Decode the GitHub App Private Key
