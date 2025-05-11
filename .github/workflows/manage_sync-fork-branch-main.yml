@@ -8,7 +8,12 @@ on:
 
 jobs:
   update_external_airflow_fork:
+    name: Sync Fork
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
       - name: Generate app token
         uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e # v2.0.6
