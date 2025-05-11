@@ -29,8 +29,8 @@ jobs:
         uses: github/super-linter/slim@v5
         env:
           VALIDATE_ALL_CODEBASE: false
-#          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          #GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
           VALIDATE_JSON: true
           VALIDATE_MARKDOWN: true
           DEFAULT_BRANCH: ${{ github.base_ref }}
