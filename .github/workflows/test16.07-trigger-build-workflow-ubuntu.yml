@@ -181,8 +181,8 @@ jobs:
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
-#          PULL_REQUEST: ${{ steps.pullrequest.outputs.pr_number }}
-          PULL_REQUEST: ${{ steps.pullrequest.outputs.pull-request-number }}
+          PULL_REQUEST: ${{ steps.pullrequest.outputs.pr_number }}
+#          PULL_REQUEST: ${{ steps.pullrequest.outputs.pull-request-number }}
           MERGE_LABELS: ${{ inputs.release_tag }}
           UPDATE_LABELS: ${{ inputs.release_tag }}
           MERGE_COMMIT_MESSAGE: "${{ inputs.release_name }} (#${{ steps.pullrequest.outputs.pr_number }})"
