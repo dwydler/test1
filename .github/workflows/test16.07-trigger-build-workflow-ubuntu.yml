@@ -187,6 +187,8 @@ jobs:
           UPDATE_LABELS: ${{ inputs.release_tag }}
           MERGE_COMMIT_MESSAGE: "${{ inputs.release_name }} (#${{ steps.pullrequest.outputs.pr_number }})"
           MERGE_METHOD: "squash"
+          MERGE_RETRIES: 6
+          MERGE_RETRY_SLEEP: 30
 
 
       - name: Create a new release
