@@ -174,7 +174,7 @@ jobs:
           target_branch: master
           title: ${{ inputs.release_name }}
           body: ${{ steps.readme.outputs.content }}
-          label: ${{ inputs.release_tag }}
+          label: "${{ inputs.release_tag }},OS: Ubuntu,OS: Ubuntu24"
           assignee: dwydler
 
       - name: Merge the pull request
