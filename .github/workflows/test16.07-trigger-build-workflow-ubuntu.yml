@@ -188,7 +188,7 @@ jobs:
           MERGE_COMMIT_MESSAGE: "${{ inputs.release_name }} (#${{ steps.pullrequest.outputs.pr_number }})"
           MERGE_METHOD: "squash"
           MERGE_RETRIES: 10
-          MERGE_RETRY_SLEEP: 30
+          MERGE_RETRY_SLEEP: 60
           MERGE_READY_STATE: clean
 
 
