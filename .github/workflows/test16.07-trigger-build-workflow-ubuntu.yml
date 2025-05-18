@@ -159,14 +159,14 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ steps.generate-token.outputs.token }}
-          delete-branch: true
+#          delete-branch: true
           title: ${{ inputs.release_name }}
           body: ${{ steps.readme.outputs.content }}
           labels:  ${{ inputs.release_tag }}
           assignees: dwydler
           draft: false
           base: releases/${{ inputs.release_tag }}
-          branch: master
+          branch: releases/${{ inputs.release_tag }}
 #        uses: devops-infra/action-pull-request@ff118b4a7c24bac5a3c95acef59e9edd1fc37890 # v0.6.0
 #        with:
 #          github_token: ${{ steps.generate-token.outputs.token }}
