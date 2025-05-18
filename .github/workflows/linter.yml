@@ -3,7 +3,7 @@ name: "Manage - Linter"
 on:
   pull_request:
     branches: [ master ]
-
+    types: [opened, reopened]
 
 jobs:
   build:
