@@ -21,6 +21,9 @@ on:
         value: ${{ jobs.Get-BasicInformations.outputs.HCloudServerImage }}
       ReadmeFile:
         value: ${{ jobs.Get-BasicInformations.outputs.ReadmeFile }}
+      GitHubPrLabels:
+        value: ${{ jobs.Get-BasicInformations.outputs.GitHubPrLabels }}
+
 
 jobs:
   Get-BasicInformations:
@@ -48,12 +51,14 @@ jobs:
             echo "packerfile=ubuntu-minimal.pkr.hcl" >> $GITHUB_OUTPUT
             echo "osimage=ubuntu-22.04" >> $GITHUB_OUTPUT
             echo "readme=Ubuntu2204-Readme.md" >> $GITHUB_OUTPUT
+            echo "ghprlabels=OS: Ubuntu,OS: Ubuntu22" >> $GITHUB_OUTPUT
             
           elif [ "${{ inputs.os }}" == "ubuntu24" ]; then
             echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
             echo "packerfile=ubuntu-24.04.pkr.hcl" >> $GITHUB_OUTPUT
             echo "osimage=ubuntu-24.04" >> $GITHUB_OUTPUT
             echo "readme=Ubuntu2404-Readme.md" >> $GITHUB_OUTPUT
+            echo "ghprlabels=OS: Ubuntu,OS: Ubuntu24" >> $GITHUB_OUTPUT
             
           else
             exit 1
@@ -95,6 +100,7 @@ jobs:
       HCloudObjectName: ${{ inputs.os }}-${{ steps.releasetagname.outputs.var }}
       HCloudServerImage: ${{ steps.os.outputs.osimage }}
       ReadmeFile: ${{ steps.os.outputs.readme }}
+      GitHubPrLabels: "${{ inputs.os }}/${{ steps.releasetagname.outputs.var }},${{ steps.os.outputs.ghprlabels }}"
 
 
   Output-DebugInformations:
@@ -119,3 +125,6 @@ jobs:
 
       - name:  Display Hetzner Sever Image name
         run: echo "${{ needs.Get-BasicInformations.outputs.HCloudServerImage }}"
+
+      - name:  Display GitHub Pull Request Labels
+        run: echo "${{ needs.Get-BasicInformations.outputs.GitHubPrLabels }}"
