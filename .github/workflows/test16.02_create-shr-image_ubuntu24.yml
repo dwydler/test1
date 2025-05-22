@@ -76,6 +76,7 @@ jobs:
       hcl_filename: ${{ needs.Trigger-CollectInformations.outputs.HclFile }}
       release_no: ${{ needs.Trigger-CollectInformations.outputs.ReleaseNo }}
       readme_file: ${{ needs.Trigger-CollectInformations.outputs.ReadmeFile }}
+      gh_pr_labels: ${{ needs.Trigger-CollectInformations.outputs.GitHubPrLabels }}
 
       hcloud_server_location: ${{ inputs.location }}
       hcloud_server_type: ${{ inputs.servertype }}
