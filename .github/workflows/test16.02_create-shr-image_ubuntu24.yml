@@ -18,7 +18,6 @@ on:
           - cx32
           - cpx21
           - ccx13
-          - cax21
         default: "cx32"
 
 
