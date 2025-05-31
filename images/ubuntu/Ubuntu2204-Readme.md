@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-138-generic
-- Image Version: 20250530.1
+- Image Version: 20250531.1
 - Systemd version: 249.11-0ubuntu3.15
 
 ## Installed Software
@@ -65,7 +65,7 @@ to accomplish this.
 - AzCopy 10.29.1 - available by `azcopy` and `azcopy10` aliases
 - Bazel 8.2.1
 - Bazelisk 1.26.0
-- Bicep 0.35.1
+- Bicep 0.36.1
 - Buildah 1.23.1
 - CMake 3.31.6
 - CodeQL Action Bundle 2.21.3
@@ -108,7 +108,7 @@ to accomplish this.
 
 ### CLI Tools
 - Alibaba Cloud CLI 3.0.279
-- AWS CLI 2.27.25
+- AWS CLI 2.27.26
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.139.0
 - Azure CLI 2.73.0
@@ -118,7 +118,7 @@ to accomplish this.
 - Netlify CLI 21.5.0
 - OpenShift CLI 4.18.15
 - ORAS CLI 1.2.3
-- Vercel CLI 42.2.0
+- Vercel CLI 42.3.0
 
 ### Java
 | Version             | Environment Variable |
@@ -285,9 +285,9 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | node:18              | sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783  | 2025-03-27 |
 | node:18-alpine       | sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e  | 2025-03-27 |
 | node:20              | sha256:7c4cd7c6935554b79c6fffb88e7bde3db0ce25b45d4c634d1fb0f1a6e7f5b782  | 2025-05-15 |
-| node:20-alpine       | sha256:be56e91681a8ec1bba91e3006039bd228dc797fd984794a3efedab325b36e679  | 2025-05-15 |
+| node:20-alpine       | sha256:d3507a213936fe4ef54760a186e113db5188472d9efdf491686bd94580a1c1e8  | 2025-05-31 |
 | node:22              | sha256:0b5b940c21ab03353de9042f9166c75bcfc53c4cd0508c7fd88576646adbf875  | 2025-05-21 |
-| node:22-alpine       | sha256:9f3ae04faa4d2188825803bf890792f33cc39033c9241fc6bb201149470436ca  | 2025-05-21 |
+| node:22-alpine       | sha256:41e4389f3d988d2ed55392df4db1420ad048ae53324a8e2b7c6d19508288107e  | 2025-05-31 |
 | ubuntu:20.04         | sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214  | 2025-04-08 |
 | ubuntu:22.04         | sha256:67cadaff1dca187079fce41360d5a7eb6f7dcd3745e53c79ad5efd8563118240  | 2025-04-28 |
 
