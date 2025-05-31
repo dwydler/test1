@@ -3,7 +3,11 @@ name: "Delete old hetzner snapshots"
 on:
   workflow_dispatch:
 
-  
+
+permissions:
+  contents: read
+
+
 jobs:
   Delete:
     runs-on: ubuntu-latest
