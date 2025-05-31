@@ -11,6 +11,10 @@ on:
         type: string
         
 
+permissions:
+  contents: read
+  
+
 jobs:
   Delete-NewBranch:
     runs-on: ubuntu-latest
