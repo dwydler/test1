@@ -6,6 +6,9 @@ on:
   workflow_dispatch: { }
   workflow_call:
 
+permissions:
+      contents: read
+      
 jobs:
   update_external_airflow_fork:
     name: Sync Fork
