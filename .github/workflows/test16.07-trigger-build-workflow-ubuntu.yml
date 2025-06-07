@@ -196,7 +196,7 @@ jobs:
 
 
       - name: Create a new release
-        uses: ncipollo/release-action@36e78ab6296394ce36f72f6488e68c2353b50514 # v1.14.0
+        uses: ncipollo/release-action@2c591bcc8ecdcd2db72b97d6147f871fcd833ba5 # v1.14.0
         with:
           tag: ${{ inputs.release_tag }}
           name: ${{ inputs.release_name }}
