@@ -116,9 +116,10 @@ jobs:
       - name: Save json file
         uses: actions/upload-artifact@v4
         with:
-          name: internal.ubuntu-24.04.json
+          name: software-report.json
           path: images/ubuntu/software-report.json
-          if-no-files-found: warn
+          if-no-files-found: error
+          overwrite: true
           
       - name: Remove File
         uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
