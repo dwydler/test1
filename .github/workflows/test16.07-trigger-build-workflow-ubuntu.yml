@@ -120,6 +120,7 @@ jobs:
           path: images/ubuntu/software-report.json
           if-no-files-found: error
           overwrite: true
+          retention-days: 1
           
       - name: Remove File
         uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
