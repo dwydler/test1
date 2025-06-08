@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-58-generic
-- Image Version: 20250530.1
+- Image Version: 20250609.1
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -24,15 +24,15 @@
 
 ### Package Management
 - cpan 1.64
-- Helm 3.18.1
-- Homebrew 4.5.3
+- Helm 3.18.2
+- Homebrew 4.5.4
 - Miniconda 25.3.1
 - Npm 10.8.2
 - Pip 24.0
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit a9eee3b18d)
+- Vcpkg (build from commit 984f9232b2)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -51,20 +51,20 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 8.14.1
+- Gradle 8.14.2
 - Lerna 8.2.2
-- Maven 3.9.9
+- Maven 3.9.10
 
 ### Tools
 - Ansible 2.18.6
 - AzCopy 10.29.1 - available by `azcopy` and `azcopy10` aliases
 - Bazel 8.2.1
 - Bazelisk 1.26.0
-- Bicep 0.35.1
+- Bicep 0.36.1
 - Buildah 1.33.7
 - CMake 3.31.6
-- CodeQL Action Bundle 2.21.3
-- Docker Amazon ECR Credential Helper 0.9.1
+- CodeQL Action Bundle 2.21.4
+- Docker Amazon ECR Credential Helper 0.10.0
 - Docker Compose v2 2.27.1
 - Docker-Buildx 0.24.0
 - Docker Client 26.1.3
@@ -85,10 +85,10 @@ to accomplish this.
 - Newman 6.2.1
 - nvm 0.40.3
 - OpenSSL 3.0.13-0ubuntu3.5
-- Packer 1.12.0
+- Packer 1.13.1
 - Parcel 2.15.2
 - Podman 4.9.3
-- Pulumi 3.173.0
+- Pulumi 3.175.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.37.1
@@ -97,13 +97,13 @@ to accomplish this.
 - Ninja 1.12.1
 
 ### CLI Tools
-- AWS CLI 2.27.25
+- AWS CLI 2.27.31
 - AWS CLI Session Manager Plugin 1.2.707.0
-- AWS SAM CLI 1.139.0
-- Azure CLI 2.73.0
+- AWS SAM CLI 1.140.0
+- Azure CLI 2.74.0
 - Azure CLI (azure-devops) 1.0.1
 - GitHub CLI 2.74.0
-- Google Cloud CLI 524.0.0
+- Google Cloud CLI 525.0.0
 
 ### Java
 | Version             | Environment Variable |
@@ -137,13 +137,13 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.8.0
 
 ### Browsers and Drivers
-- Google Chrome 137.0.7151.55
-- ChromeDriver 137.0.7151.55
+- Google Chrome 137.0.7151.68
+- ChromeDriver 137.0.7151.68
 - Chromium 137.0.7151.0
-- Microsoft Edge 137.0.3296.52
-- Microsoft Edge WebDriver 137.0.3296.52
+- Microsoft Edge 137.0.3296.68
+- Microsoft Edge WebDriver 137.0.3296.68
 - Selenium server 4.33.0
-- Mozilla Firefox 139.0
+- Mozilla Firefox 139.0.1
 - Geckodriver 0.36.0
 
 #### Environment variables
@@ -183,7 +183,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 #### Go
 - 1.21.13
 - 1.22.12
-- 1.23.9
+- 1.23.10
 
 #### Node.js
 - 18.20.8
@@ -191,11 +191,11 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 22.16.0
 
 #### Python
-- 3.9.22
-- 3.10.17
-- 3.11.12
-- 3.12.10
-- 3.13.3
+- 3.9.23
+- 3.10.18
+- 3.11.13
+- 3.12.11
+- 3.13.4
 
 #### PyPy
 - 3.9.19 [PyPy 7.3.16]
@@ -285,7 +285,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | mercurial              | 6.7.2-1ubuntu2.2             |
 | net-tools              | 2.10-0.1ubuntu4.4            |
 | netcat                 | 1.226-1ubuntu2               |
-| openssh-client         | 1:9.6p1-3ubuntu13.11         |
+| openssh-client         | 1:9.6p1-3ubuntu13.12         |
 | p7zip-full             | 16.02+transitional.1         |
 | p7zip-rar              | 16.02+transitional.1         |
 | parallel               | 20231122+ds-1                |
@@ -299,7 +299,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | shellcheck             | 0.9.0-1                      |
 | sphinxsearch           | 2.2.11-8build1               |
 | sqlite3                | 3.45.1-1ubuntu2.3            |
-| ssh                    | 1:9.6p1-3ubuntu13.11         |
+| ssh                    | 1:9.6p1-3ubuntu13.12         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5            |
 | swig                   | 4.2.0-2ubuntu1               |
