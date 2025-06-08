@@ -202,7 +202,10 @@ jobs:
           MERGE_RETRY_SLEEP: 30000 # milliseconds
           MERGE_READY_STATE: clean
 
-
+      - name: Download math result for job 2
+        uses: actions/download-artifact@v4
+        with:
+          name: software-report.json
 
       - name: Create a new release
         uses: ncipollo/release-action@90dc22b77f7e5e8d3a3a92924b18415dca53f445 # v1.14.0
@@ -211,4 +214,5 @@ jobs:
           name: ${{ inputs.release_name }}
           body: ${{ steps.readme.outputs.content }}
           token: ${{ steps.generate-token.outputs.token }}
+          artifacts: software-report.json
         
