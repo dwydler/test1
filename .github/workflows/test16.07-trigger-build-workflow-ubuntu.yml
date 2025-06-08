@@ -112,6 +112,13 @@ jobs:
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
           IMAGE_VERSION: ${{ inputs.release_no }}
           PACKER_LOG: ${{ vars.PACKER_LOG }}
+
+      - name: Save json file
+        uses: actions/upload-artifact@v4
+        with:
+          name: internal.ubuntu-24.04.json
+          path: images/ubuntu/software-report.json
+          if-no-files-found: warn
           
       - name: Remove File
         uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
