@@ -40,7 +40,7 @@ jobs:
       id: check
       shell: pwsh
       run: |
-        $apiUrl = "https://api.github.com/repos/actions/runner-images/releases/${{ inputs.release_id }}"
+        $apiUrl = "https://api.github.com/repos/dwydler/test1/releases/${{ inputs.release_id }}"
         $response = Invoke-RestMethod -Uri $apiUrl -Method Get -SkipHttpErrorCheck
         if ($response.message -ilike "Not Found") {
           echo "status=release_not_found" >> $env:GITHUB_OUTPUT
