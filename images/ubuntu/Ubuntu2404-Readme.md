@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-58-generic
-- Image Version: 20250609.1
+- Image Version: 20250609.2
 - Systemd version: 255.4-1ubuntu8.6
 
 ## Installed Software
@@ -25,7 +25,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.18.2
-- Homebrew 4.5.4
+- Homebrew 4.5.5
 - Miniconda 25.3.1
 - Npm 10.8.2
 - Pip 24.0
