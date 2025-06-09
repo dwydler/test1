@@ -16,4 +16,5 @@ curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -
 syft dir:/ -o spdx-json=$OutputDirectory/sbom.json
 
 # Preparing artifact (raw SBOM.json is too big)
-zip $OutputDirectory/sbom.json.zip $OutputDirectory/sbom.json
+#zip $OutputDirectory/sbom.json.zip $OutputDirectory/sbom.json
+zip -r -D $OutputDirectory/sbom.json.zip $OutputDirectory/sbom.json
