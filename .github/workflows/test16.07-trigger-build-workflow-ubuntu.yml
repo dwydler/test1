@@ -231,7 +231,7 @@ jobs:
           name: ${{ inputs.release_name }}
           body: ${{ steps.readme.outputs.content }}
           token: ${{ steps.generate-token.outputs.token }}
-          artifacts: software-report.json
+          artifacts: software-report.json,sbom.json.zip
 
       - name: Delete all artifacts associated with the run 
         uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b # 5.1.0
