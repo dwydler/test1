@@ -121,11 +121,23 @@ jobs:
           if-no-files-found: error
           overwrite: true
           retention-days: 1
-          
-      - name: Remove the file software-report.json
-        uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
+
+      - name: Upload file sbom.json.zip to artifact
+        uses: actions/upload-artifact@v4
         with:
-          path: images/ubuntu/software-report.json
+          name: sbom.json.zip
+          path: images/ubuntu/sbom.json.zip
+          if-no-files-found: error
+          overwrite: true
+          retention-days: 1
+          
+      - name: Remove sbom.json.zip and software-report.json
+        #uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
+        #with:
+        #  path: images/ubuntu/software-report.json
+        run: |
+          rm images/ubuntu/software-report.json
+          rm images/ubuntu/sbom.json.zip
 
       
       - name: Commit & Push changes
@@ -207,6 +219,11 @@ jobs:
         with:
           name: software-report.json
 
+      - name: Download file sbom.json.zip from artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: sbom.json.zip
+
       - name: Create a new release
         uses: ncipollo/release-action@90dc22b77f7e5e8d3a3a92924b18415dca53f445 # v1.14.0
         with:
@@ -219,4 +236,6 @@ jobs:
       - name: Delete all artifacts associated with the run 
         uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b # 5.1.0
         with:
-          name: software-report.json
+          name: |
+            software-report.json
+            sbom.json.zip
