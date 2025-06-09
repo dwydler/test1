@@ -113,7 +113,7 @@ jobs:
           IMAGE_VERSION: ${{ inputs.release_no }}
           PACKER_LOG: ${{ vars.PACKER_LOG }}
 
-      - name: Save json file
+      - name: Upload file software-report.json to artifact
         uses: actions/upload-artifact@v4
         with:
           name: software-report.json
@@ -122,7 +122,7 @@ jobs:
           overwrite: true
           retention-days: 1
           
-      - name: Remove File
+      - name: Remove the file software-report.json
         uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
         with:
           path: images/ubuntu/software-report.json
@@ -202,7 +202,7 @@ jobs:
           MERGE_RETRY_SLEEP: 30000 # milliseconds
           MERGE_READY_STATE: clean
 
-      - name: Download math result for job 2
+      - name: Download file software-report.json from artifact
         uses: actions/download-artifact@v4
         with:
           name: software-report.json
@@ -215,4 +215,8 @@ jobs:
           body: ${{ steps.readme.outputs.content }}
           token: ${{ steps.generate-token.outputs.token }}
           artifacts: software-report.json
-        
+
+      - name: Delete all artifacts associated with the run 
+        uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b # 5.1.0
+        with:
+          name: software-report.json
