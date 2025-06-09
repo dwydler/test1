@@ -17,4 +17,6 @@ syft dir:/ -o spdx-json=$OutputDirectory/sbom.json
 
 # Preparing artifact (raw SBOM.json is too big)
 #zip $OutputDirectory/sbom.json.zip $OutputDirectory/sbom.json
-zip -r -D $OutputDirectory/sbom.json.zip $OutputDirectory/sbom.json
+
+cd $OutputDirectory
+zip sbom.json.zip sbom.json
