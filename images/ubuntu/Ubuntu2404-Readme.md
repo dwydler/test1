@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-58-generic
-- Image Version: 20250610.3
+- Image Version: 20250610.4
 - Systemd version: 255.4-1ubuntu8.8
 
 ## Installed Software
@@ -102,8 +102,8 @@ to accomplish this.
 - AWS SAM CLI 1.140.0
 - Azure CLI 2.74.0
 - Azure CLI (azure-devops) 1.0.1
-- GitHub CLI 2.74.0
-- Google Cloud CLI 525.0.0
+- GitHub CLI 2.74.1
+- Google Cloud CLI 526.0.0
 
 ### Java
 | Version             | Environment Variable |
@@ -137,8 +137,8 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.8.0
 
 ### Browsers and Drivers
-- Google Chrome 137.0.7151.68
-- ChromeDriver 137.0.7151.68
+- Google Chrome 137.0.7151.103
+- ChromeDriver 137.0.7151.69
 - Chromium 137.0.7151.0
 - Microsoft Edge 137.0.3296.68
 - Microsoft Edge WebDriver 137.0.3296.68
