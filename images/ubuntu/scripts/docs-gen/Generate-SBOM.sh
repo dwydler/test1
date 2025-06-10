@@ -19,4 +19,4 @@ syft dir:/ -o spdx-json=$OutputDirectory/sbom.json
 #zip $OutputDirectory/sbom.json.zip $OutputDirectory/sbom.json
 
 cd $OutputDirectory
-zip sbom.json.zip sbom.json
+zip -r sbom.json.zip sbom.json
