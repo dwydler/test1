@@ -1,8 +1,8 @@
 # Ubuntu 24.04
 - OS Version: 24.04.2 LTS
 - Kernel Version: 6.8.0-58-generic
-- Image Version: 20250609.5
-- Systemd version: 255.4-1ubuntu8.6
+- Image Version: 20250610.1
+- Systemd version: 255.4-1ubuntu8.8
 
 ## Installed Software
 
@@ -25,14 +25,14 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.18.2
-- Homebrew 4.5.5
+- Homebrew 4.5.6
 - Miniconda 25.3.1
 - Npm 10.8.2
 - Pip 24.0
 - Pip3 24.0
 - Pipx 1.7.1
 - RubyGems 3.4.20
-- Vcpkg (build from commit 984f9232b2)
+- Vcpkg (build from commit f9d77ef46d)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -69,7 +69,7 @@ to accomplish this.
 - Docker-Buildx 0.24.0
 - Docker Client 26.1.3
 - Docker Server 26.1.3
-- Fastlane 2.227.2
+- Fastlane 2.228.0
 - Git 2.49.0
 - Git LFS 3.6.1
 - Git-ftp 1.6.0
@@ -97,7 +97,7 @@ to accomplish this.
 - Ninja 1.12.1
 
 ### CLI Tools
-- AWS CLI 2.27.31
+- AWS CLI 2.27.32
 - AWS CLI Session Manager Plugin 1.2.707.0
 - AWS SAM CLI 1.140.0
 - Azure CLI 2.74.0
@@ -303,7 +303,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5            |
 | swig                   | 4.2.0-2ubuntu1               |
-| systemd-coredump       | 255.4-1ubuntu8.6             |
+| systemd-coredump       | 255.4-1ubuntu8.8             |
 | tar                    | 1.35+dfsg-3build1            |
 | telnet                 | 0.17+2.5-3ubuntu4            |
 | texinfo                | 7.1-3build2                  |
