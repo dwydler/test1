@@ -24,7 +24,7 @@ jobs:
           exit 1
           
       - name: Install Hetzner Cloud Cli
-        uses: hetznercloud/setup-hcloud@641015849308e9ed3e3b1f3d3b0a637068c5a2af # v1.0.1
+        uses: hetznercloud/setup-hcloud@4ff9bbeda4053fb69dd7fa1fcbdfcce7e648bf33 # v1.0.2
         
       - name: Query und delete snapshots
         id: hlcoud_snapshot
