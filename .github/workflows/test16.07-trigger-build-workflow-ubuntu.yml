@@ -89,6 +89,8 @@ jobs:
       - name: Run `packer init`
         id: init
         run: packer init ./images/ubuntu/templates/${{ inputs.hcl_filename }}
+        env:
+          PACKER_GITHUB_API_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Run `packer validate`
         id: validate
@@ -100,6 +102,7 @@ jobs:
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
           IMAGE_VERSION: ${{ inputs.release_no }}
+          PACKER_GITHUB_API_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Run `packer build`
         id: build
@@ -112,6 +115,8 @@ jobs:
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
           IMAGE_VERSION: ${{ inputs.release_no }}
           PACKER_LOG: ${{ vars.PACKER_LOG }}
+          PACKER_GITHUB_API_TOKEN: ${{ steps.generate-token.outputs.token }}
+          
 
       - name: Upload file software-report.json to artifact
         uses: actions/upload-artifact@v4
